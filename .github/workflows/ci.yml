@@ -29,7 +29,7 @@ jobs:
       - name: Ensure folders
         run: mkdir -p warehouse external state
 
-      # (Valgfritt) Hent siste prod.duckdb for lesing/defer (hvis du ønsker "prod"-artefakter tilgjengelig)
+      # (Valgfritt) Hent siste prod.duckdb for lesing/defer
       - name: Download latest prod.duckdb artifact (if any)
         shell: bash
         run: |
@@ -39,45 +39,55 @@ jobs:
             -o artifacts.json
           prod_id=$(jq -r '.artifacts
             | map(select(.name=="duckdb-prod-db" and .expired==false))
-            | sort_by(.created_at)
-            | last
-            | .id // empty' artifacts.json)
+            | sort_by(.created_at) | last | .id // empty' artifacts.json)
           if [[ -n "$prod_id" ]]; then
             curl -sL -H "Authorization: Bearer ${{ github.token }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
               -o prod.zip
             unzip -q prod.zip -d _prod || true
-            # Flytt første .duckdb vi finner til warehouse/prod.duckdb
             f=$(ls -1 _prod/**.duckdb 2>/dev/null | head -n1 || true)
             if [[ -n "${f:-}" ]]; then
               mv "$f" warehouse/prod.duckdb
             fi
           fi
 
-      # Last ned forrige manifest for Slim CI
-      - name: Download latest manifest (if any)
+      # Last ned forrige manifest for Slim CI og sett DBT_STATE til mappen som inneholder det
+      - name: Download latest manifest (if any) + set DBT_STATE
         shell: bash
         run: |
           set -euo pipefail
+          rm -f ./manifest.json  # unngå gamle/innsjekkede filer
           curl -s -H "Authorization: Bearer ${{ github.token }}" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
             -o artifacts.json
           man_id=$(jq -r '.artifacts
             | map(select(.name=="dbt-manifest" and .expired==false))
-            | sort_by(.created_at)
-            | last
-            | .id // empty' artifacts.json)
+            | sort_by(.created_at) | last | .id // empty' artifacts.json)
           if [[ -n "$man_id" ]]; then
             curl -sL -H "Authorization: Bearer ${{ github.token }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$man_id/zip" \
               -o manifest.zip
+            mkdir -p state
             unzip -q manifest.zip -d state || true
-            # dbt forventer at --state peker til en mappe med manifest.json
-            test -f state/manifest.json && cp state/manifest.json ./manifest.json || true
+            FOUND="$(find state -type f -name manifest.json -print -quit || true)"
+            if [[ -n "${FOUND:-}" ]] && jq -e . "$FOUND" >/dev/null 2>&1; then
+              echo "DBT_STATE=$(dirname "$FOUND")" >> "$GITHUB_ENV"
+              echo "Using DBT_STATE=$(dirname "$FOUND")"
+            else
+              echo "No valid manifest.json found. Will run full build."
+            fi
+          else
+            echo "No manifest artifact found. Will run full build."
           fi
 
-      - name: Generate schema ID (for per-PR schema hvis ønskelig)
+      - name: Generate schema ID (per PR)
         run: echo "SCHEMA_ID=pr_${{ github.event.pull_request.number }}__${{ github.sha }}" >> $GITHUB_ENV
+
+      # (Valgfritt) Lint SQL før bygg – fjern dette steget hvis du ikke bruker SQLFluff
+      - name: Lint SQL with SQLFluff (optional)
+        run: |
+          pip install sqlfluff sqlfluff-templater-dbt
+          sqlfluff lint models/ --format github-annotation-native || true
 
       - name: dbt deps & seed
         run: |
@@ -86,8 +96,8 @@ jobs:
 
       - name: Run dbt build (Slim CI if state present)
         run: |
-          if [ -f "./manifest.json" ]; then
-            dbt build -s 'state:modified+' --defer --state ./ --target pr --vars "schema_id: $SCHEMA_ID"
+          if [[ -n "${DBT_STATE:-}" && -f "${DBT_STATE}/manifest.json" ]]; then
+            dbt build -s 'state:modified+' --defer --state "$DBT_STATE" --target pr --vars "schema_id: $SCHEMA_ID"
           else
             dbt build --target pr --vars "schema_id: $SCHEMA_ID"
           fi

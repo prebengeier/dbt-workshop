@@ -19,34 +19,61 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dbt-duckdb
-        run: pip install -r dbt-requirements.txt
-
-      - name: Ensure prod.duckdb available
-        shell: bash
+      - name: Install system deps (jq, unzip)
         run: |
-          mkdir -p warehouse
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
+          sudo apt-get update -y
+          sudo apt-get install -y jq unzip
+
+      - name: Install dbt + deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dbt-requirements.txt
+
+      - name: Ensure folders
+        run: mkdir -p warehouse state
+
+      - name: Download latest prod.duckdb artifact (if any)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "No token (act run?). Skipping prod.duckdb download."
+          else
+            curl -s -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
               -o artifacts.json
-          prod_id=$(jq -r '.artifacts[] | select(.name=="duckdb-prod-db") | .id' artifacts.json | head -n1)
-          if [ -n "$prod_id" ] && [ "$prod_id" != "null" ]; then
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            prod_id=$(jq -r '.artifacts
+              | map(select(.name=="duckdb-prod-db" and .expired==false))
+              | sort_by(.created_at) | last | .id // empty' artifacts.json)
+            if [[ -n "$prod_id" ]]; then
+              curl -sL -H "Authorization: Bearer ${GH_TOKEN}" \
                 "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
                 -o prod.zip
-            unzip -q prod.zip -d warehouse || true
-          else
-            python - << 'PY'
-import duckdb, os
-os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
-PY
+              unzip -q prod.zip -d _prod || true
+              f=$(ls -1 _prod/**.duckdb 2>/dev/null | head -n1 || true)
+              if [[ -n "${f:-}" ]]; then
+                mv "$f" warehouse/prod.duckdb
+              fi
+            else
+              echo "No previous duckdb-prod-db artifact found."
+            fi
+          fi
+          # Sørg for at filen finnes uansett
+          python -c "import duckdb,os; os.makedirs('warehouse', exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
 
-      - name: Cleanup PR schemas in prod.duckdb
+      # Kun hvis du har en makro 'drop_pr_schemas'
+      - name: Drop PR schemas in prod.duckdb (optional)
         run: |
           dbt run-operation drop_pr_schemas \
             --target prod \
-            --args '{"database": "warehouse/prod.duckdb", "schema_prefix": "analytics__pr", "pr_number": "'"$PR_NUM"'"}'
+            --args '{"schema_prefix": "analytics__pr", "pr_number": "'"${PR_NUM}"'"}'
+
+      - name: Delete PR DuckDB files
+        run: |
+          echo "Cleaning warehouse/pr_${{ env.PR_NUM }}__*.duckdb"
+          rm -f warehouse/pr_${{ env.PR_NUM }}__*.duckdb || true
 
       - name: Log cleanup results
-        run: echo "✅ Cleanup completed for PR #$PR_NUM"
+        run: echo "✅ Cleanup completed for PR #${{ env.PR_NUM }}"

@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DBT_PROFILES_DIR: .
+      # Fast prodfil i repoet
+      DBT_DUCKDB_PATH: warehouse/prod.duckdb
 
     steps:
       - uses: actions/checkout@v4
@@ -18,50 +20,94 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dbt-duckdb
-        run: pip install -r dbt-requirements.txt
-
-      - name: Ensure warehouse dirs
-        run: mkdir -p warehouse external
-
-      - name: Download latest prod.duckdb (if any)
-        shell: bash
+      - name: Install system deps (jq, unzip)
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
+          sudo apt-get update -y
+          sudo apt-get install -y jq unzip
+
+      - name: Install dbt + deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dbt-requirements.txt
+
+      - name: Ensure folders
+        run: mkdir -p warehouse external state
+
+      # (Valgfritt) Hent tidligere prod.duckdb fra artefakter
+      - name: Download latest prod.duckdb artifact (if any)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "No token available (local act run?) Skipping prod.duckdb download."
+          else
+            curl -s -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
               -o artifacts.json
-          prod_id=$(jq -r '.artifacts[] | select(.name=="duckdb-prod-db") | .id' artifacts.json | head -n1)
-          if [ -n "$prod_id" ] && [ "$prod_id" != "null" ]; then
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            prod_id=$(jq -r '.artifacts
+              | map(select(.name=="duckdb-prod-db" and .expired==false))
+              | sort_by(.created_at) | last | .id // empty' artifacts.json)
+            if [[ -n "$prod_id" ]]; then
+              curl -sL -H "Authorization: Bearer ${GH_TOKEN}" \
                 "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
                 -o prod.zip
-            unzip -q prod.zip -d warehouse || true
+              unzip -q prod.zip -d _prod || true
+              f=$(ls -1 _prod/**.duckdb 2>/dev/null | head -n1 || true)
+              if [[ -n "${f:-}" ]]; then
+                mv "$f" warehouse/prod.duckdb
+              fi
+            else
+              echo "No previous duckdb-prod-db artifact found."
+            fi
           fi
-          python - << 'PY'
-import duckdb, os
-os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
-PY
+          # Sørg for at filen finnes uansett
+          python -c "import duckdb,os; os.makedirs('warehouse', exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
 
-      - name: Download latest manifest (optional)
+      # Hent forrige manifest og sett DBT_STATE til mappen som inneholder det
+      - name: Download latest manifest (if any) + set DBT_STATE
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
+          set -euo pipefail
+          rm -f ./manifest.json
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "No token available (local act run?) Skipping manifest download (full build)."
+          else
+            curl -s -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
               -o artifacts.json
-          man_id=$(jq -r '.artifacts[] | select(.name=="dbt-manifest") | .id' artifacts.json | head -n1)
-          if [ -n "$man_id" ] && [ "$man_id" != "null" ]; then
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            man_id=$(jq -r '.artifacts
+              | map(select(.name=="dbt-manifest" and .expired==false))
+              | sort_by(.created_at) | last | .id // empty' artifacts.json)
+            if [[ -n "$man_id" ]]; then
+              curl -sL -H "Authorization: Bearer ${GH_TOKEN}" \
                 "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$man_id/zip" \
                 -o manifest.zip
-            unzip -q manifest.zip -d state || true
-            cp state/manifest.json ./manifest.json || true
+              unzip -q manifest.zip -d state || true
+              FOUND="$(find state -type f -name manifest.json -print -quit || true)"
+              if [[ -n "${FOUND:-}" ]] && jq -e . "$FOUND" >/dev/null 2>&1; then
+                echo "DBT_STATE=$(dirname "$FOUND")" >> "$GITHUB_ENV"
+                echo "Using DBT_STATE=$(dirname "$FOUND")"
+              else
+                echo "No valid manifest.json found. Will run full build."
+              fi
+            else
+              echo "No manifest artifact found. Will run full build."
+            fi
           fi
 
-      - name: Deploy to production (Slim deploy)
+      - name: dbt deps & seed (prod)
         run: |
-          if [ -f "./manifest.json" ]; then
-            dbt build -s 'state:modified+' --state ./ --target prod
+          dbt deps
+          dbt seed --target prod
+
+      - name: Deploy to production (Slim if state present)
+        run: |
+          if [[ -n "${DBT_STATE:-}" && -f "${DBT_STATE}/manifest.json" ]]; then
+            dbt build -s 'state:modified+' --state "$DBT_STATE" --target prod
           else
             dbt build --target prod
           fi
@@ -79,3 +125,6 @@ PY
           name: duckdb-prod-db
           path: warehouse/prod.duckdb
           retention-days: 7
+
+      - name: Cleanup temp files
+        run: rm -rf state/ _prod/ prod.zip manifest.zip artifacts.json || true

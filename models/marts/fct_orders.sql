@@ -45,10 +45,10 @@ order_details as (
         c.state,
         c.country,
         oi.created_at
-    from order_items oi
-    inner join orders o on oi.order_id = o.order_id
-    inner join products p on oi.product_id = p.product_id
-    inner join customers c on o.customer_id = c.customer_id
+    from order_items as oi
+    inner join orders as o on oi.order_id = o.order_id
+    inner join products as p on oi.product_id = p.product_id
+    inner join customers as c on o.customer_id = c.customer_id
 )
 
 select * from order_details

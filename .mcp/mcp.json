@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "duckdb": {
+      "command": "node",
+      "args": ["./node_modules/@motherduck/mcp-server/bin/start.js"],
+      "env": {
+        "DUCKDB_PATH": "./warehouse/prod.duckdb",
+        "MCP_SERVER_MODE": "write"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# 🦆 dbt + DuckDB Workshop (Norsk versjon)
+# 🦆 dbt + DuckDB Workshop 
 
 En praktisk steg-for-steg-guide som viser hvordan du bygger et komplett **dbt-prosjekt** på **DuckDB**, med automatisert CI/CD i **GitHub Actions** og isolerte PR-miljøer. Perfekt for både nybegynnere og erfarne som vil ha en lettvekts data stack uten server.
 

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Staging model for product data"
+    columns:
+      - name: product_id
+        description: "Primary key for products"
+        tests:
+          - not_null
+          - unique
+      - name: price
+        description: "Product selling price"
+        tests:
+          - not_null
+      - name: cost
+        description: "Product cost"
+        tests:
+          - not_null

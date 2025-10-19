@@ -1,0 +1,52 @@
+name: dbt CI Teardown (DuckDB)
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  teardown:
+    runs-on: ubuntu-latest
+    env:
+      DBT_PROFILES_DIR: .
+      PR_NUM: ${{ github.event.number }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt-duckdb
+        run: pip install -r dbt-requirements.txt
+
+      - name: Ensure prod.duckdb available
+        shell: bash
+        run: |
+          mkdir -p warehouse
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
+              -o artifacts.json
+          prod_id=$(jq -r '.artifacts[] | select(.name=="duckdb-prod-db") | .id' artifacts.json | head -n1)
+          if [ -n "$prod_id" ] && [ "$prod_id" != "null" ]; then
+            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
+                -o prod.zip
+            unzip -q prod.zip -d warehouse || true
+          else
+            python - << 'PY'
+import duckdb, os
+os.makedirs('warehouse', exist_ok=True)
+duckdb.connect('warehouse/prod.duckdb').close()
+PY
+
+      - name: Cleanup PR schemas in prod.duckdb
+        run: |
+          dbt run-operation drop_pr_schemas \
+            --target prod \
+            --args '{"database": "warehouse/prod.duckdb", "schema_prefix": "analytics__pr", "pr_number": "'"$PR_NUM"'"}'
+
+      - name: Log cleanup results
+        run: echo "✅ Cleanup completed for PR #$PR_NUM"

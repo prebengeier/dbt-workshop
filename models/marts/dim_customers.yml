@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension table with metrics"
+    columns:
+      - name: customer_id
+        description: "Primary key for customers"
+        tests:
+          - not_null
+          - unique
+      - name: total_orders
+        description: "Total number of orders by customer"
+        tests:
+          - not_null
+      - name: total_spent
+        description: "Total amount spent by customer"
+        tests:
+          - not_null
+      - name: customer_tier
+        description: "Customer tier based on spending"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['VIP', 'Premium', 'Regular', 'New']

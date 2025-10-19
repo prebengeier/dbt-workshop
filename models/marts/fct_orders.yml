@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Fact table for order details"
+    columns:
+      - name: order_item_id
+        description: "Primary key for order items"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Product identifier"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Quantity ordered"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Price per unit"
+        tests:
+          - not_null

@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,phone,address,city,state,zip_code,country,created_at,updated_at
+1,John,Smith,john.smith@email.com,555-0101,123 Main St,New York,NY,10001,USA,2024-01-01,2024-01-01
+2,Jane,Doe,jane.doe@email.com,555-0102,456 Oak Ave,Los Angeles,CA,90210,USA,2024-01-02,2024-01-02
+3,Mike,Johnson,mike.johnson@email.com,555-0103,789 Pine Rd,Chicago,IL,60601,USA,2024-01-03,2024-01-03
+4,Sarah,Williams,sarah.williams@email.com,555-0104,321 Elm St,Houston,TX,77001,USA,2024-01-04,2024-01-04
+5,David,Brown,david.brown@email.com,555-0105,654 Maple Dr,Phoenix,AZ,85001,USA,2024-01-05,2024-01-05
+6,Lisa,Davis,lisa.davis@email.com,555-0106,987 Cedar Ln,Philadelphia,PA,19101,USA,2024-01-06,2024-01-06
+7,Tom,Wilson,tom.wilson@email.com,555-0107,147 Birch Way,San Antonio,TX,78201,USA,2024-01-07,2024-01-07
+8,Amy,Miller,amy.miller@email.com,555-0108,258 Spruce Ct,San Diego,CA,92101,USA,2024-01-08,2024-01-08
+9,Chris,Taylor,chris.taylor@email.com,555-0109,369 Willow Pl,Dallas,TX,75201,USA,2024-01-09,2024-01-09
+10,Emma,Anderson,emma.anderson@email.com,555-0110,741 Aspen St,San Jose,CA,95101,USA,2024-01-10,2024-01-10

@@ -1,0 +1,21 @@
+my_dbt_project:
+  target: prod
+  outputs:
+    pr:
+      type: duckdb
+      path: ./warehouse/ci.duckdb        # isolert PR-db
+      schema: analytics
+      threads: 4
+      extensions: [httpfs]
+      external_root: ./external
+      attach:                            # gjør defer mulig mot forrige prod
+        - path: ./warehouse/prod.duckdb
+          alias: prod
+
+    prod:
+      type: duckdb
+      path: ./warehouse/prod.duckdb      # “prod”-db som fil
+      schema: analytics
+      threads: 8
+      extensions: [httpfs]
+      external_root: ./external

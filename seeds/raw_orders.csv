@@ -1,0 +1,11 @@
+order_id,customer_id,order_date,status,total_amount,shipping_address,billing_address,payment_method,created_at,updated_at
+1,1,2024-01-15,Completed,1299.99,123 Main St New York NY 10001,123 Main St New York NY 10001,Credit Card,2024-01-15,2024-01-15
+2,2,2024-01-16,Completed,1099.98,456 Oak Ave Los Angeles CA 90210,456 Oak Ave Los Angeles CA 90210,PayPal,2024-01-16,2024-01-16
+3,3,2024-01-17,Shipped,399.98,789 Pine Rd Chicago IL 60601,789 Pine Rd Chicago IL 60601,Credit Card,2024-01-17,2024-01-17
+4,4,2024-01-18,Processing,189.98,321 Elm St Houston TX 77001,321 Elm St Houston TX 77001,Credit Card,2024-01-18,2024-01-18
+5,5,2024-01-19,Completed,169.98,654 Maple Dr Phoenix AZ 85001,654 Maple Dr Phoenix AZ 85001,PayPal,2024-01-19,2024-01-19
+6,6,2024-01-20,Shipped,79.98,987 Cedar Ln Philadelphia PA 19101,987 Cedar Ln Philadelphia PA 19101,Credit Card,2024-01-20,2024-01-20
+7,7,2024-01-21,Completed,249.99,147 Birch Way San Antonio TX 78201,147 Birch Way San Antonio TX 78201,Credit Card,2024-01-21,2024-01-21
+8,8,2024-01-22,Processing,149.99,258 Spruce Ct San Diego CA 92101,258 Spruce Ct San Diego CA 92101,PayPal,2024-01-22,2024-01-22
+9,9,2024-01-23,Completed,199.98,369 Willow Pl Dallas TX 75201,369 Willow Pl Dallas TX 75201,Credit Card,2024-01-23,2024-01-23
+10,10,2024-01-24,Shipped,89.98,741 Aspen St San Jose CA 95101,741 Aspen St San Jose CA 95101,Credit Card,2024-01-24,2024-01-24

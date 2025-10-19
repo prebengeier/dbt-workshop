@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging model for order data"
+    columns:
+      - name: order_id
+        description: "Primary key for orders"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+      - name: total_amount
+        description: "Total order amount"
+        tests:
+          - not_null

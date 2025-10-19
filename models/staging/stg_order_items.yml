@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    description: "Staging model for order items data"
+    columns:
+      - name: order_item_id
+        description: "Primary key for order items"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Foreign key to orders"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      - name: product_id
+        description: "Foreign key to products"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
+      - name: quantity
+        description: "Quantity ordered"
+        tests:
+          - not_null

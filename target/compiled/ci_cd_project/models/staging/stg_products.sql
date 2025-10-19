@@ -1,7 +1,7 @@
 
 
 with source as (
-    select * from prod.analytics.raw_products
+    select * from dev.analytics_dev.raw_products
 ),
 
 staged as (

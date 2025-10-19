@@ -13,7 +13,7 @@
 
 
 select cost
-from prod.analytics.stg_products
+from dev.analytics.stg_products
 where cost is null
 
 

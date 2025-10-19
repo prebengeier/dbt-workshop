@@ -1,12 +1,10 @@
 
     
     
-    
-    create table test.analytics_test.raw_products (product_id integer,product_name text,category text,subcategory text,brand text,price float8,cost integer,description text,is_active boolean,created_at date,updated_at date)
-  ;
+    truncate table "dev"."analytics_dev"."raw_products";
     -- dbt seed --
     
-          COPY test.analytics_test.raw_products FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+          COPY dev.analytics_dev.raw_products FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
         
 
 ;

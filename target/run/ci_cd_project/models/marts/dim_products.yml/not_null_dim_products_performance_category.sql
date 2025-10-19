@@ -13,7 +13,7 @@
 
 
 select performance_category
-from prod.analytics.dim_products
+from dev.analytics.dim_products
 where performance_category is null
 
 

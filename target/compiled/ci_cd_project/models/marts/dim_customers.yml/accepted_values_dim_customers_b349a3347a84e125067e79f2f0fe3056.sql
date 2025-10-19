@@ -8,7 +8,7 @@ with all_values as (
         customer_tier as value_field,
         count(*) as n_records
 
-    from prod.analytics.dim_customers
+    from dev.analytics.dim_customers
     group by customer_tier
 
 )

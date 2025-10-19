@@ -5,7 +5,7 @@
 
 
 select profit_margin
-from prod.analytics.dim_products
+from dev.analytics.dim_products
 where profit_margin is null
 
 

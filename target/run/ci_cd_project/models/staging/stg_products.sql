@@ -1,10 +1,10 @@
 
   
-  create view prod.analytics.stg_products__dbt_tmp as (
+  create view dev.analytics.stg_products__dbt_tmp as (
     
 
 with source as (
-    select * from prod.analytics.raw_products
+    select * from dev.analytics_dev.raw_products
 ),
 
 staged as (

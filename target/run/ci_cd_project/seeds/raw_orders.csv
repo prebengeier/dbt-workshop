@@ -1,12 +1,10 @@
 
     
     
-    
-    create table test.analytics_test.raw_orders (order_id integer,customer_id integer,order_date date,status text,total_amount float8,shipping_address text,billing_address text,payment_method text,created_at date,updated_at date)
-  ;
+    truncate table "dev"."analytics_dev"."raw_orders";
     -- dbt seed --
     
-          COPY test.analytics_test.raw_orders FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+          COPY dev.analytics_dev.raw_orders FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
         
 
 ;

@@ -9485,3 +9485,2651 @@ having count(*) > 1
 [0m12:58:09.332776 [debug] [MainThread]: Command `dbt test` succeeded at 12:58:09.332702 after 2.10 seconds
 [0m12:58:09.333096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093958a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aeeb8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1f5d50>]}
 [0m12:58:09.333423 [debug] [MainThread]: Flushing usage events
+[0m13:20:36.614816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10911d8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abb2d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abb31f0>]}
+
+
+============================== 13:20:36.619561 | b0672e7a-a637-4ba9-bbc4-adc7af9f33bc ==============================
+[0m13:20:36.619561 [info ] [MainThread]: Running with dbt=1.8.9
+[0m13:20:36.620090 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/preben/Documents/dbt-workshop', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/preben/Documents/dbt-workshop/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt build --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:20:36.877570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad08100>]}
+[0m13:20:36.927551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac88a00>]}
+[0m13:20:36.934196 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m13:20:37.058303 [debug] [MainThread]: checksum: 7c9f24cadb9ed71bfad0146ef54df7f5d259c85b535c1ae4260269edc44b8995, vars: {}, profile: , target: dev, version: 1.8.9
+[0m13:20:37.181421 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m13:20:37.181838 [debug] [MainThread]: previous checksum: 7c9f24cadb9ed71bfad0146ef54df7f5d259c85b535c1ae4260269edc44b8995, current checksum: 615e2d2cb3f98118511aae44913b8ec8777c6094d89fb36e10217eda1f944ce4
+[0m13:20:37.182151 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m13:20:37.182469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f97190>]}
+[0m13:20:39.497800 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m13:20:39.498293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1480d0>]}
+[0m13:20:39.887226 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_documentation_coverage.67ef7314a7' (models/marts/documentation/documentation.yml) depends on a node named 'fct_documentation_coverage' which is disabled
+[0m13:20:39.887726 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_models_.7c2f43109c' (models/marts/documentation/documentation.yml) depends on a node named 'fct_undocumented_models' which is disabled
+[0m13:20:39.888052 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_source_tables_.1c89ecc166' (models/marts/documentation/documentation.yml) depends on a node named 'fct_undocumented_source_tables' which is disabled
+[0m13:20:39.888354 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_sources_.0409327235' (models/marts/documentation/documentation.yml) depends on a node named 'fct_undocumented_sources' which is disabled
+[0m13:20:39.888645 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_direct_join_to_source_.2ec67ec028' (models/marts/dag/dag.yml) depends on a node named 'fct_direct_join_to_source' which is disabled
+[0m13:20:39.888927 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_duplicate_sources_.642214de31' (models/marts/dag/dag.yml) depends on a node named 'fct_duplicate_sources' which is disabled
+[0m13:20:39.889209 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_marts_or_intermediate_dependent_on_source_.c0abd5f00f' (models/marts/dag/dag.yml) depends on a node named 'fct_marts_or_intermediate_dependent_on_source' which is disabled
+[0m13:20:39.889487 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_fanout_.a3ef403a95' (models/marts/dag/dag.yml) depends on a node named 'fct_model_fanout' which is disabled
+[0m13:20:39.889760 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_multiple_sources_joined_.494f431817' (models/marts/dag/dag.yml) depends on a node named 'fct_multiple_sources_joined' which is disabled
+[0m13:20:39.890039 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_rejoining_of_upstream_concepts_.c6b3625c7d' (models/marts/dag/dag.yml) depends on a node named 'fct_rejoining_of_upstream_concepts' which is disabled
+[0m13:20:39.890313 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_root_models_.ccb5a490f1' (models/marts/dag/dag.yml) depends on a node named 'fct_root_models' which is disabled
+[0m13:20:39.890583 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_fanout_.45762bb722' (models/marts/dag/dag.yml) depends on a node named 'fct_source_fanout' which is disabled
+[0m13:20:39.890854 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_marts_or_intermediate_.3aa45af51f' (models/marts/dag/dag.yml) depends on a node named 'fct_staging_dependent_on_marts_or_intermediate' which is disabled
+[0m13:20:39.891132 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_staging_.bea47be3ca' (models/marts/dag/dag.yml) depends on a node named 'fct_staging_dependent_on_staging' which is disabled
+[0m13:20:39.891402 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_unused_sources_.41456b9da8' (models/marts/dag/dag.yml) depends on a node named 'fct_unused_sources' which is disabled
+[0m13:20:39.891678 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposure_parents_materializations_.5a21592422' (models/marts/dag/dag.yml) depends on a node named 'fct_exposure_parents_materializations' which is disabled
+[0m13:20:39.891951 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_hard_coded_references_.9f62f70113' (models/marts/dag/dag.yml) depends on a node named 'fct_hard_coded_references' which is disabled
+[0m13:20:39.892220 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_too_many_joins_.0cb37fa535' (models/marts/dag/dag.yml) depends on a node named 'fct_too_many_joins' which is disabled
+[0m13:20:39.892488 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_test_coverage.df03f31e09' (models/marts/tests/testing.yml) depends on a node named 'fct_test_coverage' which is disabled
+[0m13:20:39.892759 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_missing_primary_key_tests_.4d10d48da0' (models/marts/tests/testing.yml) depends on a node named 'fct_missing_primary_key_tests' which is disabled
+[0m13:20:39.893034 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_public_models_without_contract_.bcf47f1cb0' (models/marts/governance/governance.yml) depends on a node named 'fct_public_models_without_contract' which is disabled
+[0m13:20:39.893307 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_public_models_.56938f1938' (models/marts/governance/governance.yml) depends on a node named 'fct_undocumented_public_models' which is disabled
+[0m13:20:39.893583 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposures_dependent_on_private_models_.f12ef3521e' (models/marts/governance/governance.yml) depends on a node named 'fct_exposures_dependent_on_private_models' which is disabled
+[0m13:20:39.893854 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_chained_views_dependencies_.d5cb95fb33' (models/marts/performance/performance.yml) depends on a node named 'fct_chained_views_dependencies' which is disabled
+[0m13:20:39.894124 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_directories_.50098500db' (models/marts/structure/structure.yml) depends on a node named 'fct_model_directories' which is disabled
+[0m13:20:39.894396 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_naming_conventions_.a79bc0fbe2' (models/marts/structure/structure.yml) depends on a node named 'fct_model_naming_conventions' which is disabled
+[0m13:20:39.894667 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_directories_.3ec42bc19c' (models/marts/structure/structure.yml) depends on a node named 'fct_source_directories' which is disabled
+[0m13:20:39.894935 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_test_directories_.1c1db93433' (models/marts/structure/structure.yml) depends on a node named 'fct_test_directories' which is disabled
+[0m13:20:40.002626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b66fd60>]}
+[0m13:20:40.163323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10afbf8e0>]}
+[0m13:20:40.163802 [info ] [MainThread]: Found 7 models, 4 seeds, 41 data tests, 880 macros
+[0m13:20:40.168065 [info ] [MainThread]: 
+[0m13:20:40.168546 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:20:40.174298 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m13:20:40.174796 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m13:20:40.232873 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m13:20:40.233253 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m13:20:40.233577 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = 'dev'
+    
+  
+  
+[0m13:20:40.233905 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = 'dev'
+    
+  
+  
+[0m13:20:40.234208 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:20:40.234484 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:20:40.384645 [debug] [ThreadPool]: SQL status: OK in 0.150 seconds
+[0m13:20:40.385047 [debug] [ThreadPool]: SQL status: OK in 0.151 seconds
+[0m13:20:40.386975 [debug] [ThreadPool]: On list_dev: Close
+[0m13:20:40.387975 [debug] [ThreadPool]: On list_dev: Close
+[0m13:20:40.390031 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_analytics)
+[0m13:20:40.390625 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "analytics"
+"
+[0m13:20:40.397559 [debug] [ThreadPool]: Using duckdb connection "create_dev_analytics"
+[0m13:20:40.397897 [debug] [ThreadPool]: On create_dev_analytics: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "create_dev_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='dev'
+        and type='sqlite'
+    
+  
+[0m13:20:40.398182 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:20:40.433394 [debug] [ThreadPool]: SQL status: OK in 0.035 seconds
+[0m13:20:40.434775 [debug] [ThreadPool]: Using duckdb connection "create_dev_analytics"
+[0m13:20:40.435081 [debug] [ThreadPool]: On create_dev_analytics: BEGIN
+[0m13:20:40.435436 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:20:40.435707 [debug] [ThreadPool]: Using duckdb connection "create_dev_analytics"
+[0m13:20:40.435973 [debug] [ThreadPool]: On create_dev_analytics: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "create_dev_analytics"} */
+
+    
+    
+        create schema if not exists dev.analytics
+    
+[0m13:20:40.437236 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:20:40.438008 [debug] [ThreadPool]: On create_dev_analytics: COMMIT
+[0m13:20:40.438312 [debug] [ThreadPool]: Using duckdb connection "create_dev_analytics"
+[0m13:20:40.438584 [debug] [ThreadPool]: On create_dev_analytics: COMMIT
+[0m13:20:40.439363 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:20:40.439643 [debug] [ThreadPool]: On create_dev_analytics: Close
+[0m13:20:40.445705 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_analytics)
+[0m13:20:40.451413 [debug] [ThreadPool]: Using duckdb connection "list_dev_analytics"
+[0m13:20:40.451830 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dev_analytics, now list_dev_analytics_dev)
+[0m13:20:40.452136 [debug] [ThreadPool]: On list_dev_analytics: BEGIN
+[0m13:20:40.455213 [debug] [ThreadPool]: Using duckdb connection "list_dev_analytics_dev"
+[0m13:20:40.455519 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:20:40.455801 [debug] [ThreadPool]: On list_dev_analytics_dev: BEGIN
+[0m13:20:40.456125 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:20:40.489907 [debug] [ThreadPool]: SQL status: OK in 0.034 seconds
+[0m13:20:40.490264 [debug] [ThreadPool]: Using duckdb connection "list_dev_analytics"
+[0m13:20:40.490566 [debug] [ThreadPool]: SQL status: OK in 0.034 seconds
+[0m13:20:40.490885 [debug] [ThreadPool]: On list_dev_analytics: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "list_dev_analytics"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'analytics'
+    and table_catalog = 'dev'
+  
+[0m13:20:40.491188 [debug] [ThreadPool]: Using duckdb connection "list_dev_analytics_dev"
+[0m13:20:40.491569 [debug] [ThreadPool]: On list_dev_analytics_dev: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "connection_name": "list_dev_analytics_dev"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'analytics_dev'
+    and table_catalog = 'dev'
+  
+[0m13:20:40.504339 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m13:20:40.504672 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m13:20:40.505729 [debug] [ThreadPool]: On list_dev_analytics: ROLLBACK
+[0m13:20:40.506839 [debug] [ThreadPool]: On list_dev_analytics_dev: ROLLBACK
+[0m13:20:40.507624 [debug] [ThreadPool]: Failed to rollback 'list_dev_analytics'
+[0m13:20:40.507981 [debug] [ThreadPool]: Failed to rollback 'list_dev_analytics_dev'
+[0m13:20:40.508253 [debug] [ThreadPool]: On list_dev_analytics: Close
+[0m13:20:40.508532 [debug] [ThreadPool]: On list_dev_analytics_dev: Close
+[0m13:20:40.510417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5a6110>]}
+[0m13:20:40.510852 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:20:40.511127 [debug] [MainThread]: On master: BEGIN
+[0m13:20:40.511380 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:20:40.550413 [debug] [MainThread]: SQL status: OK in 0.039 seconds
+[0m13:20:40.550746 [debug] [MainThread]: On master: COMMIT
+[0m13:20:40.551032 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:20:40.551300 [debug] [MainThread]: On master: COMMIT
+[0m13:20:40.551632 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:20:40.551902 [debug] [MainThread]: On master: Close
+[0m13:20:40.552877 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:20:40.553222 [info ] [MainThread]: 
+[0m13:20:40.555503 [debug] [Thread-1 (]: Began running node seed.ci_cd_project.raw_customers
+[0m13:20:40.555892 [debug] [Thread-2 (]: Began running node seed.ci_cd_project.raw_order_items
+[0m13:20:40.556366 [info ] [Thread-1 (]: 1 of 52 START seed file analytics_dev.raw_customers ............................ [RUN]
+[0m13:20:40.556785 [debug] [Thread-3 (]: Began running node seed.ci_cd_project.raw_orders
+[0m13:20:40.557195 [info ] [Thread-2 (]: 2 of 52 START seed file analytics_dev.raw_order_items .......................... [RUN]
+[0m13:20:40.557580 [debug] [Thread-4 (]: Began running node seed.ci_cd_project.raw_products
+[0m13:20:40.557948 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev_analytics, now seed.ci_cd_project.raw_customers)
+[0m13:20:40.558385 [info ] [Thread-3 (]: 3 of 52 START seed file analytics_dev.raw_orders ............................... [RUN]
+[0m13:20:40.558878 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_analytics_dev, now seed.ci_cd_project.raw_order_items)
+[0m13:20:40.559326 [info ] [Thread-4 (]: 4 of 52 START seed file analytics_dev.raw_products ............................. [RUN]
+[0m13:20:40.559840 [debug] [Thread-1 (]: Began compiling node seed.ci_cd_project.raw_customers
+[0m13:20:40.560295 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.ci_cd_project.raw_orders'
+[0m13:20:40.560629 [debug] [Thread-2 (]: Began compiling node seed.ci_cd_project.raw_order_items
+[0m13:20:40.561034 [debug] [Thread-4 (]: Acquiring new duckdb connection 'seed.ci_cd_project.raw_products'
+[0m13:20:40.561373 [debug] [Thread-1 (]: Began executing node seed.ci_cd_project.raw_customers
+[0m13:20:40.561693 [debug] [Thread-3 (]: Began compiling node seed.ci_cd_project.raw_orders
+[0m13:20:40.562330 [debug] [Thread-2 (]: Began executing node seed.ci_cd_project.raw_order_items
+[0m13:20:40.562674 [debug] [Thread-4 (]: Began compiling node seed.ci_cd_project.raw_products
+[0m13:20:40.569335 [debug] [Thread-3 (]: Began executing node seed.ci_cd_project.raw_orders
+[0m13:20:40.582670 [debug] [Thread-4 (]: Began executing node seed.ci_cd_project.raw_products
+[0m13:20:40.632107 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m13:20:40.640724 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m13:20:40.642331 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: BEGIN
+[0m13:20:40.646747 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m13:20:40.647090 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: BEGIN
+[0m13:20:40.651882 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m13:20:40.652249 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:40.652582 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: BEGIN
+[0m13:20:40.652921 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:40.653279 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: BEGIN
+[0m13:20:40.653676 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:20:40.654053 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:20:40.690030 [debug] [Thread-2 (]: SQL status: OK in 0.037 seconds
+[0m13:20:40.690419 [debug] [Thread-1 (]: SQL status: OK in 0.038 seconds
+[0m13:20:40.690776 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m13:20:40.691102 [debug] [Thread-4 (]: SQL status: OK in 0.037 seconds
+[0m13:20:40.691399 [debug] [Thread-3 (]: SQL status: OK in 0.038 seconds
+[0m13:20:40.691719 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m13:20:40.692043 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "seed.ci_cd_project.raw_order_items"} */
+truncate table "dev"."analytics_dev"."raw_order_items"
+[0m13:20:40.692363 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m13:20:40.692669 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m13:20:40.692978 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "seed.ci_cd_project.raw_customers"} */
+truncate table "dev"."analytics_dev"."raw_customers"
+[0m13:20:40.693385 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "seed.ci_cd_project.raw_products"} */
+truncate table "dev"."analytics_dev"."raw_products"
+[0m13:20:40.693740 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "seed.ci_cd_project.raw_orders"} */
+truncate table "dev"."analytics_dev"."raw_orders"
+[0m13:20:40.695133 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.695467 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.695783 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:20:40.696079 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:20:40.706872 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m13:20:40.707878 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m13:20:40.708830 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m13:20:40.709745 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m13:20:40.710091 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: 
+          COPY dev.analytics_dev.raw_products FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:20:40.710427 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: 
+          COPY dev.analytics_dev.raw_orders FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:20:40.710760 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: 
+          COPY dev.analytics_dev.raw_customers FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:20:40.711085 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: 
+          COPY dev.analytics_dev.raw_order_items FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_order_items.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:20:40.722261 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m13:20:40.722620 [debug] [Thread-2 (]: SQL status: OK in 0.011 seconds
+[0m13:20:40.722945 [debug] [Thread-3 (]: SQL status: OK in 0.012 seconds
+[0m13:20:40.723269 [debug] [Thread-4 (]: SQL status: OK in 0.012 seconds
+[0m13:20:40.728368 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_customers"
+[0m13:20:40.728893 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_order_items"
+[0m13:20:40.729380 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_orders"
+[0m13:20:40.729847 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_products"
+[0m13:20:40.745475 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: COMMIT
+[0m13:20:40.747678 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: COMMIT
+[0m13:20:40.748087 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m13:20:40.749255 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: COMMIT
+[0m13:20:40.749600 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m13:20:40.750621 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: COMMIT
+[0m13:20:40.750964 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: COMMIT
+[0m13:20:40.751288 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m13:20:40.751605 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: COMMIT
+[0m13:20:40.751923 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m13:20:40.752325 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: COMMIT
+[0m13:20:40.752754 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: COMMIT
+[0m13:20:40.754250 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:20:40.756174 [debug] [Thread-2 (]: On seed.ci_cd_project.raw_order_items: Close
+[0m13:20:40.756581 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:20:40.756920 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:20:40.758009 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m13:20:40.758646 [debug] [Thread-1 (]: On seed.ci_cd_project.raw_customers: Close
+[0m13:20:40.759205 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b421f00>]}
+[0m13:20:40.759843 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_orders: Close
+[0m13:20:40.760447 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: Close
+[0m13:20:40.760900 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b61e260>]}
+[0m13:20:40.761385 [info ] [Thread-2 (]: 2 of 52 OK loaded seed file analytics_dev.raw_order_items ...................... [[32mINSERT 14[0m in 0.20s]
+[0m13:20:40.761839 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b422800>]}
+[0m13:20:40.762798 [debug] [Thread-2 (]: Finished running node seed.ci_cd_project.raw_order_items
+[0m13:20:40.762353 [info ] [Thread-1 (]: 1 of 52 OK loaded seed file analytics_dev.raw_customers ........................ [[32mINSERT 10[0m in 0.20s]
+[0m13:20:40.763355 [info ] [Thread-3 (]: 3 of 52 OK loaded seed file analytics_dev.raw_orders ........................... [[32mINSERT 10[0m in 0.20s]
+[0m13:20:40.763922 [debug] [Thread-2 (]: Began running node model.ci_cd_project.stg_order_items
+[0m13:20:40.764396 [debug] [Thread-1 (]: Finished running node seed.ci_cd_project.raw_customers
+[0m13:20:40.764863 [debug] [Thread-3 (]: Finished running node seed.ci_cd_project.raw_orders
+[0m13:20:40.765321 [info ] [Thread-2 (]: 5 of 52 START sql view model analytics.stg_order_items ......................... [RUN]
+[0m13:20:40.765975 [debug] [Thread-1 (]: Began running node model.ci_cd_project.stg_customers
+[0m13:20:40.766346 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.raw_order_items, now model.ci_cd_project.stg_order_items)
+[0m13:20:40.766718 [debug] [Thread-3 (]: Began running node model.ci_cd_project.stg_orders
+[0m13:20:40.767519 [debug] [Thread-2 (]: Began compiling node model.ci_cd_project.stg_order_items
+[0m13:20:40.767202 [info ] [Thread-1 (]: 6 of 52 START sql view model analytics.stg_customers ........................... [RUN]
+[0m13:20:40.777282 [debug] [Thread-2 (]: Writing injected SQL for node "model.ci_cd_project.stg_order_items"
+[0m13:20:40.777738 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b422d40>]}
+[0m13:20:40.778104 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.raw_customers, now model.ci_cd_project.stg_customers)
+[0m13:20:40.768148 [info ] [Thread-3 (]: 7 of 52 START sql view model analytics.stg_orders .............................. [RUN]
+[0m13:20:40.779075 [debug] [Thread-1 (]: Began compiling node model.ci_cd_project.stg_customers
+[0m13:20:40.778760 [info ] [Thread-4 (]: 4 of 52 OK loaded seed file analytics_dev.raw_products ......................... [[32mINSERT 10[0m in 0.22s]
+[0m13:20:40.779586 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.raw_orders, now model.ci_cd_project.stg_orders)
+[0m13:20:40.784015 [debug] [Thread-1 (]: Writing injected SQL for node "model.ci_cd_project.stg_customers"
+[0m13:20:40.784397 [debug] [Thread-2 (]: Began executing node model.ci_cd_project.stg_order_items
+[0m13:20:40.784874 [debug] [Thread-4 (]: Finished running node seed.ci_cd_project.raw_products
+[0m13:20:40.785195 [debug] [Thread-3 (]: Began compiling node model.ci_cd_project.stg_orders
+[0m13:20:40.807619 [debug] [Thread-3 (]: Writing injected SQL for node "model.ci_cd_project.stg_orders"
+[0m13:20:40.814500 [debug] [Thread-1 (]: Began executing node model.ci_cd_project.stg_customers
+[0m13:20:40.815955 [debug] [Thread-2 (]: Writing runtime sql for node "model.ci_cd_project.stg_order_items"
+[0m13:20:40.820426 [debug] [Thread-1 (]: Writing runtime sql for node "model.ci_cd_project.stg_customers"
+[0m13:20:40.820823 [debug] [Thread-4 (]: Began running node model.ci_cd_project.stg_products
+[0m13:20:40.821358 [debug] [Thread-3 (]: Began executing node model.ci_cd_project.stg_orders
+[0m13:20:40.825140 [debug] [Thread-3 (]: Writing runtime sql for node "model.ci_cd_project.stg_orders"
+[0m13:20:40.821785 [info ] [Thread-4 (]: 8 of 52 START sql view model analytics.stg_products ............................ [RUN]
+[0m13:20:40.825743 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.stg_order_items"
+[0m13:20:40.826158 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.stg_customers"
+[0m13:20:40.826518 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.raw_products, now model.ci_cd_project.stg_products)
+[0m13:20:40.826875 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: BEGIN
+[0m13:20:40.827244 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: BEGIN
+[0m13:20:40.827595 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.stg_orders"
+[0m13:20:40.827911 [debug] [Thread-4 (]: Began compiling node model.ci_cd_project.stg_products
+[0m13:20:40.828222 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:40.828579 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:40.829002 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: BEGIN
+[0m13:20:40.832243 [debug] [Thread-4 (]: Writing injected SQL for node "model.ci_cd_project.stg_products"
+[0m13:20:40.832688 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:40.833188 [debug] [Thread-4 (]: Began executing node model.ci_cd_project.stg_products
+[0m13:20:40.836646 [debug] [Thread-4 (]: Writing runtime sql for node "model.ci_cd_project.stg_products"
+[0m13:20:40.837402 [debug] [Thread-4 (]: Using duckdb connection "model.ci_cd_project.stg_products"
+[0m13:20:40.837759 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: BEGIN
+[0m13:20:40.838071 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:40.870584 [debug] [Thread-2 (]: SQL status: OK in 0.042 seconds
+[0m13:20:40.870980 [debug] [Thread-1 (]: SQL status: OK in 0.042 seconds
+[0m13:20:40.871331 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.stg_order_items"
+[0m13:20:40.871652 [debug] [Thread-4 (]: SQL status: OK in 0.034 seconds
+[0m13:20:40.871995 [debug] [Thread-3 (]: SQL status: OK in 0.039 seconds
+[0m13:20:40.872332 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.stg_customers"
+[0m13:20:40.872681 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_order_items"} */
+
+  
+  create view dev.analytics.stg_order_items__dbt_tmp as (
+    
+
+with source as (
+    select * from dev.analytics_dev.raw_order_items
+),
+
+staged as (
+    select
+        order_item_id,
+        order_id,
+        product_id,
+        quantity,
+        unit_price,
+        total_price,
+        discount_amount,
+        created_at
+    from source
+)
+
+select * from staged
+  );
+
+[0m13:20:40.873019 [debug] [Thread-4 (]: Using duckdb connection "model.ci_cd_project.stg_products"
+[0m13:20:40.873322 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.stg_orders"
+[0m13:20:40.873652 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_customers"} */
+
+  
+  create view dev.analytics.stg_customers__dbt_tmp as (
+    
+
+with source as (
+    select * from dev.analytics_dev.raw_customers
+),
+
+staged as (
+    select
+        customer_id,
+        first_name,
+        last_name,
+        email,
+        phone,
+        address,
+        city,
+        state,
+        zip_code,
+        country,
+        created_at,
+        updated_at
+    from source
+)
+
+select * from staged
+where true
+  );
+
+[0m13:20:40.874321 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_products"} */
+
+  
+  create view dev.analytics.stg_products__dbt_tmp as (
+    
+
+with source as (
+    select * from dev.analytics_dev.raw_products
+),
+
+staged as (
+    select
+        product_id,
+        product_name,
+        category,
+        subcategory,
+        brand,
+        price,
+        cost,
+        description,
+        is_active,
+        created_at,
+        updated_at
+    from source
+)
+
+select * from staged
+  );
+
+[0m13:20:40.874683 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_orders"} */
+
+  
+  create view dev.analytics.stg_orders__dbt_tmp as (
+    
+
+with source as (
+    select * from dev.analytics_dev.raw_orders
+),
+
+staged as (
+    select
+        order_id,
+        customer_id,
+        order_date,
+        status,
+        total_amount,
+        shipping_address,
+        billing_address,
+        payment_method,
+        created_at,
+        updated_at
+    from source
+)
+
+select * from staged
+  );
+
+[0m13:20:40.875023 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.882452 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.stg_order_items"
+[0m13:20:40.882812 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m13:20:40.883178 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_order_items"} */
+alter view dev.analytics.stg_order_items__dbt_tmp rename to stg_order_items
+[0m13:20:40.883498 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m13:20:40.883821 [debug] [Thread-4 (]: SQL status: OK in 0.008 seconds
+[0m13:20:40.887107 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.stg_customers"
+[0m13:20:40.890697 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.stg_orders"
+[0m13:20:40.893889 [debug] [Thread-4 (]: Using duckdb connection "model.ci_cd_project.stg_products"
+[0m13:20:40.894223 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m13:20:40.894555 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_customers"} */
+alter view dev.analytics.stg_customers__dbt_tmp rename to stg_customers
+[0m13:20:40.894906 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_orders"} */
+alter view dev.analytics.stg_orders__dbt_tmp rename to stg_orders
+[0m13:20:40.895241 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_products"} */
+alter view dev.analytics.stg_products__dbt_tmp rename to stg_products
+[0m13:20:40.896274 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: COMMIT
+[0m13:20:40.896853 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.stg_order_items"
+[0m13:20:40.897182 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:20:40.897491 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.897795 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: COMMIT
+[0m13:20:40.898094 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.899105 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: COMMIT
+[0m13:20:40.900085 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: COMMIT
+[0m13:20:40.901124 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: COMMIT
+[0m13:20:40.901489 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.stg_orders"
+[0m13:20:40.901838 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.stg_customers"
+[0m13:20:40.902185 [debug] [Thread-4 (]: Using duckdb connection "model.ci_cd_project.stg_products"
+[0m13:20:40.902527 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: COMMIT
+[0m13:20:40.902870 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: COMMIT
+[0m13:20:40.903172 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:20:40.903474 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: COMMIT
+[0m13:20:40.909566 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.stg_order_items"
+[0m13:20:40.909896 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m13:20:40.910268 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m13:20:40.910594 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_order_items"} */
+drop view if exists dev.analytics.stg_order_items__dbt_backup cascade
+[0m13:20:40.910903 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.913584 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.stg_customers"
+[0m13:20:40.916252 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.stg_orders"
+[0m13:20:40.918962 [debug] [Thread-4 (]: Using duckdb connection "model.ci_cd_project.stg_products"
+[0m13:20:40.919313 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_customers"} */
+drop view if exists dev.analytics.stg_customers__dbt_backup cascade
+[0m13:20:40.919656 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_orders"} */
+drop view if exists dev.analytics.stg_orders__dbt_backup cascade
+[0m13:20:40.919968 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:20:40.920283 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.stg_products"} */
+drop view if exists dev.analytics.stg_products__dbt_backup cascade
+[0m13:20:40.921525 [debug] [Thread-2 (]: On model.ci_cd_project.stg_order_items: Close
+[0m13:20:40.921858 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:40.922197 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:20:40.922693 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7dd80>]}
+[0m13:20:40.923793 [debug] [Thread-1 (]: On model.ci_cd_project.stg_customers: Close
+[0m13:20:40.924837 [debug] [Thread-3 (]: On model.ci_cd_project.stg_orders: Close
+[0m13:20:40.925145 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:40.925671 [info ] [Thread-2 (]: 5 of 52 OK created sql view model analytics.stg_order_items .................... [[32mOK[0m in 0.16s]
+[0m13:20:40.926169 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6410f0>]}
+[0m13:20:40.927239 [debug] [Thread-4 (]: On model.ci_cd_project.stg_products: Close
+[0m13:20:40.927609 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b02a0b0>]}
+[0m13:20:40.928092 [debug] [Thread-2 (]: Finished running node model.ci_cd_project.stg_order_items
+[0m13:20:40.928610 [info ] [Thread-1 (]: 6 of 52 OK created sql view model analytics.stg_customers ...................... [[32mOK[0m in 0.15s]
+[0m13:20:40.929201 [info ] [Thread-3 (]: 7 of 52 OK created sql view model analytics.stg_orders ......................... [[32mOK[0m in 0.15s]
+[0m13:20:40.929940 [debug] [Thread-1 (]: Finished running node model.ci_cd_project.stg_customers
+[0m13:20:40.930310 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96
+[0m13:20:40.930829 [debug] [Thread-3 (]: Finished running node model.ci_cd_project.stg_orders
+[0m13:20:40.931198 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35
+[0m13:20:40.931675 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b43c8b0>]}
+[0m13:20:40.932039 [info ] [Thread-2 (]: 9 of 52 START test not_null_stg_order_items_order_id ........................... [RUN]
+[0m13:20:40.932657 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6
+[0m13:20:40.933280 [info ] [Thread-1 (]: 10 of 52 START test not_null_stg_order_items_order_item_id ..................... [RUN]
+[0m13:20:40.934024 [info ] [Thread-4 (]: 8 of 52 OK created sql view model analytics.stg_products ....................... [[32mOK[0m in 0.11s]
+[0m13:20:40.934419 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.stg_order_items, now test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96)
+[0m13:20:40.934784 [info ] [Thread-3 (]: 11 of 52 START test not_null_stg_order_items_product_id ........................ [RUN]
+[0m13:20:40.935188 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.stg_customers, now test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35)
+[0m13:20:40.935671 [debug] [Thread-4 (]: Finished running node model.ci_cd_project.stg_products
+[0m13:20:40.935987 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96
+[0m13:20:40.936349 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.stg_orders, now test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6)
+[0m13:20:40.936820 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35
+[0m13:20:40.937222 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7
+[0m13:20:40.947054 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96"
+[0m13:20:40.947424 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6
+[0m13:20:40.951428 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35"
+[0m13:20:40.951822 [info ] [Thread-4 (]: 12 of 52 START test not_null_stg_order_items_quantity .......................... [RUN]
+[0m13:20:40.956028 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6"
+[0m13:20:40.956564 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.stg_products, now test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7)
+[0m13:20:40.957005 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35
+[0m13:20:40.957329 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96
+[0m13:20:40.957667 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7
+[0m13:20:40.980129 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35"
+[0m13:20:40.991356 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7"
+[0m13:20:40.992015 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96"
+[0m13:20:40.992452 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6
+[0m13:20:40.995476 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6"
+[0m13:20:40.995900 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7
+[0m13:20:40.998697 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7"
+[0m13:20:40.999128 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35"
+[0m13:20:40.999604 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6"
+[0m13:20:40.999970 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96"
+[0m13:20:41.000302 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35: BEGIN
+[0m13:20:41.000644 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6: BEGIN
+[0m13:20:41.000986 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7"
+[0m13:20:41.001295 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96: BEGIN
+[0m13:20:41.001608 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.001928 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.002242 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7: BEGIN
+[0m13:20:41.002587 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.003004 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.039833 [debug] [Thread-1 (]: SQL status: OK in 0.038 seconds
+[0m13:20:41.040225 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35"
+[0m13:20:41.040577 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_item_id
+from dev.analytics.stg_order_items
+where order_item_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.040925 [debug] [Thread-2 (]: SQL status: OK in 0.038 seconds
+[0m13:20:41.041296 [debug] [Thread-3 (]: SQL status: OK in 0.039 seconds
+[0m13:20:41.041691 [debug] [Thread-4 (]: SQL status: OK in 0.039 seconds
+[0m13:20:41.042020 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96"
+[0m13:20:41.042342 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6"
+[0m13:20:41.042665 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7"
+[0m13:20:41.043031 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from dev.analytics.stg_order_items
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.043435 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select product_id
+from dev.analytics.stg_order_items
+where product_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.043809 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.044138 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select quantity
+from dev.analytics.stg_order_items
+where quantity is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.047412 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35: ROLLBACK
+[0m13:20:41.047832 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.048164 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.048519 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35'
+[0m13:20:41.048840 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:20:41.050013 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96: ROLLBACK
+[0m13:20:41.051125 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7: ROLLBACK
+[0m13:20:41.051460 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35: Close
+[0m13:20:41.051891 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96'
+[0m13:20:41.052957 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6: ROLLBACK
+[0m13:20:41.053334 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7'
+[0m13:20:41.053711 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96: Close
+[0m13:20:41.054198 [info ] [Thread-1 (]: 10 of 52 PASS not_null_stg_order_items_order_item_id ........................... [[32mPASS[0m in 0.12s]
+[0m13:20:41.054683 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6'
+[0m13:20:41.055043 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7: Close
+[0m13:20:41.055593 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35
+[0m13:20:41.056039 [info ] [Thread-2 (]: 9 of 52 PASS not_null_stg_order_items_order_id ................................. [[32mPASS[0m in 0.12s]
+[0m13:20:41.056403 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6: Close
+[0m13:20:41.056819 [debug] [Thread-1 (]: Began running node test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108
+[0m13:20:41.057260 [info ] [Thread-4 (]: 12 of 52 PASS not_null_stg_order_items_quantity ................................ [[32mPASS[0m in 0.10s]
+[0m13:20:41.057808 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96
+[0m13:20:41.058227 [info ] [Thread-1 (]: 13 of 52 START test unique_stg_order_items_order_item_id ....................... [RUN]
+[0m13:20:41.058740 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7
+[0m13:20:41.059121 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:20:41.059575 [info ] [Thread-3 (]: 11 of 52 PASS not_null_stg_order_items_product_id .............................. [[32mPASS[0m in 0.12s]
+[0m13:20:41.060063 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_order_items_order_item_id.26a7e2bc35, now test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108)
+[0m13:20:41.060474 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_stg_customers_email.d7cf761533
+[0m13:20:41.061015 [info ] [Thread-2 (]: 14 of 52 START test not_null_stg_customers_customer_id ......................... [RUN]
+[0m13:20:41.061569 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6
+[0m13:20:41.061894 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108
+[0m13:20:41.062225 [info ] [Thread-4 (]: 15 of 52 START test not_null_stg_customers_email ............................... [RUN]
+[0m13:20:41.062608 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_order_items_order_id.2063801f96, now test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m13:20:41.062986 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033
+[0m13:20:41.069692 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_order_items_quantity.ae199f05a7, now test.ci_cd_project.not_null_stg_customers_email.d7cf761533)
+[0m13:20:41.071106 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108"
+[0m13:20:41.071463 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:20:41.071830 [info ] [Thread-3 (]: 16 of 52 START test not_null_stg_customers_first_name .......................... [RUN]
+[0m13:20:41.072211 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_stg_customers_email.d7cf761533
+[0m13:20:41.076372 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m13:20:41.076771 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_order_items_product_id.5154a8a6f6, now test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033)
+[0m13:20:41.080838 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_customers_email.d7cf761533"
+[0m13:20:41.081311 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033
+[0m13:20:41.081662 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108
+[0m13:20:41.085665 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033"
+[0m13:20:41.089688 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108"
+[0m13:20:41.090144 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:20:41.090539 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_stg_customers_email.d7cf761533
+[0m13:20:41.093328 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m13:20:41.096122 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_customers_email.d7cf761533"
+[0m13:20:41.096500 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033
+[0m13:20:41.096966 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108"
+[0m13:20:41.099744 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033"
+[0m13:20:41.100158 [debug] [Thread-1 (]: On test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108: BEGIN
+[0m13:20:41.100524 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m13:20:41.100958 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_email.d7cf761533"
+[0m13:20:41.101281 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.101616 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa: BEGIN
+[0m13:20:41.101967 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_customers_email.d7cf761533: BEGIN
+[0m13:20:41.102318 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033"
+[0m13:20:41.102714 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.103061 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.103503 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033: BEGIN
+[0m13:20:41.103881 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.138661 [debug] [Thread-1 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.139022 [debug] [Thread-2 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.139339 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108"
+[0m13:20:41.139677 [debug] [Thread-4 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.140030 [debug] [Thread-3 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.140336 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m13:20:41.140678 [debug] [Thread-1 (]: On test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_item_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.stg_order_items
+where order_item_id is not null
+group by order_item_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.141016 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_email.d7cf761533"
+[0m13:20:41.141320 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033"
+[0m13:20:41.141645 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from dev.analytics.stg_customers
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.142145 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_customers_email.d7cf761533: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_customers_email.d7cf761533"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select email
+from dev.analytics.stg_customers
+where email is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.142556 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select first_name
+from dev.analytics.stg_customers
+where first_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.143535 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.143907 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.145172 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa: ROLLBACK
+[0m13:20:41.145546 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.145895 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:20:41.147112 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033: ROLLBACK
+[0m13:20:41.147495 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m13:20:41.148624 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_customers_email.d7cf761533: ROLLBACK
+[0m13:20:41.149735 [debug] [Thread-1 (]: On test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108: ROLLBACK
+[0m13:20:41.150129 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033'
+[0m13:20:41.150446 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa: Close
+[0m13:20:41.150839 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_customers_email.d7cf761533'
+[0m13:20:41.151229 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108'
+[0m13:20:41.151534 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033: Close
+[0m13:20:41.152054 [info ] [Thread-2 (]: 14 of 52 PASS not_null_stg_customers_customer_id ............................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.152408 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_customers_email.d7cf761533: Close
+[0m13:20:41.152725 [debug] [Thread-1 (]: On test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108: Close
+[0m13:20:41.153223 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m13:20:41.153667 [info ] [Thread-3 (]: 16 of 52 PASS not_null_stg_customers_first_name ................................ [[32mPASS[0m in 0.08s]
+[0m13:20:41.154186 [info ] [Thread-4 (]: 15 of 52 PASS not_null_stg_customers_email ..................................... [[32mPASS[0m in 0.08s]
+[0m13:20:41.154650 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186
+[0m13:20:41.155169 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033
+[0m13:20:41.155624 [info ] [Thread-1 (]: 13 of 52 PASS unique_stg_order_items_order_item_id ............................. [[32mPASS[0m in 0.10s]
+[0m13:20:41.156096 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_stg_customers_email.d7cf761533
+[0m13:20:41.156436 [info ] [Thread-2 (]: 17 of 52 START test not_null_stg_customers_last_name ........................... [RUN]
+[0m13:20:41.156820 [debug] [Thread-3 (]: Began running node test.ci_cd_project.unique_stg_customers_customer_id.c7614daada
+[0m13:20:41.157330 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108
+[0m13:20:41.157699 [debug] [Thread-4 (]: Began running node test.ci_cd_project.unique_stg_customers_email.1ebcb2333e
+[0m13:20:41.158084 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186)
+[0m13:20:41.158493 [info ] [Thread-3 (]: 18 of 52 START test unique_stg_customers_customer_id ........................... [RUN]
+[0m13:20:41.159122 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m13:20:41.159520 [info ] [Thread-4 (]: 19 of 52 START test unique_stg_customers_email ................................. [RUN]
+[0m13:20:41.159893 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186
+[0m13:20:41.160257 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_customers_first_name.57f99cf033, now test.ci_cd_project.unique_stg_customers_customer_id.c7614daada)
+[0m13:20:41.160607 [info ] [Thread-1 (]: 20 of 52 START test not_null_stg_orders_customer_id ............................ [RUN]
+[0m13:20:41.160973 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_customers_email.d7cf761533, now test.ci_cd_project.unique_stg_customers_email.1ebcb2333e)
+[0m13:20:41.166621 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186"
+[0m13:20:41.166998 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.unique_stg_customers_customer_id.c7614daada
+[0m13:20:41.167373 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_stg_order_items_order_item_id.90e333a108, now test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m13:20:41.167708 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.unique_stg_customers_email.1ebcb2333e
+[0m13:20:41.171956 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.unique_stg_customers_customer_id.c7614daada"
+[0m13:20:41.172328 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m13:20:41.176388 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.unique_stg_customers_email.1ebcb2333e"
+[0m13:20:41.180602 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m13:20:41.180969 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186
+[0m13:20:41.181466 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.unique_stg_customers_customer_id.c7614daada
+[0m13:20:41.185262 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186"
+[0m13:20:41.188127 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.unique_stg_customers_customer_id.c7614daada"
+[0m13:20:41.188496 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m13:20:41.188809 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.unique_stg_customers_email.1ebcb2333e
+[0m13:20:41.191624 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m13:20:41.194453 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.unique_stg_customers_email.1ebcb2333e"
+[0m13:20:41.194865 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186"
+[0m13:20:41.195371 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.unique_stg_customers_customer_id.c7614daada"
+[0m13:20:41.195702 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186: BEGIN
+[0m13:20:41.196113 [debug] [Thread-3 (]: On test.ci_cd_project.unique_stg_customers_customer_id.c7614daada: BEGIN
+[0m13:20:41.196454 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m13:20:41.196804 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.unique_stg_customers_email.1ebcb2333e"
+[0m13:20:41.197200 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.197512 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.197832 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5: BEGIN
+[0m13:20:41.198146 [debug] [Thread-4 (]: On test.ci_cd_project.unique_stg_customers_email.1ebcb2333e: BEGIN
+[0m13:20:41.198555 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.198875 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.233401 [debug] [Thread-3 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.233746 [debug] [Thread-2 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.234109 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.unique_stg_customers_customer_id.c7614daada"
+[0m13:20:41.234457 [debug] [Thread-1 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.234784 [debug] [Thread-4 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.235088 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186"
+[0m13:20:41.235424 [debug] [Thread-3 (]: On test.ci_cd_project.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_stg_customers_customer_id.c7614daada"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.stg_customers
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.235758 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m13:20:41.236061 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.unique_stg_customers_email.1ebcb2333e"
+[0m13:20:41.236413 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select last_name
+from dev.analytics.stg_customers
+where last_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.236887 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from dev.analytics.stg_orders
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.237243 [debug] [Thread-4 (]: On test.ci_cd_project.unique_stg_customers_email.1ebcb2333e: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_stg_customers_email.1ebcb2333e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    email as unique_field,
+    count(*) as n_records
+
+from dev.analytics.stg_customers
+where email is not null
+group by email
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.237680 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.238132 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.239535 [debug] [Thread-3 (]: On test.ci_cd_project.unique_stg_customers_customer_id.c7614daada: ROLLBACK
+[0m13:20:41.240884 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186: ROLLBACK
+[0m13:20:41.241266 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.241582 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.241954 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.unique_stg_customers_customer_id.c7614daada'
+[0m13:20:41.242335 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186'
+[0m13:20:41.243515 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5: ROLLBACK
+[0m13:20:41.244657 [debug] [Thread-4 (]: On test.ci_cd_project.unique_stg_customers_email.1ebcb2333e: ROLLBACK
+[0m13:20:41.244995 [debug] [Thread-3 (]: On test.ci_cd_project.unique_stg_customers_customer_id.c7614daada: Close
+[0m13:20:41.245325 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186: Close
+[0m13:20:41.245720 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5'
+[0m13:20:41.246096 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.unique_stg_customers_email.1ebcb2333e'
+[0m13:20:41.246593 [info ] [Thread-3 (]: 18 of 52 PASS unique_stg_customers_customer_id ................................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.247142 [info ] [Thread-2 (]: 17 of 52 PASS not_null_stg_customers_last_name ................................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.247496 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5: Close
+[0m13:20:41.247829 [debug] [Thread-4 (]: On test.ci_cd_project.unique_stg_customers_email.1ebcb2333e: Close
+[0m13:20:41.248301 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.unique_stg_customers_customer_id.c7614daada
+[0m13:20:41.248753 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186
+[0m13:20:41.249294 [info ] [Thread-1 (]: 20 of 52 PASS not_null_stg_orders_customer_id .................................. [[32mPASS[0m in 0.08s]
+[0m13:20:41.249743 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:20:41.250148 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b
+[0m13:20:41.250699 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5
+[0m13:20:41.251164 [info ] [Thread-4 (]: 19 of 52 PASS unique_stg_customers_email ....................................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.251537 [info ] [Thread-3 (]: 21 of 52 START test not_null_stg_orders_order_id ............................... [RUN]
+[0m13:20:41.251898 [info ] [Thread-2 (]: 22 of 52 START test not_null_stg_orders_total_amount ........................... [RUN]
+[0m13:20:41.252327 [debug] [Thread-1 (]: Began running node test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54
+[0m13:20:41.252819 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.unique_stg_customers_email.1ebcb2333e
+[0m13:20:41.253230 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_stg_customers_customer_id.c7614daada, now test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m13:20:41.253849 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_customers_last_name.fa1ab1e186, now test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b)
+[0m13:20:41.254232 [info ] [Thread-1 (]: 23 of 52 START test relationships_stg_order_items_order_id__order_id__ref_stg_orders_  [RUN]
+[0m13:20:41.254640 [debug] [Thread-4 (]: Began running node test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m13:20:41.254989 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:20:41.255345 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b
+[0m13:20:41.255704 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_orders_customer_id.af79d5e4b5, now test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54)
+[0m13:20:41.256061 [info ] [Thread-4 (]: 24 of 52 START test relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [RUN]
+[0m13:20:41.261718 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m13:20:41.265768 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b"
+[0m13:20:41.266142 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54
+[0m13:20:41.266508 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_stg_customers_email.1ebcb2333e, now test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500)
+[0m13:20:41.271904 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54"
+[0m13:20:41.272309 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m13:20:41.277329 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m13:20:41.277703 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b
+[0m13:20:41.322296 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b"
+[0m13:20:41.322749 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54
+[0m13:20:41.323099 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:20:41.326037 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54"
+[0m13:20:41.326414 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m13:20:41.329116 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m13:20:41.329582 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b"
+[0m13:20:41.332342 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m13:20:41.332809 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b: BEGIN
+[0m13:20:41.333342 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.333739 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54"
+[0m13:20:41.334121 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m13:20:41.334572 [debug] [Thread-1 (]: On test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54: BEGIN
+[0m13:20:41.334974 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m13:20:41.335316 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64: BEGIN
+[0m13:20:41.335655 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.335997 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: BEGIN
+[0m13:20:41.336312 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.336652 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.370267 [debug] [Thread-1 (]: SQL status: OK in 0.035 seconds
+[0m13:20:41.370608 [debug] [Thread-2 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.370918 [debug] [Thread-3 (]: SQL status: OK in 0.035 seconds
+[0m13:20:41.371257 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54"
+[0m13:20:41.371606 [debug] [Thread-4 (]: SQL status: OK in 0.035 seconds
+[0m13:20:41.371937 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b"
+[0m13:20:41.372260 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m13:20:41.372615 [debug] [Thread-1 (]: On test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select order_id as from_field
+    from dev.analytics.stg_order_items
+    where order_id is not null
+),
+
+parent as (
+    select order_id as to_field
+    from dev.analytics.stg_orders
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.372969 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"
+[0m13:20:41.373298 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_amount
+from dev.analytics.stg_orders
+where total_amount is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.373641 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from dev.analytics.stg_orders
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.374137 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select customer_id as from_field
+    from dev.analytics.stg_orders
+    where customer_id is not null
+),
+
+parent as (
+    select customer_id as to_field
+    from dev.analytics.stg_customers
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.375073 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.375445 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.376778 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b: ROLLBACK
+[0m13:20:41.377183 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.377498 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:20:41.378614 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64: ROLLBACK
+[0m13:20:41.379030 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b'
+[0m13:20:41.380180 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: ROLLBACK
+[0m13:20:41.381276 [debug] [Thread-1 (]: On test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54: ROLLBACK
+[0m13:20:41.381663 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64'
+[0m13:20:41.381971 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b: Close
+[0m13:20:41.382365 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500'
+[0m13:20:41.382756 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54'
+[0m13:20:41.383055 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64: Close
+[0m13:20:41.383835 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500: Close
+[0m13:20:41.383563 [info ] [Thread-2 (]: 22 of 52 PASS not_null_stg_orders_total_amount ................................. [[32mPASS[0m in 0.13s]
+[0m13:20:41.384249 [debug] [Thread-1 (]: On test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54: Close
+[0m13:20:41.384735 [info ] [Thread-3 (]: 21 of 52 PASS not_null_stg_orders_order_id ..................................... [[32mPASS[0m in 0.13s]
+[0m13:20:41.385194 [info ] [Thread-4 (]: 24 of 52 PASS relationships_stg_orders_customer_id__customer_id__ref_stg_customers_  [[32mPASS[0m in 0.12s]
+[0m13:20:41.385693 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b
+[0m13:20:41.386179 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m13:20:41.386654 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500
+[0m13:20:41.387028 [debug] [Thread-2 (]: Began running node test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a
+[0m13:20:41.387509 [info ] [Thread-1 (]: 23 of 52 PASS relationships_stg_order_items_order_id__order_id__ref_stg_orders_  [[32mPASS[0m in 0.13s]
+[0m13:20:41.387969 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_stg_products_cost.addf44ba80
+[0m13:20:41.388368 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_stg_products_price.2d147627d4
+[0m13:20:41.388718 [info ] [Thread-2 (]: 25 of 52 START test unique_stg_orders_order_id ................................. [RUN]
+[0m13:20:41.389214 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54
+[0m13:20:41.389588 [info ] [Thread-3 (]: 26 of 52 START test not_null_stg_products_cost ................................. [RUN]
+[0m13:20:41.390020 [info ] [Thread-4 (]: 27 of 52 START test not_null_stg_products_price ................................ [RUN]
+[0m13:20:41.390518 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_orders_total_amount.f31d98d41b, now test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a)
+[0m13:20:41.390926 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3
+[0m13:20:41.391327 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_orders_order_id.81cfe2fe64, now test.ci_cd_project.not_null_stg_products_cost.addf44ba80)
+[0m13:20:41.391687 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.relationships_stg_orders_customer_id__customer_id__ref_stg_customers_.430bf21500, now test.ci_cd_project.not_null_stg_products_price.2d147627d4)
+[0m13:20:41.392013 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a
+[0m13:20:41.392363 [info ] [Thread-1 (]: 28 of 52 START test not_null_stg_products_product_id ........................... [RUN]
+[0m13:20:41.392704 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_stg_products_cost.addf44ba80
+[0m13:20:41.393008 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_stg_products_price.2d147627d4
+[0m13:20:41.398425 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a"
+[0m13:20:41.398825 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.relationships_stg_order_items_order_id__order_id__ref_stg_orders_.dbe9930c54, now test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3)
+[0m13:20:41.402800 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_products_cost.addf44ba80"
+[0m13:20:41.407070 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_products_price.2d147627d4"
+[0m13:20:41.407516 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3
+[0m13:20:41.411665 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3"
+[0m13:20:41.412066 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a
+[0m13:20:41.415977 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a"
+[0m13:20:41.416581 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_stg_products_cost.addf44ba80
+[0m13:20:41.416909 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_stg_products_price.2d147627d4
+[0m13:20:41.417210 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3
+[0m13:20:41.419923 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_products_cost.addf44ba80"
+[0m13:20:41.422743 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_products_price.2d147627d4"
+[0m13:20:41.423147 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a"
+[0m13:20:41.425906 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3"
+[0m13:20:41.426389 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a: BEGIN
+[0m13:20:41.426875 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_price.2d147627d4"
+[0m13:20:41.427220 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.427573 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_cost.addf44ba80"
+[0m13:20:41.427915 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_products_price.2d147627d4: BEGIN
+[0m13:20:41.428360 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3"
+[0m13:20:41.428696 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_products_cost.addf44ba80: BEGIN
+[0m13:20:41.429015 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.429354 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3: BEGIN
+[0m13:20:41.429663 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.430002 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.464303 [debug] [Thread-2 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.464636 [debug] [Thread-4 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.464978 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a"
+[0m13:20:41.465318 [debug] [Thread-3 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.465620 [debug] [Thread-1 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.465939 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_price.2d147627d4"
+[0m13:20:41.466278 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.stg_orders
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.466616 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_cost.addf44ba80"
+[0m13:20:41.466922 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3"
+[0m13:20:41.467245 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_products_price.2d147627d4: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_products_price.2d147627d4"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select price
+from dev.analytics.stg_products
+where price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.467698 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_products_cost.addf44ba80: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_products_cost.addf44ba80"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cost
+from dev.analytics.stg_products
+where cost is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.468066 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select product_id
+from dev.analytics.stg_products
+where product_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.468500 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.469009 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.470284 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a: ROLLBACK
+[0m13:20:41.470608 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.471812 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_products_price.2d147627d4: ROLLBACK
+[0m13:20:41.472196 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a'
+[0m13:20:41.472505 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:20:41.472915 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_products_price.2d147627d4'
+[0m13:20:41.474059 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_products_cost.addf44ba80: ROLLBACK
+[0m13:20:41.474383 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a: Close
+[0m13:20:41.474754 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_stg_products_price.2d147627d4: Close
+[0m13:20:41.475813 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3: ROLLBACK
+[0m13:20:41.476195 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_products_cost.addf44ba80'
+[0m13:20:41.477501 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3'
+[0m13:20:41.476732 [info ] [Thread-4 (]: 27 of 52 PASS not_null_stg_products_price ...................................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.477914 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_stg_products_cost.addf44ba80: Close
+[0m13:20:41.477143 [info ] [Thread-2 (]: 25 of 52 PASS unique_stg_orders_order_id ....................................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.478339 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3: Close
+[0m13:20:41.478821 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_stg_products_price.2d147627d4
+[0m13:20:41.479310 [info ] [Thread-3 (]: 26 of 52 PASS not_null_stg_products_cost ....................................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.479776 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a
+[0m13:20:41.480187 [debug] [Thread-4 (]: Began running node test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c
+[0m13:20:41.480661 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_stg_products_cost.addf44ba80
+[0m13:20:41.481069 [debug] [Thread-2 (]: Began running node test.ci_cd_project.unique_stg_products_product_id.7d950a1467
+[0m13:20:41.481550 [info ] [Thread-1 (]: 28 of 52 PASS not_null_stg_products_product_id ................................. [[32mPASS[0m in 0.08s]
+[0m13:20:41.482027 [info ] [Thread-4 (]: 29 of 52 START test relationships_stg_order_items_product_id__product_id__ref_stg_products_  [RUN]
+[0m13:20:41.483082 [debug] [Thread-3 (]: Began running node model.ci_cd_project.dim_customers
+[0m13:20:41.482589 [info ] [Thread-2 (]: 30 of 52 START test unique_stg_products_product_id ............................. [RUN]
+[0m13:20:41.483668 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3
+[0m13:20:41.484048 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_products_price.2d147627d4, now test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c)
+[0m13:20:41.484512 [info ] [Thread-3 (]: 31 of 52 START sql table model analytics.dim_customers ......................... [RUN]
+[0m13:20:41.484922 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_stg_orders_order_id.e3b841c71a, now test.ci_cd_project.unique_stg_products_product_id.7d950a1467)
+[0m13:20:41.485346 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c
+[0m13:20:41.485696 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_products_cost.addf44ba80, now model.ci_cd_project.dim_customers)
+[0m13:20:41.486019 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.unique_stg_products_product_id.7d950a1467
+[0m13:20:41.492679 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c"
+[0m13:20:41.493009 [debug] [Thread-3 (]: Began compiling node model.ci_cd_project.dim_customers
+[0m13:20:41.497029 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.unique_stg_products_product_id.7d950a1467"
+[0m13:20:41.500767 [debug] [Thread-3 (]: Writing injected SQL for node "model.ci_cd_project.dim_customers"
+[0m13:20:41.502084 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.unique_stg_products_product_id.7d950a1467
+[0m13:20:41.502436 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c
+[0m13:20:41.502752 [debug] [Thread-3 (]: Began executing node model.ci_cd_project.dim_customers
+[0m13:20:41.505596 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.unique_stg_products_product_id.7d950a1467"
+[0m13:20:41.509300 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c"
+[0m13:20:41.528595 [debug] [Thread-3 (]: Writing runtime sql for node "model.ci_cd_project.dim_customers"
+[0m13:20:41.529241 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_stg_products_product_id.7d950a1467"
+[0m13:20:41.529639 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c"
+[0m13:20:41.530002 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_products_product_id.7d950a1467: BEGIN
+[0m13:20:41.530347 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c: BEGIN
+[0m13:20:41.530693 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.dim_customers"
+[0m13:20:41.531025 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.531390 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.531718 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: BEGIN
+[0m13:20:41.532139 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.567051 [debug] [Thread-2 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.567442 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_stg_products_product_id.7d950a1467"
+[0m13:20:41.567793 [debug] [Thread-3 (]: SQL status: OK in 0.036 seconds
+[0m13:20:41.568145 [debug] [Thread-4 (]: SQL status: OK in 0.037 seconds
+[0m13:20:41.568480 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_products_product_id.7d950a1467: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_stg_products_product_id.7d950a1467"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    product_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.stg_products
+where product_id is not null
+group by product_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.568832 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.dim_customers"
+[0m13:20:41.569158 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c"
+[0m13:20:41.569647 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_customers"} */
+
+  
+    
+    
+
+    create  table
+      dev.analytics.dim_customers__dbt_tmp
+  
+    as (
+      
+
+with customers as (
+    select * from dev.analytics.stg_customers
+),
+
+customer_metrics as (
+    select
+        customer_id,
+        count(*) as total_orders,
+        sum(total_amount) as total_spent,
+        min(order_date) as first_order_date,
+        max(order_date) as last_order_date
+    from dev.analytics.stg_orders
+    group by customer_id
+)
+
+select
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    c.email,
+    c.phone,
+    c.address,
+    c.city,
+    c.state,
+    c.zip_code,
+    c.country,
+    c.created_at,
+    c.updated_at,
+    coalesce(cm.total_orders, 0) as total_orders,
+    coalesce(cm.total_spent, 0) as total_spent,
+    cm.first_order_date,
+    cm.last_order_date,
+    case
+        when cm.total_spent >= 1000 then 'VIP'
+        when cm.total_spent >= 500 then 'Premium'
+        when cm.total_spent >= 100 then 'Regular'
+        else 'New'
+    end as customer_tier
+from customers c
+left join customer_metrics cm on c.customer_id = cm.customer_id
+    );
+  
+  
+[0m13:20:41.570076 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select product_id as from_field
+    from dev.analytics.stg_order_items
+    where product_id is not null
+),
+
+parent as (
+    select product_id as to_field
+    from dev.analytics.stg_products
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.570461 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.572025 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_products_product_id.7d950a1467: ROLLBACK
+[0m13:20:41.572444 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.572848 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.unique_stg_products_product_id.7d950a1467'
+[0m13:20:41.573263 [debug] [Thread-2 (]: On test.ci_cd_project.unique_stg_products_product_id.7d950a1467: Close
+[0m13:20:41.574464 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c: ROLLBACK
+[0m13:20:41.575289 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m13:20:41.575666 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c'
+[0m13:20:41.575016 [info ] [Thread-2 (]: 30 of 52 PASS unique_stg_products_product_id ................................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.579206 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.dim_customers"
+[0m13:20:41.579559 [debug] [Thread-4 (]: On test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c: Close
+[0m13:20:41.580115 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.unique_stg_products_product_id.7d950a1467
+[0m13:20:41.580459 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_customers"} */
+alter table dev.analytics.dim_customers__dbt_tmp rename to dim_customers
+[0m13:20:41.581108 [info ] [Thread-4 (]: 29 of 52 PASS relationships_stg_order_items_product_id__product_id__ref_stg_products_  [[32mPASS[0m in 0.10s]
+[0m13:20:41.581758 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c
+[0m13:20:41.582207 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.586909 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: COMMIT
+[0m13:20:41.587371 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.dim_customers"
+[0m13:20:41.587763 [debug] [Thread-1 (]: Began running node model.ci_cd_project.dim_products
+[0m13:20:41.588070 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: COMMIT
+[0m13:20:41.588380 [debug] [Thread-2 (]: Began running node model.ci_cd_project.fct_orders
+[0m13:20:41.588822 [info ] [Thread-1 (]: 32 of 52 START sql table model analytics.dim_products .......................... [RUN]
+[0m13:20:41.589685 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_stg_products_product_id.6373b0acf3, now model.ci_cd_project.dim_products)
+[0m13:20:41.589340 [info ] [Thread-2 (]: 33 of 52 START sql table model analytics.fct_orders ............................ [RUN]
+[0m13:20:41.590147 [debug] [Thread-1 (]: Began compiling node model.ci_cd_project.dim_products
+[0m13:20:41.590466 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.590820 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_stg_products_product_id.7d950a1467, now model.ci_cd_project.fct_orders)
+[0m13:20:41.594575 [debug] [Thread-1 (]: Writing injected SQL for node "model.ci_cd_project.dim_products"
+[0m13:20:41.598578 [debug] [Thread-3 (]: Using duckdb connection "model.ci_cd_project.dim_customers"
+[0m13:20:41.598933 [debug] [Thread-2 (]: Began compiling node model.ci_cd_project.fct_orders
+[0m13:20:41.599346 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_customers"} */
+drop table if exists dev.analytics.dim_customers__dbt_backup cascade
+[0m13:20:41.603485 [debug] [Thread-2 (]: Writing injected SQL for node "model.ci_cd_project.fct_orders"
+[0m13:20:41.604074 [debug] [Thread-1 (]: Began executing node model.ci_cd_project.dim_products
+[0m13:20:41.604425 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.608034 [debug] [Thread-1 (]: Writing runtime sql for node "model.ci_cd_project.dim_products"
+[0m13:20:41.609213 [debug] [Thread-3 (]: On model.ci_cd_project.dim_customers: Close
+[0m13:20:41.609811 [debug] [Thread-2 (]: Began executing node model.ci_cd_project.fct_orders
+[0m13:20:41.613410 [debug] [Thread-2 (]: Writing runtime sql for node "model.ci_cd_project.fct_orders"
+[0m13:20:41.613843 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.dim_products"
+[0m13:20:41.614192 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: BEGIN
+[0m13:20:41.614633 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be656c0>]}
+[0m13:20:41.614975 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.615374 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.fct_orders"
+[0m13:20:41.615861 [info ] [Thread-3 (]: 31 of 52 OK created sql table model analytics.dim_customers .................... [[32mOK[0m in 0.13s]
+[0m13:20:41.616297 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: BEGIN
+[0m13:20:41.616754 [debug] [Thread-3 (]: Finished running node model.ci_cd_project.dim_customers
+[0m13:20:41.617056 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.617682 [debug] [Thread-4 (]: Began running node test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3
+[0m13:20:41.618060 [info ] [Thread-4 (]: 34 of 52 START test accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New  [RUN]
+[0m13:20:41.618433 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m13:20:41.618790 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.relationships_stg_order_items_product_id__product_id__ref_stg_products_.886a82c26c, now test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3)
+[0m13:20:41.619147 [info ] [Thread-3 (]: 35 of 52 START test not_null_dim_customers_customer_id ......................... [RUN]
+[0m13:20:41.619501 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3
+[0m13:20:41.619866 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.dim_customers, now test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d)
+[0m13:20:41.625473 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3"
+[0m13:20:41.660557 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m13:20:41.661192 [debug] [Thread-1 (]: SQL status: OK in 0.046 seconds
+[0m13:20:41.661533 [debug] [Thread-2 (]: SQL status: OK in 0.044 seconds
+[0m13:20:41.665826 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m13:20:41.666207 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.dim_products"
+[0m13:20:41.666569 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.fct_orders"
+[0m13:20:41.667044 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_products"} */
+
+  
+    
+    
+
+    create  table
+      dev.analytics.dim_products__dbt_tmp
+  
+    as (
+      
+
+with products as (
+    select * from dev.analytics.stg_products
+),
+
+product_metrics as (
+    select
+        product_id,
+        count(*) as total_orders,
+        sum(quantity) as total_quantity_sold,
+        sum(total_price) as total_revenue,
+        avg(unit_price) as avg_selling_price
+    from dev.analytics.stg_order_items
+    group by product_id
+)
+
+select
+    p.product_id,
+    p.product_name,
+    p.category,
+    p.subcategory,
+    p.brand,
+    p.price,
+    p.cost,
+    p.description,
+    p.is_active,
+    p.created_at,
+    p.updated_at,
+    coalesce(pm.total_orders, 0) as total_orders,
+    coalesce(pm.total_quantity_sold, 0) as total_quantity_sold,
+    coalesce(pm.total_revenue, 0) as total_revenue,
+    coalesce(pm.avg_selling_price, 0) as avg_selling_price,
+    (p.price - p.cost) as profit_margin,
+    case
+        when pm.total_revenue >= 10000 then 'High Performance'
+        when pm.total_revenue >= 5000 then 'Medium Performance'
+        when pm.total_revenue >= 1000 then 'Low Performance'
+        else 'No Sales'
+    end as performance_category
+from products p
+left join product_metrics pm on p.product_id = pm.product_id
+    );
+  
+  
+[0m13:20:41.667466 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3
+[0m13:20:41.667872 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.fct_orders"} */
+
+  
+    
+    
+
+    create  table
+      dev.analytics.fct_orders__dbt_tmp
+  
+    as (
+      
+
+with orders as (
+    select * from dev.analytics.stg_orders
+),
+
+order_items as (
+    select * from dev.analytics.stg_order_items
+),
+
+products as (
+    select * from dev.analytics.stg_products
+),
+
+customers as (
+    select * from dev.analytics.stg_customers
+),
+
+order_details as (
+    select
+        oi.order_item_id,
+        oi.order_id,
+        oi.product_id,
+        oi.quantity,
+        oi.unit_price,
+        oi.total_price,
+        oi.discount_amount,
+        o.order_date,
+        o.status,
+        o.customer_id,
+        o.total_amount as order_total,
+        p.product_name,
+        p.category,
+        p.brand,
+        p.price as product_price,
+        p.cost as product_cost,
+        c.first_name,
+        c.last_name,
+        c.email,
+        c.city,
+        c.state,
+        c.country,
+        oi.created_at
+    from order_items oi
+    inner join orders o on oi.order_id = o.order_id
+    inner join products p on oi.product_id = p.product_id
+    inner join customers c on o.customer_id = c.customer_id
+)
+
+select * from order_details
+where true
+    );
+  
+  
+[0m13:20:41.671095 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3"
+[0m13:20:41.671492 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m13:20:41.671966 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:20:41.674979 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m13:20:41.679182 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.dim_products"
+[0m13:20:41.679554 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m13:20:41.679956 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_products"} */
+alter table dev.analytics.dim_products__dbt_tmp rename to dim_products
+[0m13:20:41.680390 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3"
+[0m13:20:41.683636 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.fct_orders"
+[0m13:20:41.684096 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3: BEGIN
+[0m13:20:41.684463 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.fct_orders"} */
+alter table dev.analytics.fct_orders__dbt_tmp rename to fct_orders
+[0m13:20:41.684816 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m13:20:41.685136 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.685448 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.685824 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d: BEGIN
+[0m13:20:41.686930 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: COMMIT
+[0m13:20:41.687266 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.687652 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.687977 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.688292 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.dim_products"
+[0m13:20:41.689332 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: COMMIT
+[0m13:20:41.689739 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3"
+[0m13:20:41.690072 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.690377 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: COMMIT
+[0m13:20:41.690698 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.fct_orders"
+[0m13:20:41.691055 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        customer_tier as value_field,
+        count(*) as n_records
+
+    from dev.analytics.dim_customers
+    group by customer_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'VIP','Premium','Regular','New'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.691399 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m13:20:41.691765 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: COMMIT
+[0m13:20:41.692194 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:20:41.692509 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from dev.analytics.dim_customers
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.692853 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.695647 [debug] [Thread-1 (]: Using duckdb connection "model.ci_cd_project.dim_products"
+[0m13:20:41.696003 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:20:41.696451 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.dim_products"} */
+drop table if exists dev.analytics.dim_products__dbt_backup cascade
+[0m13:20:41.697641 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3: ROLLBACK
+[0m13:20:41.697989 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.700773 [debug] [Thread-2 (]: Using duckdb connection "model.ci_cd_project.fct_orders"
+[0m13:20:41.701308 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3'
+[0m13:20:41.701674 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.702764 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d: ROLLBACK
+[0m13:20:41.703104 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "model.ci_cd_project.fct_orders"} */
+drop table if exists dev.analytics.fct_orders__dbt_backup cascade
+[0m13:20:41.703453 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3: Close
+[0m13:20:41.704513 [debug] [Thread-1 (]: On model.ci_cd_project.dim_products: Close
+[0m13:20:41.704915 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d'
+[0m13:20:41.705512 [info ] [Thread-4 (]: 34 of 52 PASS accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New  [[32mPASS[0m in 0.09s]
+[0m13:20:41.705898 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.706315 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be7ac50>]}
+[0m13:20:41.706631 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d: Close
+[0m13:20:41.707110 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3
+[0m13:20:41.708134 [debug] [Thread-2 (]: On model.ci_cd_project.fct_orders: Close
+[0m13:20:41.708684 [info ] [Thread-1 (]: 32 of 52 OK created sql table model analytics.dim_products ..................... [[32mOK[0m in 0.12s]
+[0m13:20:41.709199 [info ] [Thread-3 (]: 35 of 52 PASS not_null_dim_customers_customer_id ............................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.709592 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075
+[0m13:20:41.710138 [debug] [Thread-1 (]: Finished running node model.ci_cd_project.dim_products
+[0m13:20:41.710583 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m13:20:41.711078 [info ] [Thread-4 (]: 36 of 52 START test not_null_dim_customers_customer_tier ....................... [RUN]
+[0m13:20:41.711606 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9
+[0m13:20:41.712308 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed
+[0m13:20:41.712887 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.accepted_values_dim_customers_customer_tier__VIP__Premium__Regular__New.23fbc108c3, now test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075)
+[0m13:20:41.713259 [info ] [Thread-1 (]: 37 of 52 START test not_null_dim_customers_total_orders ........................ [RUN]
+[0m13:20:41.713622 [info ] [Thread-3 (]: 38 of 52 START test not_null_dim_customers_total_spent ......................... [RUN]
+[0m13:20:41.713987 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075
+[0m13:20:41.714349 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.dim_products, now test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9)
+[0m13:20:41.714702 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_customers_customer_id.dd91cd1c8d, now test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed)
+[0m13:20:41.720746 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075"
+[0m13:20:41.721219 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0672e7a-a637-4ba9-bbc4-adc7af9f33bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5a63b0>]}
+[0m13:20:41.721567 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9
+[0m13:20:41.721927 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed
+[0m13:20:41.726552 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9"
+[0m13:20:41.722553 [info ] [Thread-2 (]: 33 of 52 OK created sql table model analytics.fct_orders ....................... [[32mOK[0m in 0.13s]
+[0m13:20:41.730800 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed"
+[0m13:20:41.731261 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075
+[0m13:20:41.731782 [debug] [Thread-2 (]: Finished running node model.ci_cd_project.fct_orders
+[0m13:20:41.734672 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075"
+[0m13:20:41.735086 [debug] [Thread-2 (]: Began running node test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd
+[0m13:20:41.735400 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9
+[0m13:20:41.736372 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed
+[0m13:20:41.740276 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9"
+[0m13:20:41.736056 [info ] [Thread-2 (]: 39 of 52 START test unique_dim_customers_customer_id ........................... [RUN]
+[0m13:20:41.743146 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed"
+[0m13:20:41.743617 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ci_cd_project.fct_orders, now test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd)
+[0m13:20:41.743989 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075"
+[0m13:20:41.744415 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd
+[0m13:20:41.744762 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075: BEGIN
+[0m13:20:41.745151 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9"
+[0m13:20:41.749222 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m13:20:41.749630 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed"
+[0m13:20:41.749960 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.750291 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9: BEGIN
+[0m13:20:41.750677 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed: BEGIN
+[0m13:20:41.751099 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.751413 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd
+[0m13:20:41.751713 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.754665 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m13:20:41.755318 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m13:20:41.755645 [debug] [Thread-2 (]: On test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd: BEGIN
+[0m13:20:41.755948 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.788924 [debug] [Thread-4 (]: SQL status: OK in 0.039 seconds
+[0m13:20:41.789286 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075"
+[0m13:20:41.789609 [debug] [Thread-2 (]: SQL status: OK in 0.034 seconds
+[0m13:20:41.789921 [debug] [Thread-1 (]: SQL status: OK in 0.039 seconds
+[0m13:20:41.790247 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_tier
+from dev.analytics.dim_customers
+where customer_tier is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.790553 [debug] [Thread-3 (]: SQL status: OK in 0.039 seconds
+[0m13:20:41.790859 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m13:20:41.791164 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9"
+[0m13:20:41.791570 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed"
+[0m13:20:41.791915 [debug] [Thread-2 (]: On test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.dim_customers
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.792227 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.792545 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_orders
+from dev.analytics.dim_customers
+where total_orders is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.792889 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_spent
+from dev.analytics.dim_customers
+where total_spent is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.794421 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075: ROLLBACK
+[0m13:20:41.794919 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075'
+[0m13:20:41.795252 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.795562 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.795867 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075: Close
+[0m13:20:41.796170 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.797315 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9: ROLLBACK
+[0m13:20:41.798419 [debug] [Thread-2 (]: On test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd: ROLLBACK
+[0m13:20:41.798930 [info ] [Thread-4 (]: 36 of 52 PASS not_null_dim_customers_customer_tier ............................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.800177 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed: ROLLBACK
+[0m13:20:41.800578 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9'
+[0m13:20:41.800957 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd'
+[0m13:20:41.801428 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075
+[0m13:20:41.801795 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed'
+[0m13:20:41.802105 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9: Close
+[0m13:20:41.802415 [debug] [Thread-2 (]: On test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd: Close
+[0m13:20:41.802794 [debug] [Thread-4 (]: Began running node test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed
+[0m13:20:41.803185 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed: Close
+[0m13:20:41.803698 [info ] [Thread-1 (]: 37 of 52 PASS not_null_dim_customers_total_orders .............................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.804228 [info ] [Thread-2 (]: 39 of 52 PASS unique_dim_customers_customer_id ................................. [[32mPASS[0m in 0.06s]
+[0m13:20:41.804647 [info ] [Thread-4 (]: 40 of 52 START test accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales  [RUN]
+[0m13:20:41.805196 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9
+[0m13:20:41.805643 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd
+[0m13:20:41.806100 [info ] [Thread-3 (]: 38 of 52 PASS not_null_dim_customers_total_spent ............................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.806483 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_customers_customer_tier.61510b1075, now test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed)
+[0m13:20:41.806858 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69
+[0m13:20:41.807258 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1
+[0m13:20:41.807711 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed
+[0m13:20:41.808056 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed
+[0m13:20:41.808396 [info ] [Thread-1 (]: 41 of 52 START test not_null_dim_products_performance_category ................. [RUN]
+[0m13:20:41.808744 [info ] [Thread-2 (]: 42 of 52 START test not_null_dim_products_product_id ........................... [RUN]
+[0m13:20:41.809172 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71
+[0m13:20:41.815084 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed"
+[0m13:20:41.815486 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_customers_total_orders.6e18bb41d9, now test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69)
+[0m13:20:41.815846 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_dim_customers_customer_id.15c9f1e2fd, now test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1)
+[0m13:20:41.816200 [info ] [Thread-3 (]: 43 of 52 START test not_null_dim_products_profit_margin ........................ [RUN]
+[0m13:20:41.816617 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69
+[0m13:20:41.816939 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1
+[0m13:20:41.817306 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_customers_total_spent.0ff6f454ed, now test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71)
+[0m13:20:41.821752 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69"
+[0m13:20:41.822123 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed
+[0m13:20:41.826168 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1"
+[0m13:20:41.826530 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71
+[0m13:20:41.829600 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed"
+[0m13:20:41.834941 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71"
+[0m13:20:41.835381 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69
+[0m13:20:41.835806 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1
+[0m13:20:41.838681 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69"
+[0m13:20:41.841458 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1"
+[0m13:20:41.841893 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed"
+[0m13:20:41.842437 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed: BEGIN
+[0m13:20:41.842778 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71
+[0m13:20:41.843150 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.843599 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69"
+[0m13:20:41.846299 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71"
+[0m13:20:41.846673 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1"
+[0m13:20:41.847064 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69: BEGIN
+[0m13:20:41.847451 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1: BEGIN
+[0m13:20:41.847768 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.848099 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.848438 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71"
+[0m13:20:41.848803 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71: BEGIN
+[0m13:20:41.849096 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:41.886834 [debug] [Thread-4 (]: SQL status: OK in 0.044 seconds
+[0m13:20:41.887299 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed"
+[0m13:20:41.887664 [debug] [Thread-1 (]: SQL status: OK in 0.040 seconds
+[0m13:20:41.888109 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        performance_category as value_field,
+        count(*) as n_records
+
+    from dev.analytics.dim_products
+    group by performance_category
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'High Performance','Medium Performance','Low Performance','No Sales'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.888505 [debug] [Thread-2 (]: SQL status: OK in 0.040 seconds
+[0m13:20:41.888856 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69"
+[0m13:20:41.889165 [debug] [Thread-3 (]: SQL status: OK in 0.040 seconds
+[0m13:20:41.889620 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1"
+[0m13:20:41.889979 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select performance_category
+from dev.analytics.dim_products
+where performance_category is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.890355 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71"
+[0m13:20:41.890684 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.891021 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select product_id
+from dev.analytics.dim_products
+where product_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.891422 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select profit_margin
+from dev.analytics.dim_products
+where profit_margin is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:41.892800 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed: ROLLBACK
+[0m13:20:41.893205 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:20:41.893600 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:20:41.894011 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed'
+[0m13:20:41.894333 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:20:41.895565 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69: ROLLBACK
+[0m13:20:41.896674 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1: ROLLBACK
+[0m13:20:41.897002 [debug] [Thread-4 (]: On test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed: Close
+[0m13:20:41.897432 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69'
+[0m13:20:41.898487 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71: ROLLBACK
+[0m13:20:41.898858 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1'
+[0m13:20:41.899659 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69: Close
+[0m13:20:41.899388 [info ] [Thread-4 (]: 40 of 52 PASS accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales  [[32mPASS[0m in 0.09s]
+[0m13:20:41.900117 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71'
+[0m13:20:41.900433 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1: Close
+[0m13:20:41.900903 [info ] [Thread-1 (]: 41 of 52 PASS not_null_dim_products_performance_category ....................... [[32mPASS[0m in 0.09s]
+[0m13:20:41.901412 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed
+[0m13:20:41.901734 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71: Close
+[0m13:20:41.902187 [info ] [Thread-2 (]: 42 of 52 PASS not_null_dim_products_product_id ................................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.902712 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69
+[0m13:20:41.903139 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a
+[0m13:20:41.903707 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1
+[0m13:20:41.904102 [debug] [Thread-1 (]: Began running node test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985
+[0m13:20:41.904474 [info ] [Thread-4 (]: 44 of 52 START test not_null_dim_products_total_revenue ........................ [RUN]
+[0m13:20:41.905146 [info ] [Thread-3 (]: 43 of 52 PASS not_null_dim_products_profit_margin .............................. [[32mPASS[0m in 0.09s]
+[0m13:20:41.905698 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b
+[0m13:20:41.906144 [info ] [Thread-1 (]: 45 of 52 START test unique_dim_products_product_id ............................. [RUN]
+[0m13:20:41.906573 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.accepted_values_dim_products_performance_category__High_Performance__Medium_Performance__Low_Performance__No_Sales.85239a3fed, now test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a)
+[0m13:20:41.907052 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71
+[0m13:20:41.907391 [info ] [Thread-2 (]: 46 of 52 START test not_null_fct_orders_customer_id ............................ [RUN]
+[0m13:20:41.907766 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_products_performance_category.cc222c8f69, now test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985)
+[0m13:20:41.908102 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a
+[0m13:20:41.908462 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0
+[0m13:20:41.908839 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_products_product_id.c8aba288d1, now test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b)
+[0m13:20:41.909173 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985
+[0m13:20:41.914963 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a"
+[0m13:20:41.915350 [info ] [Thread-3 (]: 47 of 52 START test not_null_fct_orders_order_id ............................... [RUN]
+[0m13:20:41.915708 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b
+[0m13:20:41.965667 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985"
+[0m13:20:41.966231 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_products_profit_margin.c5a6f54e71, now test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0)
+[0m13:20:41.970461 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b"
+[0m13:20:41.970963 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a
+[0m13:20:41.971285 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0
+[0m13:20:41.974215 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a"
+[0m13:20:41.978969 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0"
+[0m13:20:41.979310 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985
+[0m13:20:41.979812 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b
+[0m13:20:41.982590 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985"
+[0m13:20:41.985432 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b"
+[0m13:20:41.985881 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a"
+[0m13:20:41.986327 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0
+[0m13:20:41.986734 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a: BEGIN
+[0m13:20:41.987122 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985"
+[0m13:20:41.989832 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0"
+[0m13:20:41.990206 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:41.990551 [debug] [Thread-1 (]: On test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985: BEGIN
+[0m13:20:41.990912 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b"
+[0m13:20:41.991358 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:41.991707 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b: BEGIN
+[0m13:20:41.992053 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0"
+[0m13:20:41.992374 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:41.992770 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0: BEGIN
+[0m13:20:41.993104 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:42.026827 [debug] [Thread-1 (]: SQL status: OK in 0.035 seconds
+[0m13:20:42.027210 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985"
+[0m13:20:42.027543 [debug] [Thread-3 (]: SQL status: OK in 0.034 seconds
+[0m13:20:42.027869 [debug] [Thread-1 (]: On test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    product_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.dim_products
+where product_id is not null
+group by product_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.028180 [debug] [Thread-4 (]: SQL status: OK in 0.038 seconds
+[0m13:20:42.028462 [debug] [Thread-2 (]: SQL status: OK in 0.036 seconds
+[0m13:20:42.028765 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0"
+[0m13:20:42.029114 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a"
+[0m13:20:42.029513 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b"
+[0m13:20:42.029874 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from dev.analytics.fct_orders
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.030252 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_revenue
+from dev.analytics.dim_products
+where total_revenue is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.030567 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:42.030885 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from dev.analytics.fct_orders
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.032355 [debug] [Thread-1 (]: On test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985: ROLLBACK
+[0m13:20:42.032868 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985'
+[0m13:20:42.033214 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:20:42.033529 [debug] [Thread-1 (]: On test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985: Close
+[0m13:20:42.033833 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:20:42.034125 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:20:42.035286 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0: ROLLBACK
+[0m13:20:42.035835 [info ] [Thread-1 (]: 45 of 52 PASS unique_dim_products_product_id ................................... [[32mPASS[0m in 0.13s]
+[0m13:20:42.036958 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a: ROLLBACK
+[0m13:20:42.038051 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b: ROLLBACK
+[0m13:20:42.038435 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0'
+[0m13:20:42.038899 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985
+[0m13:20:42.039268 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a'
+[0m13:20:42.039627 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b'
+[0m13:20:42.039937 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0: Close
+[0m13:20:42.040305 [debug] [Thread-1 (]: Began running node test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94
+[0m13:20:42.040677 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a: Close
+[0m13:20:42.040999 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b: Close
+[0m13:20:42.041484 [info ] [Thread-3 (]: 47 of 52 PASS not_null_fct_orders_order_id ..................................... [[32mPASS[0m in 0.08s]
+[0m13:20:42.041900 [info ] [Thread-1 (]: 48 of 52 START test not_null_fct_orders_order_item_id .......................... [RUN]
+[0m13:20:42.042502 [info ] [Thread-4 (]: 44 of 52 PASS not_null_dim_products_total_revenue .............................. [[32mPASS[0m in 0.14s]
+[0m13:20:42.043252 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0
+[0m13:20:42.043623 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.unique_dim_products_product_id.ef7b2a9985, now test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94)
+[0m13:20:42.044156 [info ] [Thread-2 (]: 46 of 52 PASS not_null_fct_orders_customer_id .................................. [[32mPASS[0m in 0.14s]
+[0m13:20:42.044662 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a
+[0m13:20:42.045031 [debug] [Thread-3 (]: Began running node test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24
+[0m13:20:42.045385 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94
+[0m13:20:42.045849 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b
+[0m13:20:42.046210 [debug] [Thread-4 (]: Began running node test.ci_cd_project.not_null_fct_orders_quantity.f754434156
+[0m13:20:42.046579 [info ] [Thread-3 (]: 49 of 52 START test not_null_fct_orders_product_id ............................. [RUN]
+[0m13:20:42.052288 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94"
+[0m13:20:42.052706 [debug] [Thread-2 (]: Began running node test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982
+[0m13:20:42.053088 [info ] [Thread-4 (]: 50 of 52 START test not_null_fct_orders_quantity ............................... [RUN]
+[0m13:20:42.053581 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_fct_orders_order_id.4e687af8d0, now test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24)
+[0m13:20:42.054211 [info ] [Thread-2 (]: 51 of 52 START test not_null_fct_orders_unit_price ............................. [RUN]
+[0m13:20:42.054627 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_dim_products_total_revenue.07243f7e3a, now test.ci_cd_project.not_null_fct_orders_quantity.f754434156)
+[0m13:20:42.054986 [debug] [Thread-3 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24
+[0m13:20:42.055314 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94
+[0m13:20:42.056094 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_fct_orders_customer_id.16fe324f7b, now test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982)
+[0m13:20:42.056425 [debug] [Thread-4 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_quantity.f754434156
+[0m13:20:42.060614 [debug] [Thread-3 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24"
+[0m13:20:42.063440 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94"
+[0m13:20:42.063788 [debug] [Thread-2 (]: Began compiling node test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982
+[0m13:20:42.067866 [debug] [Thread-4 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_quantity.f754434156"
+[0m13:20:42.073357 [debug] [Thread-2 (]: Writing injected SQL for node "test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982"
+[0m13:20:42.073894 [debug] [Thread-3 (]: Began executing node test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24
+[0m13:20:42.076709 [debug] [Thread-3 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24"
+[0m13:20:42.077163 [debug] [Thread-2 (]: Began executing node test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982
+[0m13:20:42.077557 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94"
+[0m13:20:42.077893 [debug] [Thread-4 (]: Began executing node test.ci_cd_project.not_null_fct_orders_quantity.f754434156
+[0m13:20:42.080656 [debug] [Thread-2 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982"
+[0m13:20:42.081027 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94: BEGIN
+[0m13:20:42.081404 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24"
+[0m13:20:42.084170 [debug] [Thread-4 (]: Writing runtime sql for node "test.ci_cd_project.not_null_fct_orders_quantity.f754434156"
+[0m13:20:42.084570 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:42.084908 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24: BEGIN
+[0m13:20:42.085360 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982"
+[0m13:20:42.085775 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:20:42.086135 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_quantity.f754434156"
+[0m13:20:42.086468 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982: BEGIN
+[0m13:20:42.086949 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_fct_orders_quantity.f754434156: BEGIN
+[0m13:20:42.087289 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:20:42.087616 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m13:20:42.125402 [debug] [Thread-1 (]: SQL status: OK in 0.041 seconds
+[0m13:20:42.125752 [debug] [Thread-3 (]: SQL status: OK in 0.040 seconds
+[0m13:20:42.126145 [debug] [Thread-2 (]: SQL status: OK in 0.039 seconds
+[0m13:20:42.126493 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94"
+[0m13:20:42.126832 [debug] [Thread-4 (]: SQL status: OK in 0.039 seconds
+[0m13:20:42.127144 [debug] [Thread-3 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24"
+[0m13:20:42.127467 [debug] [Thread-2 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982"
+[0m13:20:42.127808 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_item_id
+from dev.analytics.fct_orders
+where order_item_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.128140 [debug] [Thread-4 (]: Using duckdb connection "test.ci_cd_project.not_null_fct_orders_quantity.f754434156"
+[0m13:20:42.128469 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select product_id
+from dev.analytics.fct_orders
+where product_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.128818 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select unit_price
+from dev.analytics.fct_orders
+where unit_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.129271 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_fct_orders_quantity.f754434156: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.not_null_fct_orders_quantity.f754434156"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select quantity
+from dev.analytics.fct_orders
+where quantity is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.129721 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:42.130107 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:20:42.130508 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:20:42.131787 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94: ROLLBACK
+[0m13:20:42.132112 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:20:42.133242 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24: ROLLBACK
+[0m13:20:42.134395 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982: ROLLBACK
+[0m13:20:42.134803 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94'
+[0m13:20:42.135213 [debug] [Thread-3 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24'
+[0m13:20:42.136309 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_fct_orders_quantity.f754434156: ROLLBACK
+[0m13:20:42.136704 [debug] [Thread-2 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982'
+[0m13:20:42.137015 [debug] [Thread-1 (]: On test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94: Close
+[0m13:20:42.137323 [debug] [Thread-3 (]: On test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24: Close
+[0m13:20:42.137678 [debug] [Thread-4 (]: Failed to rollback 'test.ci_cd_project.not_null_fct_orders_quantity.f754434156'
+[0m13:20:42.137984 [debug] [Thread-2 (]: On test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982: Close
+[0m13:20:42.138484 [info ] [Thread-1 (]: 48 of 52 PASS not_null_fct_orders_order_item_id ................................ [[32mPASS[0m in 0.09s]
+[0m13:20:42.138883 [debug] [Thread-4 (]: On test.ci_cd_project.not_null_fct_orders_quantity.f754434156: Close
+[0m13:20:42.139328 [info ] [Thread-3 (]: 49 of 52 PASS not_null_fct_orders_product_id ................................... [[32mPASS[0m in 0.09s]
+[0m13:20:42.139867 [info ] [Thread-2 (]: 51 of 52 PASS not_null_fct_orders_unit_price ................................... [[32mPASS[0m in 0.08s]
+[0m13:20:42.140379 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94
+[0m13:20:42.140895 [debug] [Thread-3 (]: Finished running node test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24
+[0m13:20:42.141398 [debug] [Thread-2 (]: Finished running node test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982
+[0m13:20:42.141875 [info ] [Thread-4 (]: 50 of 52 PASS not_null_fct_orders_quantity ..................................... [[32mPASS[0m in 0.09s]
+[0m13:20:42.142277 [debug] [Thread-1 (]: Began running node test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7
+[0m13:20:42.142929 [debug] [Thread-4 (]: Finished running node test.ci_cd_project.not_null_fct_orders_quantity.f754434156
+[0m13:20:42.143287 [info ] [Thread-1 (]: 52 of 52 START test unique_fct_orders_order_item_id ............................ [RUN]
+[0m13:20:42.143889 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ci_cd_project.not_null_fct_orders_order_item_id.d90f190d94, now test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7)
+[0m13:20:42.144419 [debug] [Thread-1 (]: Began compiling node test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7
+[0m13:20:42.148916 [debug] [Thread-1 (]: Writing injected SQL for node "test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7"
+[0m13:20:42.149586 [debug] [Thread-1 (]: Began executing node test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7
+[0m13:20:42.154137 [debug] [Thread-1 (]: Writing runtime sql for node "test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7"
+[0m13:20:42.154887 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7"
+[0m13:20:42.155222 [debug] [Thread-1 (]: On test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7: BEGIN
+[0m13:20:42.155525 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:20:42.193121 [debug] [Thread-1 (]: SQL status: OK in 0.038 seconds
+[0m13:20:42.193489 [debug] [Thread-1 (]: Using duckdb connection "test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7"
+[0m13:20:42.193834 [debug] [Thread-1 (]: On test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "dev", "node_id": "test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_item_id as unique_field,
+    count(*) as n_records
+
+from dev.analytics.fct_orders
+where order_item_id is not null
+group by order_item_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:20:42.194762 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:20:42.196065 [debug] [Thread-1 (]: On test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7: ROLLBACK
+[0m13:20:42.196475 [debug] [Thread-1 (]: Failed to rollback 'test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7'
+[0m13:20:42.196792 [debug] [Thread-1 (]: On test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7: Close
+[0m13:20:42.197930 [info ] [Thread-1 (]: 52 of 52 PASS unique_fct_orders_order_item_id .................................. [[32mPASS[0m in 0.05s]
+[0m13:20:42.198482 [debug] [Thread-1 (]: Finished running node test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7
+[0m13:20:42.199456 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:20:42.199746 [debug] [MainThread]: On master: BEGIN
+[0m13:20:42.200002 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:20:42.239113 [debug] [MainThread]: SQL status: OK in 0.039 seconds
+[0m13:20:42.239482 [debug] [MainThread]: On master: COMMIT
+[0m13:20:42.239775 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:20:42.240042 [debug] [MainThread]: On master: COMMIT
+[0m13:20:42.240377 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:20:42.240654 [debug] [MainThread]: On master: Close
+[0m13:20:42.241637 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:20:42.241910 [debug] [MainThread]: Connection 'test.ci_cd_project.unique_fct_orders_order_item_id.0719ca0ce7' was properly closed.
+[0m13:20:42.242158 [debug] [MainThread]: Connection 'test.ci_cd_project.not_null_fct_orders_unit_price.a8881f4982' was properly closed.
+[0m13:20:42.242400 [debug] [MainThread]: Connection 'test.ci_cd_project.not_null_fct_orders_product_id.8e73ef4e24' was properly closed.
+[0m13:20:42.242640 [debug] [MainThread]: Connection 'test.ci_cd_project.not_null_fct_orders_quantity.f754434156' was properly closed.
+[0m13:20:42.243039 [info ] [MainThread]: 
+[0m13:20:42.243345 [info ] [MainThread]: Finished running 4 seeds, 4 view models, 41 data tests, 3 table models in 0 hours 0 minutes and 2.07 seconds (2.07s).
+[0m13:20:42.249121 [debug] [MainThread]: Command end result
+[0m13:20:42.322906 [info ] [MainThread]: 
+[0m13:20:42.323323 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:20:42.323673 [info ] [MainThread]: 
+[0m13:20:42.323980 [info ] [MainThread]: Done. PASS=52 WARN=0 ERROR=0 SKIP=0 TOTAL=52
+[0m13:20:42.326570 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.7717614, "process_in_blocks": "0", "process_kernel_time": 0.648976, "process_mem_max_rss": "197722112", "process_out_blocks": "0", "process_user_time": 9.237883}
+[0m13:20:42.326985 [debug] [MainThread]: Command `dbt build` succeeded at 13:20:42.326906 after 5.77 seconds
+[0m13:20:42.327325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10911d8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4a4a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4a6c20>]}
+[0m13:20:42.327655 [debug] [MainThread]: Flushing usage events

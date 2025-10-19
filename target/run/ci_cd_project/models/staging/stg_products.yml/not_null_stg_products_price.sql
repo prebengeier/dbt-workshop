@@ -13,7 +13,7 @@
 
 
 select price
-from prod.analytics.stg_products
+from dev.analytics.stg_products
 where price is null
 
 

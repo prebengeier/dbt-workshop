@@ -4,25 +4,25 @@
     
 
     create  table
-      prod.analytics.fct_orders__dbt_tmp
+      dev.analytics.fct_orders__dbt_tmp
   
     as (
       
 
 with orders as (
-    select * from prod.analytics.stg_orders
+    select * from dev.analytics.stg_orders
 ),
 
 order_items as (
-    select * from prod.analytics.stg_order_items
+    select * from dev.analytics.stg_order_items
 ),
 
 products as (
-    select * from prod.analytics.stg_products
+    select * from dev.analytics.stg_products
 ),
 
 customers as (
-    select * from prod.analytics.stg_customers
+    select * from dev.analytics.stg_customers
 ),
 
 order_details as (

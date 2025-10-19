@@ -1,7 +1,7 @@
 
 
 with customers as (
-    select * from prod.analytics.stg_customers
+    select * from dev.analytics.stg_customers
 ),
 
 customer_metrics as (
@@ -11,7 +11,7 @@ customer_metrics as (
         sum(total_amount) as total_spent,
         min(order_date) as first_order_date,
         max(order_date) as last_order_date
-    from prod.analytics.stg_orders
+    from dev.analytics.stg_orders
     group by customer_id
 )
 

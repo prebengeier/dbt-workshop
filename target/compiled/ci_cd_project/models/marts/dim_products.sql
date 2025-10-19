@@ -1,7 +1,7 @@
 
 
 with products as (
-    select * from prod.analytics.stg_products
+    select * from dev.analytics.stg_products
 ),
 
 product_metrics as (
@@ -11,7 +11,7 @@ product_metrics as (
         sum(quantity) as total_quantity_sold,
         sum(total_price) as total_revenue,
         avg(unit_price) as avg_selling_price
-    from prod.analytics.stg_order_items
+    from dev.analytics.stg_order_items
     group by product_id
 )
 

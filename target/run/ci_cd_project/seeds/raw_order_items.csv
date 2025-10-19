@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table test.analytics_test.raw_order_items (order_item_id integer,order_id integer,product_id integer,quantity integer,unit_price float8,total_price float8,discount_amount integer,created_at date)
+  ;
+    -- dbt seed --
+    
+          COPY test.analytics_test.raw_order_items FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_order_items.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

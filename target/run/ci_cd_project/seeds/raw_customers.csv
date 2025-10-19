@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table test.analytics_test.raw_customers (customer_id integer,first_name text,last_name text,email text,phone text,address text,city text,state text,zip_code integer,country text,created_at date,updated_at date)
+  ;
+    -- dbt seed --
+    
+          COPY test.analytics_test.raw_customers FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

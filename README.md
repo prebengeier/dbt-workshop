@@ -63,14 +63,40 @@ dbt-workshop/
 ### Eksempel på `profiles.example.yml`
 
 ```yaml
-duckdb:
+workshop_duckdb:
   target: dev
   outputs:
+
+    # Lokal utvikling 
     dev:
       type: duckdb
-      path: "{{ env_var('DBT_DUCKDB_PATH', 'local.duckdb') }}"
-      schema: main
+      path: ./warehouse/dev.duckdb
+      schema: analytics_dev
       threads: 4
+      extensions: [httpfs]
+      external_root: ./external
+
+    # Test / CI — brukes av GitHub Actions (PR-bygg)
+    test:
+      type: duckdb
+      path: ./warehouse/test.duckdb      
+      schema: analytics_test
+      threads: 4
+      extensions: [httpfs]
+      external_root: ./external
+      attach:
+        - path: ./warehouse/prod.duckdb   
+          alias: prod
+
+    # Produksjon 
+    prod:
+      type: duckdb
+      path: ./warehouse/prod.duckdb
+      schema: analytics
+      threads: 8
+      extensions: [httpfs]
+      external_root: ./external
+
 ```
 
 ---
@@ -78,13 +104,16 @@ duckdb:
 ## ⚙️ Lokal kjøring
 
 ```bash
-export DBT_DUCKDB_PATH=local.duckdb   # Windows: set DBT_DUCKDB_PATH=local.duckdb
+dbt deps 
+dbt seed --target dev/test/prod
+dbt build --target dev/test/prod
+dbt snapshot --target dev/test/prod
 
-dbt deps
-dbt seed
-dbt build
-dbt snapshot
-duckdb local.duckdb -c "select * from marts.fct_orders limit 5;"
+export DBT_DUCKDB_PATH=./warehouse/dev.duckdb
+dbt deps && dbt seed && dbt build --target dev
+
+export DBT_DUCKDB_PATH=./warehouse/pr_999__local.duckdb
+dbt build -s 'state:modified+' --state ./state --target pr --vars "schema_id: pr_999__local"
 ```
 
 ---

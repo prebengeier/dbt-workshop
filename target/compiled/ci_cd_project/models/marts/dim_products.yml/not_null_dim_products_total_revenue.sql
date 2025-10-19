@@ -5,7 +5,7 @@
 
 
 select total_revenue
-from dev.analytics.dim_products
+from pr_999__local.analytics.dim_products
 where total_revenue is null
 
 

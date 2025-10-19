@@ -5,7 +5,7 @@
 
 
 select order_id
-from dev.analytics.stg_order_items
+from pr_999__local.analytics.stg_order_items
 where order_id is null
 
 

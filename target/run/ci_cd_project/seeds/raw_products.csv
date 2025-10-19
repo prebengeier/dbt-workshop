@@ -1,10 +1,10 @@
 
     
     
-    truncate table "dev"."analytics_dev"."raw_products";
+    truncate table "pr_999__local"."raw"."raw_products";
     -- dbt seed --
     
-          COPY dev.analytics_dev.raw_products FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+          COPY pr_999__local.raw.raw_products FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
         
 
 ;

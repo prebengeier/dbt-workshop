@@ -16,7 +16,7 @@ with all_values as (
         performance_category as value_field,
         count(*) as n_records
 
-    from dev.analytics.dim_products
+    from pr_999__local.analytics.dim_products
     group by performance_category
 
 )

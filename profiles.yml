@@ -5,28 +5,32 @@ workshop_duckdb:
     # Lokal utvikling — kjør på egen maskin
     dev:
       type: duckdb
-      path: ./warehouse/dev.duckdb
-      schema: analytics_dev
+      # Lokalt lagrer vi i en fast fil (kan overstyres av env var)
+      path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/dev.duckdb') }}"
+      schema: "{{ var('schema_id', 'analytics_dev') }}"
       threads: 4
       extensions: [httpfs]
       external_root: ./external
 
-    # Test / CI — brukes av GitHub Actions (PR-bygg)
-    test:
+    # PR / CI — brukes av GitHub Actions (Slim CI)
+    pr:
       type: duckdb
-      path: ./warehouse/test.duckdb       # midlertidig CI-fil
-      schema: analytics_test
+      # I CI settes DBT_DUCKDB_PATH til f.eks. warehouse/pr_<nr>__<sha>.duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/test.duckdb') }}"
+      # Styres av --vars "schema_id: pr_<nr>__<sha>", med fallback for lokal testing
+      schema: "{{ var('schema_id', 'analytics_pr') }}"
       threads: 4
       extensions: [httpfs]
       external_root: ./external
+      # Attach prod for ev. defer/lesing (valgfritt)
       attach:
-        - path: ./warehouse/prod.duckdb   # kobler til for defer
+        - path: ./warehouse/prod.duckdb
           alias: prod
 
-    # Produksjon — “endelig” databasefil i repoet
+    # Produksjon — “endelig” databasefil
     prod:
       type: duckdb
-      path: ./warehouse/prod.duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/prod.duckdb') }}"
       schema: analytics
       threads: 8
       extensions: [httpfs]

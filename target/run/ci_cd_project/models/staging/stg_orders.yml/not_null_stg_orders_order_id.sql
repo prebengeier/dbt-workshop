@@ -13,7 +13,7 @@
 
 
 select order_id
-from dev.analytics.stg_orders
+from pr_999__local.analytics.stg_orders
 where order_id is null
 
 

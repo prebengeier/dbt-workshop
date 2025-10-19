@@ -13,7 +13,7 @@
 
 
 select unit_price
-from dev.analytics.fct_orders
+from pr_999__local.analytics.fct_orders
 where unit_price is null
 
 

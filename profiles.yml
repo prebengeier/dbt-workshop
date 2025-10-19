@@ -1,20 +1,32 @@
-my_dbt_project:
-  target: prod
+workshop_duckdb:
+  target: dev
   outputs:
-    pr:
+
+    # Lokal utvikling — kjør på egen maskin
+    dev:
       type: duckdb
-      path: ./warehouse/ci.duckdb        # isolert PR-db
-      schema: analytics
+      path: ./warehouse/dev.duckdb
+      schema: analytics_dev
       threads: 4
       extensions: [httpfs]
       external_root: ./external
-      attach:                            # gjør defer mulig mot forrige prod
-        - path: ./warehouse/prod.duckdb
+
+    # Test / CI — brukes av GitHub Actions (PR-bygg)
+    test:
+      type: duckdb
+      path: ./warehouse/test.duckdb       # midlertidig CI-fil
+      schema: analytics_test
+      threads: 4
+      extensions: [httpfs]
+      external_root: ./external
+      attach:
+        - path: ./warehouse/prod.duckdb   # kobler til for defer
           alias: prod
 
+    # Produksjon — “endelig” databasefil i repoet
     prod:
       type: duckdb
-      path: ./warehouse/prod.duckdb      # “prod”-db som fil
+      path: ./warehouse/prod.duckdb
       schema: analytics
       threads: 8
       extensions: [httpfs]

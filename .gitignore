@@ -1,1 +1,14 @@
-target/*
+# Python virtual environment
+.venv/
+
+
+# dbt build outputs
+target/
+
+
+dbt_modules/
+__pycache__/
+.DS_Store
+*.duckdb
+*.zip
+state/

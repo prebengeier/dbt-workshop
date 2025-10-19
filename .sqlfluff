@@ -1,0 +1,18 @@
+[sqlfluff]
+templater = dbt
+dialect = duckdb
+exclude_rules = L009,L031,L034  
+max_line_length = 120
+
+[sqlfluff:templater:dbt]
+project_dir = .
+profiles_dir = .
+
+[sqlfluff:rules]
+indentation = 4
+capitalisation_policy = lower
+single_quotes = true
+allow_scalar = false
+
+[sqlfluff:indentation]
+indented_joins = false

@@ -42,5 +42,5 @@ select
         when cm.total_spent >= 100 then 'Regular'
         else 'New'
     end as customer_tier
-from customers c
-left join customer_metrics cm on c.customer_id = cm.customer_id
+from customers as c
+left join customer_metrics as cm on c.customer_id = cm.customer_id

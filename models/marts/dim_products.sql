@@ -42,5 +42,5 @@ select
         when pm.total_revenue >= 1000 then 'Low Performance'
         else 'No Sales'
     end as performance_category
-from products p
-left join product_metrics pm on p.product_id = pm.product_id
+from products as p
+left join product_metrics as pm on p.product_id = pm.product_id

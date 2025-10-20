@@ -1,10 +1,12 @@
 
     
     
-    truncate table "pr_999__local"."raw"."raw_orders";
+    
+    create table prod.raw.raw_orders (order_id integer,customer_id integer,order_date date,status text,total_amount float8,shipping_address text,billing_address text,payment_method text,created_at date,updated_at date)
+  ;
     -- dbt seed --
     
-          COPY pr_999__local.raw.raw_orders FROM '/Users/preben/Documents/dbt-workshop/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+          COPY prod.raw.raw_orders FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
         
 
 ;

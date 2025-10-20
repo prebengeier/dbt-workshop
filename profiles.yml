@@ -2,32 +2,27 @@ workshop_duckdb:
   target: dev
   outputs:
 
-    # Lokal utvikling — kjør på egen maskin
     dev:
       type: duckdb
-      # Lokalt lagrer vi i en fast fil (kan overstyres av env var)
       path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/dev.duckdb') }}"
       schema: "{{ var('schema_id', 'analytics_dev') }}"
       threads: 4
       extensions: [httpfs]
       external_root: ./external
 
-    # PR / CI — brukes av GitHub Actions (Slim CI)
+
     pr:
       type: duckdb
-      # I CI settes DBT_DUCKDB_PATH til f.eks. warehouse/pr_<nr>__<sha>.duckdb
       path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/test.duckdb') }}"
-      # Styres av --vars "schema_id: pr_<nr>__<sha>", med fallback for lokal testing
       schema: "{{ var('schema_id', 'analytics_pr') }}"
       threads: 4
       extensions: [httpfs]
       external_root: ./external
-      # Attach prod for ev. defer/lesing (valgfritt)
       attach:
         - path: ./warehouse/prod.duckdb
           alias: prod
 
-    # Produksjon — “endelig” databasefil
+
     prod:
       type: duckdb
       path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/prod.duckdb') }}"

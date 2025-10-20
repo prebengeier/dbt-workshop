@@ -29,7 +29,7 @@ Installer dbt med DuckDB-adapter:
 python -m venv .venv
 source .venv/bin/activate           # Windows: .venv\Scripts\activate
 pip install --upgrade pip
-pip install dbt-duckdb dbt-utils
+pip install -r dbt-requirements.txt
 ```
 
 ---
@@ -67,7 +67,6 @@ workshop_duckdb:
   target: dev
   outputs:
 
-    # Lokal utvikling 
     dev:
       type: duckdb
       path: ./warehouse/dev.duckdb
@@ -76,7 +75,6 @@ workshop_duckdb:
       extensions: [httpfs]
       external_root: ./external
 
-    # Test / CI — brukes av GitHub Actions (PR-bygg)
     test:
       type: duckdb
       path: ./warehouse/test.duckdb      
@@ -88,7 +86,6 @@ workshop_duckdb:
         - path: ./warehouse/prod.duckdb   
           alias: prod
 
-    # Produksjon 
     prod:
       type: duckdb
       path: ./warehouse/prod.duckdb
@@ -101,7 +98,7 @@ workshop_duckdb:
 
 ---
 
-## ⚙️ Lokal kjøring
+## Lokal kjøring
 
 ```bash
 dbt deps 
@@ -141,11 +138,9 @@ Kjøres når en PR **lukkes eller merges**.
 - Sletter DuckDB-filer for PR-miljøer
 - Logger opprydding i Actions-loggen
 
-> 💡 **Tips:** Hver PR får sin egen `.duckdb`-fil — ingen database-server trengs. Bare slett filen for å rydde opp.
-
 ---
 
-## 🧠 Slim CI (state:modified+)
+## Slim CI (state:modified+)
 
 Slim CI bygger kun endrede modeller.
 
@@ -176,27 +171,7 @@ Hvis ingen `manifest.json` finnes, kjøres full bygging.
 
 ---
 
-## 🧹 Feilsøking
 
-| Problem | Løsning |
-|----------|----------|
-| `jq: Cannot iterate over null` | Ingen artefakter ennå – første bygg kjører full run |
-| `404 Not Found` for artefakter | Gamle eller utløpte artefakter slettet av GitHub |
-| PR fra fork feiler | Forks har ikke tilgang til artefakter fra hovedrepo |
-| Ingen Slim CI-effekt | Sjekk at `manifest.json` finnes i `./` og `--state ./` brukes |
-
----
-
-## 🔧 Videre forbedringer
-
-- Generer **dbt docs** og publiser via GitHub Pages
-- Legg til **SQL-linting** med `sqlfluff`
-- Legg inn **pytest** for makrotesting
-- Integrer **testdekning** i CI/CD
-
----
-
-## 🧾 Hurtigreferanse
 
 ```bash
 # Lokal utvikling
@@ -209,8 +184,3 @@ dbt build -s 'state:modified+' --defer --state ./
 # Rydd opp PR-db-filer
 dbt run-operation drop_pr_dbs --args '{"glob_pattern": "ci/pr_123__*.duckdb"}'
 ```
-
----
-
-🎉 **Gratulerer!** Du har nå et komplett oppsett for dbt + DuckDB, med moderne CI/CD og produksjonslignende miljøer – alt lokalt og gratis.
-

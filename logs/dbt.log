@@ -28164,3 +28164,783 @@ truncate table "pr_999__local"."raw"."territories"
 [0m18:03:21.802457 [debug] [MainThread]: Command `dbt seed` succeeded at 18:03:21.802376 after 2.12 seconds
 [0m18:03:21.802805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e81990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091e7f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10986f940>]}
 [0m18:03:21.803145 [debug] [MainThread]: Flushing usage events
+[0m22:13:08.716519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E347E49BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34B6E8980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34B6E8B30>]}
+
+
+============================== 22:13:08.729210 | 549b65e1-8651-421f-98cb-b9a1b30fa93a ==============================
+[0m22:13:08.729210 [info ] [MainThread]: Running with dbt=1.8.9
+[0m22:13:08.734759 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt deps', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:13:09.094403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34B693350>]}
+[0m22:13:10.673654 [debug] [MainThread]: Set downloads directory='C:\Users\PREBEN~1.GEI\AppData\Local\Temp\dbt-downloads-ou5m70y_'
+[0m22:13:10.674712 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m22:13:11.799520 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m22:13:11.803906 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m22:13:12.684353 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m22:13:12.694453 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_project_evaluator.json
+[0m22:13:13.948711 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_project_evaluator.json 200
+[0m22:13:13.958750 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json
+[0m22:13:15.024040 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json 200
+[0m22:13:15.028039 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `calogica/dbt_expectations` package is deprecated in favor of
+`metaplane/dbt_expectations`. Please update your `packages.yml` configuration to
+use `metaplane/dbt_expectations` instead.
+[0m22:13:15.032041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34AB534A0>]}
+[0m22:13:15.037040 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m22:13:16.368740 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m22:13:16.368740 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json
+[0m22:13:18.220093 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json 200
+[0m22:13:18.228670 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m22:13:20.829736 [info ] [MainThread]: Installed from version 1.1.1
+[0m22:13:20.845541 [info ] [MainThread]: Updated version available: 1.3.1
+[0m22:13:20.895314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C794F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7951C0>]}
+[0m22:13:20.895314 [info ] [MainThread]: Installing dbt-labs/dbt_project_evaluator
+[0m22:13:25.458862 [info ] [MainThread]: Installed from version 0.11.0
+[0m22:13:25.458862 [info ] [MainThread]: Updated version available: 1.0.2
+[0m22:13:25.464908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C794C80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C794F50>]}
+[0m22:13:25.466918 [info ] [MainThread]: Installing calogica/dbt_expectations
+[0m22:13:28.712817 [info ] [MainThread]: Installed from version 0.10.3
+[0m22:13:28.714816 [info ] [MainThread]: Updated version available: 0.10.4
+[0m22:13:28.715816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E4170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E42F0>]}
+[0m22:13:28.717817 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m22:13:30.280097 [info ] [MainThread]: Installed from version 0.12.1
+[0m22:13:30.282097 [info ] [MainThread]: Updated version available: 0.13.1
+[0m22:13:30.283097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E4740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E4530>]}
+[0m22:13:30.284098 [info ] [MainThread]: Installing calogica/dbt_date
+[0m22:13:32.002350 [info ] [MainThread]: Installed from version 0.10.1
+[0m22:13:32.004389 [info ] [MainThread]: Up to date!
+[0m22:13:32.004389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '549b65e1-8651-421f-98cb-b9a1b30fa93a', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E45C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C7E47D0>]}
+[0m22:13:32.004389 [info ] [MainThread]: 
+[0m22:13:32.004389 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils', 'dbt-labs/dbt_project_evaluator', 'calogica/dbt_expectations', 'dbt-labs/codegen']                 
+Update your versions in packages.yml, then run dbt deps
+[0m22:13:32.050096 [debug] [MainThread]: Command `dbt deps` succeeded at 22:13:32.049566 after 23.87 seconds
+[0m22:13:32.051161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34B35C770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E34C0D9460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E347847500>]}
+[0m22:13:32.052248 [debug] [MainThread]: Flushing usage events
+[0m22:13:32.148251 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m22:14:59.254909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA98CD6360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA967333B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA99692780>]}
+
+
+============================== 22:14:59.268909 | cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b ==============================
+[0m22:14:59.268909 [info ] [MainThread]: Running with dbt=1.8.9
+[0m22:14:59.270908 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'debug': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt seed --target prod', 'send_anonymous_usage_stats': 'True'}
+[0m22:15:00.368707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9A5540B0>]}
+[0m22:15:00.521124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9A4F0A10>]}
+[0m22:15:00.533440 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m22:15:01.607623 [debug] [MainThread]: checksum: 615e2d2cb3f98118511aae44913b8ec8777c6094d89fb36e10217eda1f944ce4, vars: {}, profile: , target: prod, version: 1.8.9
+[0m22:15:01.975487 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m22:15:02.005629 [debug] [MainThread]: previous checksum: 615e2d2cb3f98118511aae44913b8ec8777c6094d89fb36e10217eda1f944ce4, current checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1
+[0m22:15:02.006630 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m22:15:02.008628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA997E80E0>]}
+[0m22:15:10.932824 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m22:15:10.937821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9BE4ECC0>]}
+[0m22:15:12.135742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_direct_join_to_source_.2ec67ec028' (models\marts\dag\dag.yml) depends on a node named 'fct_direct_join_to_source' which is disabled
+[0m22:15:12.137749 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_duplicate_sources_.642214de31' (models\marts\dag\dag.yml) depends on a node named 'fct_duplicate_sources' which is disabled
+[0m22:15:12.138743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_marts_or_intermediate_dependent_on_source_.c0abd5f00f' (models\marts\dag\dag.yml) depends on a node named 'fct_marts_or_intermediate_dependent_on_source' which is disabled
+[0m22:15:12.140741 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_fanout_.a3ef403a95' (models\marts\dag\dag.yml) depends on a node named 'fct_model_fanout' which is disabled
+[0m22:15:12.140741 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_multiple_sources_joined_.494f431817' (models\marts\dag\dag.yml) depends on a node named 'fct_multiple_sources_joined' which is disabled
+[0m22:15:12.141742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_rejoining_of_upstream_concepts_.c6b3625c7d' (models\marts\dag\dag.yml) depends on a node named 'fct_rejoining_of_upstream_concepts' which is disabled
+[0m22:15:12.143742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_root_models_.ccb5a490f1' (models\marts\dag\dag.yml) depends on a node named 'fct_root_models' which is disabled
+[0m22:15:12.144744 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_fanout_.45762bb722' (models\marts\dag\dag.yml) depends on a node named 'fct_source_fanout' which is disabled
+[0m22:15:12.145743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_marts_or_intermediate_.3aa45af51f' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_marts_or_intermediate' which is disabled
+[0m22:15:12.146743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_staging_.bea47be3ca' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_staging' which is disabled
+[0m22:15:12.147746 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_unused_sources_.41456b9da8' (models\marts\dag\dag.yml) depends on a node named 'fct_unused_sources' which is disabled
+[0m22:15:12.148743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposure_parents_materializations_.5a21592422' (models\marts\dag\dag.yml) depends on a node named 'fct_exposure_parents_materializations' which is disabled
+[0m22:15:12.149743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_hard_coded_references_.9f62f70113' (models\marts\dag\dag.yml) depends on a node named 'fct_hard_coded_references' which is disabled
+[0m22:15:12.149743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_too_many_joins_.0cb37fa535' (models\marts\dag\dag.yml) depends on a node named 'fct_too_many_joins' which is disabled
+[0m22:15:12.150743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_documentation_coverage.67ef7314a7' (models\marts\documentation\documentation.yml) depends on a node named 'fct_documentation_coverage' which is disabled
+[0m22:15:12.151744 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_models_.7c2f43109c' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_models' which is disabled
+[0m22:15:12.152743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_source_tables_.1c89ecc166' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_source_tables' which is disabled
+[0m22:15:12.153742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_sources_.0409327235' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_sources' which is disabled
+[0m22:15:12.154743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_public_models_without_contract_.bcf47f1cb0' (models\marts\governance\governance.yml) depends on a node named 'fct_public_models_without_contract' which is disabled
+[0m22:15:12.155744 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_public_models_.56938f1938' (models\marts\governance\governance.yml) depends on a node named 'fct_undocumented_public_models' which is disabled
+[0m22:15:12.156742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposures_dependent_on_private_models_.f12ef3521e' (models\marts\governance\governance.yml) depends on a node named 'fct_exposures_dependent_on_private_models' which is disabled
+[0m22:15:12.156742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_chained_views_dependencies_.d5cb95fb33' (models\marts\performance\performance.yml) depends on a node named 'fct_chained_views_dependencies' which is disabled
+[0m22:15:12.157743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_directories_.50098500db' (models\marts\structure\structure.yml) depends on a node named 'fct_model_directories' which is disabled
+[0m22:15:12.158742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_naming_conventions_.a79bc0fbe2' (models\marts\structure\structure.yml) depends on a node named 'fct_model_naming_conventions' which is disabled
+[0m22:15:12.159741 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_directories_.3ec42bc19c' (models\marts\structure\structure.yml) depends on a node named 'fct_source_directories' which is disabled
+[0m22:15:12.160742 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_test_directories_.1c1db93433' (models\marts\structure\structure.yml) depends on a node named 'fct_test_directories' which is disabled
+[0m22:15:12.161743 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_test_coverage.df03f31e09' (models\marts\tests\testing.yml) depends on a node named 'fct_test_coverage' which is disabled
+[0m22:15:12.162746 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_missing_primary_key_tests_.4d10d48da0' (models\marts\tests\testing.yml) depends on a node named 'fct_missing_primary_key_tests' which is disabled
+[0m22:15:12.703798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9B7AD460>]}
+[0m22:15:13.317345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C26D6A0>]}
+[0m22:15:13.318345 [info ] [MainThread]: Found 8 models, 15 seeds, 41 data tests, 880 macros
+[0m22:15:13.321344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C2E0C80>]}
+[0m22:15:13.333345 [info ] [MainThread]: 
+[0m22:15:13.335345 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:15:13.357344 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_prod'
+[0m22:15:13.921342 [debug] [ThreadPool]: Using duckdb connection "list_prod"
+[0m22:15:13.922342 [debug] [ThreadPool]: On list_prod: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "connection_name": "list_prod"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = 'prod'
+    
+  
+  
+[0m22:15:13.922342 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:15:21.847937 [debug] [ThreadPool]: SQL status: OK in 7.925 seconds
+[0m22:15:21.852936 [debug] [ThreadPool]: On list_prod: Close
+[0m22:15:21.862941 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prod, now create_prod_raw)
+[0m22:15:21.864938 [debug] [ThreadPool]: Creating schema "database: "prod"
+schema: "raw"
+"
+[0m22:15:21.884937 [debug] [ThreadPool]: Using duckdb connection "create_prod_raw"
+[0m22:15:21.885939 [debug] [ThreadPool]: On create_prod_raw: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "connection_name": "create_prod_raw"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='prod'
+        and type='sqlite'
+    
+  
+[0m22:15:21.886942 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:15:22.455829 [debug] [ThreadPool]: SQL status: OK in 0.568 seconds
+[0m22:15:22.459829 [debug] [ThreadPool]: Using duckdb connection "create_prod_raw"
+[0m22:15:22.460830 [debug] [ThreadPool]: On create_prod_raw: BEGIN
+[0m22:15:22.461829 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:15:22.462830 [debug] [ThreadPool]: Using duckdb connection "create_prod_raw"
+[0m22:15:22.463833 [debug] [ThreadPool]: On create_prod_raw: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "connection_name": "create_prod_raw"} */
+
+    
+    
+        create schema if not exists prod.raw
+    
+[0m22:15:22.465832 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:15:22.467830 [debug] [ThreadPool]: On create_prod_raw: COMMIT
+[0m22:15:22.468830 [debug] [ThreadPool]: Using duckdb connection "create_prod_raw"
+[0m22:15:22.469829 [debug] [ThreadPool]: On create_prod_raw: COMMIT
+[0m22:15:22.476829 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m22:15:22.477830 [debug] [ThreadPool]: On create_prod_raw: Close
+[0m22:15:22.515828 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_prod_raw'
+[0m22:15:22.528829 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_prod_analytics'
+[0m22:15:22.532828 [debug] [ThreadPool]: Using duckdb connection "list_prod_raw"
+[0m22:15:22.540832 [debug] [ThreadPool]: Using duckdb connection "list_prod_analytics"
+[0m22:15:22.541828 [debug] [ThreadPool]: On list_prod_raw: BEGIN
+[0m22:15:22.542829 [debug] [ThreadPool]: On list_prod_analytics: BEGIN
+[0m22:15:22.542829 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:15:22.543829 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:15:22.886829 [debug] [ThreadPool]: SQL status: OK in 0.343 seconds
+[0m22:15:22.887828 [debug] [ThreadPool]: Using duckdb connection "list_prod_raw"
+[0m22:15:22.887828 [debug] [ThreadPool]: SQL status: OK in 0.344 seconds
+[0m22:15:22.888828 [debug] [ThreadPool]: On list_prod_raw: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "connection_name": "list_prod_raw"} */
+select
+      'prod' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'raw'
+    and table_catalog = 'prod'
+  
+[0m22:15:22.889829 [debug] [ThreadPool]: Using duckdb connection "list_prod_analytics"
+[0m22:15:22.890828 [debug] [ThreadPool]: On list_prod_analytics: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "connection_name": "list_prod_analytics"} */
+select
+      'prod' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'analytics'
+    and table_catalog = 'prod'
+  
+[0m22:15:22.952953 [debug] [ThreadPool]: SQL status: OK in 0.062 seconds
+[0m22:15:22.952953 [debug] [ThreadPool]: On list_prod_raw: ROLLBACK
+[0m22:15:22.952953 [debug] [ThreadPool]: SQL status: OK in 0.065 seconds
+[0m22:15:22.959169 [debug] [ThreadPool]: On list_prod_analytics: ROLLBACK
+[0m22:15:22.963904 [debug] [ThreadPool]: Failed to rollback 'list_prod_raw'
+[0m22:15:22.964904 [debug] [ThreadPool]: On list_prod_raw: Close
+[0m22:15:22.968439 [debug] [ThreadPool]: Failed to rollback 'list_prod_analytics'
+[0m22:15:22.968439 [debug] [ThreadPool]: On list_prod_analytics: Close
+[0m22:15:22.989042 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9BE9F920>]}
+[0m22:15:22.990043 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:15:22.991042 [debug] [MainThread]: On master: BEGIN
+[0m22:15:22.992042 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:15:23.400509 [debug] [MainThread]: SQL status: OK in 0.408 seconds
+[0m22:15:23.401646 [debug] [MainThread]: On master: COMMIT
+[0m22:15:23.402164 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:15:23.403162 [debug] [MainThread]: On master: COMMIT
+[0m22:15:23.404161 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:15:23.405162 [debug] [MainThread]: On master: Close
+[0m22:15:23.413163 [info ] [MainThread]: Concurrency: 8 threads (target='prod')
+[0m22:15:23.414163 [info ] [MainThread]: 
+[0m22:15:23.488068 [debug] [Thread-1 (]: Began running node seed.ci_cd_project.categories
+[0m22:15:23.489066 [debug] [Thread-2 (]: Began running node seed.ci_cd_project.customers
+[0m22:15:23.490066 [debug] [Thread-3 (]: Began running node seed.ci_cd_project.employee_territories
+[0m22:15:23.491065 [debug] [Thread-4 (]: Began running node seed.ci_cd_project.employees
+[0m22:15:23.493066 [debug] [Thread-5 (]: Began running node seed.ci_cd_project.order_details
+[0m22:15:23.494065 [debug] [Thread-6 (]: Began running node seed.ci_cd_project.orders
+[0m22:15:23.496066 [debug] [Thread-7 (]: Began running node seed.ci_cd_project.products
+[0m22:15:23.492065 [info ] [Thread-1 (]: 1 of 15 START seed file raw.categories ......................................... [RUN]
+[0m22:15:23.497065 [debug] [Thread-8 (]: Began running node seed.ci_cd_project.raw_customers
+[0m22:15:23.495066 [info ] [Thread-2 (]: 2 of 15 START seed file raw.customers .......................................... [RUN]
+[0m22:15:23.498068 [info ] [Thread-3 (]: 3 of 15 START seed file raw.employee_territories ............................... [RUN]
+[0m22:15:23.500067 [info ] [Thread-4 (]: 4 of 15 START seed file raw.employees .......................................... [RUN]
+[0m22:15:23.501282 [info ] [Thread-5 (]: 5 of 15 START seed file raw.order_details ...................................... [RUN]
+[0m22:15:23.504798 [debug] [Thread-1 (]: Acquiring new duckdb connection 'seed.ci_cd_project.categories'
+[0m22:15:23.507172 [debug] [Thread-2 (]: Acquiring new duckdb connection 'seed.ci_cd_project.customers'
+[0m22:15:23.502054 [info ] [Thread-6 (]: 6 of 15 START seed file raw.orders ............................................. [RUN]
+[0m22:15:23.508418 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.ci_cd_project.employee_territories'
+[0m22:15:23.510010 [debug] [Thread-4 (]: Acquiring new duckdb connection 'seed.ci_cd_project.employees'
+[0m22:15:23.511063 [debug] [Thread-5 (]: Acquiring new duckdb connection 'seed.ci_cd_project.order_details'
+[0m22:15:23.512096 [debug] [Thread-1 (]: Began compiling node seed.ci_cd_project.categories
+[0m22:15:23.512882 [debug] [Thread-2 (]: Began compiling node seed.ci_cd_project.customers
+[0m22:15:23.503667 [info ] [Thread-7 (]: 7 of 15 START seed file raw.products ........................................... [RUN]
+[0m22:15:23.519327 [debug] [Thread-6 (]: Acquiring new duckdb connection 'seed.ci_cd_project.orders'
+[0m22:15:23.520324 [debug] [Thread-3 (]: Began compiling node seed.ci_cd_project.employee_territories
+[0m22:15:23.506113 [info ] [Thread-8 (]: 8 of 15 START seed file raw.raw_customers ...................................... [RUN]
+[0m22:15:23.521324 [debug] [Thread-4 (]: Began compiling node seed.ci_cd_project.employees
+[0m22:15:23.522323 [debug] [Thread-5 (]: Began compiling node seed.ci_cd_project.order_details
+[0m22:15:23.532352 [debug] [Thread-5 (]: Began executing node seed.ci_cd_project.order_details
+[0m22:15:23.524354 [debug] [Thread-2 (]: Began executing node seed.ci_cd_project.customers
+[0m22:15:23.525350 [debug] [Thread-7 (]: Acquiring new duckdb connection 'seed.ci_cd_project.products'
+[0m22:15:23.526350 [debug] [Thread-6 (]: Began compiling node seed.ci_cd_project.orders
+[0m22:15:23.527354 [debug] [Thread-3 (]: Began executing node seed.ci_cd_project.employee_territories
+[0m22:15:23.529354 [debug] [Thread-8 (]: Acquiring new duckdb connection 'seed.ci_cd_project.raw_customers'
+[0m22:15:23.530352 [debug] [Thread-4 (]: Began executing node seed.ci_cd_project.employees
+[0m22:15:23.523830 [debug] [Thread-1 (]: Began executing node seed.ci_cd_project.categories
+[0m22:15:23.587935 [debug] [Thread-7 (]: Began compiling node seed.ci_cd_project.products
+[0m22:15:23.590935 [debug] [Thread-6 (]: Began executing node seed.ci_cd_project.orders
+[0m22:15:23.596934 [debug] [Thread-8 (]: Began compiling node seed.ci_cd_project.raw_customers
+[0m22:15:23.710423 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.customers"
+[0m22:15:23.738422 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.employee_territories"
+[0m22:15:23.739422 [debug] [Thread-7 (]: Began executing node seed.ci_cd_project.products
+[0m22:15:23.779677 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.employees"
+[0m22:15:23.799417 [debug] [Thread-8 (]: Began executing node seed.ci_cd_project.raw_customers
+[0m22:15:23.830396 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: BEGIN
+[0m22:15:23.879336 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.order_details"
+[0m22:15:23.879887 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: BEGIN
+[0m22:15:23.885612 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.categories"
+[0m22:15:23.914348 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: BEGIN
+[0m22:15:23.978347 [debug] [Thread-6 (]: Using duckdb connection "seed.ci_cd_project.orders"
+[0m22:15:23.979346 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:15:23.992346 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: BEGIN
+[0m22:15:23.998348 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.products"
+[0m22:15:23.999347 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:15:24.000347 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: BEGIN
+[0m22:15:24.003350 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:15:24.006347 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m22:15:24.007347 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: BEGIN
+[0m22:15:24.008348 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m22:15:24.009347 [debug] [Thread-7 (]: On seed.ci_cd_project.products: BEGIN
+[0m22:15:24.010348 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:15:24.011348 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: BEGIN
+[0m22:15:24.012349 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m22:15:24.014348 [debug] [Thread-7 (]: Opening a new connection, currently in state init
+[0m22:15:24.015348 [debug] [Thread-8 (]: Opening a new connection, currently in state init
+[0m22:15:24.392348 [debug] [Thread-2 (]: SQL status: OK in 0.413 seconds
+[0m22:15:24.393347 [debug] [Thread-4 (]: SQL status: OK in 0.390 seconds
+[0m22:15:24.394347 [debug] [Thread-3 (]: SQL status: OK in 0.395 seconds
+[0m22:15:24.395346 [debug] [Thread-5 (]: SQL status: OK in 0.387 seconds
+[0m22:15:24.396346 [debug] [Thread-1 (]: SQL status: OK in 0.386 seconds
+[0m22:15:24.397348 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.customers"
+[0m22:15:24.398347 [debug] [Thread-7 (]: SQL status: OK in 0.384 seconds
+[0m22:15:24.399347 [debug] [Thread-8 (]: SQL status: OK in 0.384 seconds
+[0m22:15:24.399347 [debug] [Thread-6 (]: SQL status: OK in 0.387 seconds
+[0m22:15:24.400347 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.employees"
+[0m22:15:24.401348 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.employee_territories"
+[0m22:15:24.402349 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.order_details"
+[0m22:15:24.403347 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.categories"
+[0m22:15:24.404346 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.customers"} */
+
+    create table prod.raw.customers (customerID text,companyName text,contactName text,contactTitle text,address text,city text,region text,postalCode text,country text,phone text,fax text)
+  
+[0m22:15:24.405346 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.products"
+[0m22:15:24.406346 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m22:15:24.407348 [debug] [Thread-6 (]: Using duckdb connection "seed.ci_cd_project.orders"
+[0m22:15:24.408347 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.employees"} */
+
+    create table prod.raw.employees (employeeID integer,lastName text,firstName text,title text,titleOfCourtesy text,birthDate text,hireDate text,address text,city text,region text,postalCode text,country text,homePhone text,extension integer,photo text,notes text,reportsTo integer,photoPath text)
+  
+[0m22:15:24.409346 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.employee_territories"} */
+
+    create table prod.raw.employee_territories (employeeID integer,territoryID integer)
+  
+[0m22:15:24.410346 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.order_details"} */
+
+    create table prod.raw.order_details (orderID integer,productID integer,unitPrice float8,quantity integer,discount float8)
+  
+[0m22:15:24.411346 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.categories"} */
+
+    create table prod.raw.categories (categoryID integer,categoryName text,description text,picture text)
+  
+[0m22:15:24.413346 [debug] [Thread-7 (]: On seed.ci_cd_project.products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.products"} */
+
+    create table prod.raw.products (productID integer,productName text,supplierID integer,categoryID integer,quantityPerUnit text,unitPrice float8,unitsInStock integer,unitsOnOrder integer,reorderLevel integer,discontinued integer)
+  
+[0m22:15:24.414348 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.raw_customers"} */
+
+    create table prod.raw.raw_customers (customer_id integer,first_name text,last_name text,email text,phone text,address text,city text,state text,zip_code integer,country text,created_at date,updated_at date)
+  
+[0m22:15:24.416349 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.orders"} */
+
+    create table prod.raw.orders (orderID integer,customerID text,employeeID integer,orderDate text,requiredDate text,shippedDate text,shipVia integer,freight float8,shipName text,shipAddress text,shipCity text,shipRegion text,shipPostalCode text,shipCountry text)
+  
+[0m22:15:24.417348 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:15:24.420348 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m22:15:24.421347 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.422348 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.423349 [debug] [Thread-5 (]: SQL status: OK in 0.004 seconds
+[0m22:15:24.423349 [debug] [Thread-7 (]: SQL status: OK in 0.004 seconds
+[0m22:15:24.455347 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.customers"
+[0m22:15:24.456347 [debug] [Thread-8 (]: SQL status: OK in 0.033 seconds
+[0m22:15:24.459347 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.employee_territories"
+[0m22:15:24.460346 [debug] [Thread-6 (]: SQL status: OK in 0.035 seconds
+[0m22:15:24.463347 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.employees"
+[0m22:15:24.466349 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.categories"
+[0m22:15:24.469348 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.order_details"
+[0m22:15:24.471350 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.products"
+[0m22:15:24.472348 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: 
+          COPY prod.raw.customers FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.475347 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m22:15:24.476349 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: 
+          COPY prod.raw.employee_territories FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\employee_territories.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.479348 [debug] [Thread-6 (]: Using duckdb connection "seed.ci_cd_project.orders"
+[0m22:15:24.480348 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: 
+          COPY prod.raw.employees FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\employees.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.481348 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: 
+          COPY prod.raw.categories FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\categories.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.482348 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: 
+          COPY prod.raw.order_details FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\order_details.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.483348 [debug] [Thread-7 (]: On seed.ci_cd_project.products: 
+          COPY prod.raw.products FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.484350 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: 
+          COPY prod.raw.raw_customers FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.486351 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: 
+          COPY prod.raw.orders FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.506347 [debug] [Thread-3 (]: SQL status: OK in 0.020 seconds
+[0m22:15:24.521348 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.ci_cd_project.employee_territories"
+[0m22:15:24.525349 [debug] [Thread-7 (]: SQL status: OK in 0.037 seconds
+[0m22:15:24.526902 [debug] [Thread-5 (]: SQL status: OK in 0.039 seconds
+[0m22:15:24.527900 [debug] [Thread-4 (]: SQL status: OK in 0.041 seconds
+[0m22:15:24.528900 [debug] [Thread-7 (]: Writing runtime SQL for node "seed.ci_cd_project.products"
+[0m22:15:24.529900 [debug] [Thread-2 (]: SQL status: OK in 0.046 seconds
+[0m22:15:24.531900 [debug] [Thread-5 (]: Writing runtime SQL for node "seed.ci_cd_project.order_details"
+[0m22:15:24.534901 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.ci_cd_project.employees"
+[0m22:15:24.535901 [debug] [Thread-8 (]: SQL status: OK in 0.047 seconds
+[0m22:15:24.536900 [debug] [Thread-1 (]: SQL status: OK in 0.049 seconds
+[0m22:15:24.584900 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: COMMIT
+[0m22:15:24.585899 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.ci_cd_project.customers"
+[0m22:15:24.587903 [debug] [Thread-8 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_customers"
+[0m22:15:24.591900 [debug] [Thread-7 (]: On seed.ci_cd_project.products: COMMIT
+[0m22:15:24.593907 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.ci_cd_project.categories"
+[0m22:15:24.594900 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.employee_territories"
+[0m22:15:24.595900 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.products"
+[0m22:15:24.599901 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: COMMIT
+[0m22:15:24.603899 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: COMMIT
+[0m22:15:24.604904 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: COMMIT
+[0m22:15:24.605901 [debug] [Thread-7 (]: On seed.ci_cd_project.products: COMMIT
+[0m22:15:24.609899 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: COMMIT
+[0m22:15:24.610899 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.order_details"
+[0m22:15:24.613902 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: COMMIT
+[0m22:15:24.614900 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.employees"
+[0m22:15:24.618901 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: COMMIT
+[0m22:15:24.619900 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.customers"
+[0m22:15:24.621901 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: COMMIT
+[0m22:15:24.622900 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.raw_customers"
+[0m22:15:24.623900 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: COMMIT
+[0m22:15:24.624901 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m22:15:24.625900 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.categories"
+[0m22:15:24.627900 [debug] [Thread-7 (]: SQL status: OK in 0.008 seconds
+[0m22:15:24.628901 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: COMMIT
+[0m22:15:24.629902 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: COMMIT
+[0m22:15:24.636904 [debug] [Thread-3 (]: On seed.ci_cd_project.employee_territories: Close
+[0m22:15:24.637900 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m22:15:24.638901 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: COMMIT
+[0m22:15:24.639901 [debug] [Thread-5 (]: SQL status: OK in 0.010 seconds
+[0m22:15:24.641900 [debug] [Thread-7 (]: On seed.ci_cd_project.products: Close
+[0m22:15:24.646902 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA96E7D4C0>]}
+[0m22:15:24.648902 [debug] [Thread-4 (]: On seed.ci_cd_project.employees: Close
+[0m22:15:24.649901 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m22:15:24.650902 [debug] [Thread-8 (]: SQL status: OK in 0.008 seconds
+[0m22:15:24.653902 [debug] [Thread-5 (]: On seed.ci_cd_project.order_details: Close
+[0m22:15:24.654902 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.656899 [debug] [Thread-7 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E213AD0>]}
+[0m22:15:24.655899 [info ] [Thread-3 (]: 3 of 15 OK loaded seed file raw.employee_territories ........................... [[32mINSERT 49[0m in 1.14s]
+[0m22:15:24.658898 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E25F410>]}
+[0m22:15:24.659911 [debug] [Thread-2 (]: On seed.ci_cd_project.customers: Close
+[0m22:15:24.661899 [debug] [Thread-8 (]: On seed.ci_cd_project.raw_customers: Close
+[0m22:15:24.663900 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9BEF7D40>]}
+[0m22:15:24.664898 [debug] [Thread-1 (]: On seed.ci_cd_project.categories: Close
+[0m22:15:24.667900 [debug] [Thread-3 (]: Finished running node seed.ci_cd_project.employee_territories
+[0m22:15:24.665899 [info ] [Thread-7 (]: 7 of 15 OK loaded seed file raw.products ....................................... [[32mINSERT 77[0m in 1.13s]
+[0m22:15:24.670902 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C49A5D0>]}
+[0m22:15:24.668900 [info ] [Thread-4 (]: 4 of 15 OK loaded seed file raw.employees ...................................... [[32mINSERT 8[0m in 1.15s]
+[0m22:15:24.672902 [debug] [Thread-8 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C4A9BE0>]}
+[0m22:15:24.677901 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9BF7F020>]}
+[0m22:15:24.678901 [debug] [Thread-3 (]: Began running node seed.ci_cd_project.raw_order_items
+[0m22:15:24.673900 [info ] [Thread-5 (]: 5 of 15 OK loaded seed file raw.order_details .................................. [[32mINSERT 2155[0m in 1.15s]
+[0m22:15:24.680900 [debug] [Thread-7 (]: Finished running node seed.ci_cd_project.products
+[0m22:15:24.683900 [debug] [Thread-4 (]: Finished running node seed.ci_cd_project.employees
+[0m22:15:24.681899 [info ] [Thread-2 (]: 2 of 15 OK loaded seed file raw.customers ...................................... [[32mINSERT 91[0m in 1.16s]
+[0m22:15:24.684901 [info ] [Thread-8 (]: 8 of 15 OK loaded seed file raw.raw_customers .................................. [[32mINSERT 10[0m in 1.14s]
+[0m22:15:24.689900 [debug] [Thread-5 (]: Finished running node seed.ci_cd_project.order_details
+[0m22:15:24.690900 [debug] [Thread-7 (]: Began running node seed.ci_cd_project.raw_orders
+[0m22:15:24.691900 [debug] [Thread-4 (]: Began running node seed.ci_cd_project.raw_products
+[0m22:15:24.685902 [info ] [Thread-1 (]: 1 of 15 OK loaded seed file raw.categories ..................................... [[32mINSERT 8[0m in 1.17s]
+[0m22:15:24.693900 [debug] [Thread-2 (]: Finished running node seed.ci_cd_project.customers
+[0m22:15:24.694900 [debug] [Thread-8 (]: Finished running node seed.ci_cd_project.raw_customers
+[0m22:15:24.687901 [info ] [Thread-3 (]: 9 of 15 START seed file raw.raw_order_items .................................... [RUN]
+[0m22:15:24.696900 [debug] [Thread-5 (]: Began running node seed.ci_cd_project.regions
+[0m22:15:24.700901 [debug] [Thread-1 (]: Finished running node seed.ci_cd_project.categories
+[0m22:15:24.702901 [debug] [Thread-2 (]: Began running node seed.ci_cd_project.shippers
+[0m22:15:24.697900 [info ] [Thread-7 (]: 10 of 15 START seed file raw.raw_orders ........................................ [RUN]
+[0m22:15:24.704904 [debug] [Thread-8 (]: Began running node seed.ci_cd_project.suppliers
+[0m22:15:24.706901 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.employee_territories, now seed.ci_cd_project.raw_order_items)
+[0m22:15:24.698900 [info ] [Thread-4 (]: 11 of 15 START seed file raw.raw_products ...................................... [RUN]
+[0m22:15:24.708901 [debug] [Thread-1 (]: Began running node seed.ci_cd_project.territories
+[0m22:15:24.707905 [info ] [Thread-5 (]: 12 of 15 START seed file raw.regions ........................................... [RUN]
+[0m22:15:24.711900 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.products, now seed.ci_cd_project.raw_orders)
+[0m22:15:24.710901 [info ] [Thread-2 (]: 13 of 15 START seed file raw.shippers .......................................... [RUN]
+[0m22:15:24.713901 [debug] [Thread-3 (]: Began compiling node seed.ci_cd_project.raw_order_items
+[0m22:15:24.712900 [info ] [Thread-8 (]: 14 of 15 START seed file raw.suppliers ......................................... [RUN]
+[0m22:15:24.714900 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.employees, now seed.ci_cd_project.raw_products)
+[0m22:15:24.717901 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.order_details, now seed.ci_cd_project.regions)
+[0m22:15:24.719906 [debug] [Thread-7 (]: Began compiling node seed.ci_cd_project.raw_orders
+[0m22:15:24.720905 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.customers, now seed.ci_cd_project.shippers)
+[0m22:15:24.722903 [debug] [Thread-3 (]: Began executing node seed.ci_cd_project.raw_order_items
+[0m22:15:24.723906 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.raw_customers, now seed.ci_cd_project.suppliers)
+[0m22:15:24.716900 [info ] [Thread-1 (]: 15 of 15 START seed file raw.territories ....................................... [RUN]
+[0m22:15:24.725902 [debug] [Thread-4 (]: Began compiling node seed.ci_cd_project.raw_products
+[0m22:15:24.726902 [debug] [Thread-5 (]: Began compiling node seed.ci_cd_project.regions
+[0m22:15:24.727901 [debug] [Thread-7 (]: Began executing node seed.ci_cd_project.raw_orders
+[0m22:15:24.728900 [debug] [Thread-2 (]: Began compiling node seed.ci_cd_project.shippers
+[0m22:15:24.736909 [debug] [Thread-8 (]: Began compiling node seed.ci_cd_project.suppliers
+[0m22:15:24.739900 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.ci_cd_project.categories, now seed.ci_cd_project.territories)
+[0m22:15:24.741902 [debug] [Thread-4 (]: Began executing node seed.ci_cd_project.raw_products
+[0m22:15:24.742901 [debug] [Thread-5 (]: Began executing node seed.ci_cd_project.regions
+[0m22:15:24.751901 [debug] [Thread-2 (]: Began executing node seed.ci_cd_project.shippers
+[0m22:15:24.758902 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m22:15:24.759901 [debug] [Thread-8 (]: Began executing node seed.ci_cd_project.suppliers
+[0m22:15:24.766900 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m22:15:24.767372 [debug] [Thread-1 (]: Began compiling node seed.ci_cd_project.territories
+[0m22:15:24.792892 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: BEGIN
+[0m22:15:24.804893 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: BEGIN
+[0m22:15:24.809894 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.regions"
+[0m22:15:24.812893 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m22:15:24.813896 [debug] [Thread-1 (]: Began executing node seed.ci_cd_project.territories
+[0m22:15:24.816893 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.shippers"
+[0m22:15:24.817893 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:15:24.820895 [debug] [Thread-7 (]: Opening a new connection, currently in state closed
+[0m22:15:24.822892 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.suppliers"
+[0m22:15:24.823892 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: BEGIN
+[0m22:15:24.824893 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: BEGIN
+[0m22:15:24.833892 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: BEGIN
+[0m22:15:24.837892 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: BEGIN
+[0m22:15:24.838894 [debug] [Thread-3 (]: SQL status: OK in 0.021 seconds
+[0m22:15:24.839894 [debug] [Thread-5 (]: Opening a new connection, currently in state closed
+[0m22:15:24.840892 [debug] [Thread-7 (]: SQL status: OK in 0.020 seconds
+[0m22:15:24.841891 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m22:15:24.842892 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:15:24.844892 [debug] [Thread-8 (]: Opening a new connection, currently in state closed
+[0m22:15:24.847893 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.territories"
+[0m22:15:24.848892 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m22:15:24.849893 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m22:15:24.851892 [debug] [Thread-5 (]: SQL status: OK in 0.012 seconds
+[0m22:15:24.852895 [debug] [Thread-4 (]: SQL status: OK in 0.012 seconds
+[0m22:15:24.854894 [debug] [Thread-2 (]: SQL status: OK in 0.012 seconds
+[0m22:15:24.855893 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: BEGIN
+[0m22:15:24.856892 [debug] [Thread-8 (]: SQL status: OK in 0.011 seconds
+[0m22:15:24.857894 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.raw_order_items"} */
+
+    create table prod.raw.raw_order_items (order_item_id integer,order_id integer,product_id integer,quantity integer,unit_price float8,total_price float8,discount_amount integer,created_at date)
+  
+[0m22:15:24.858895 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.raw_orders"} */
+
+    create table prod.raw.raw_orders (order_id integer,customer_id integer,order_date date,status text,total_amount float8,shipping_address text,billing_address text,payment_method text,created_at date,updated_at date)
+  
+[0m22:15:24.859893 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.regions"
+[0m22:15:24.860894 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m22:15:24.861895 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.shippers"
+[0m22:15:24.862903 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:15:24.863894 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.suppliers"
+[0m22:15:24.865892 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.regions"} */
+
+    create table prod.raw.regions (regionID integer,regionDescription text)
+  
+[0m22:15:24.867894 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.raw_products"} */
+
+    create table prod.raw.raw_products (product_id integer,product_name text,category text,subcategory text,brand text,price float8,cost integer,description text,is_active boolean,created_at date,updated_at date)
+  
+[0m22:15:24.868895 [debug] [Thread-7 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.869895 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m22:15:24.869895 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.shippers"} */
+
+    create table prod.raw.shippers (shipperID integer,companyName text,phone text)
+  
+[0m22:15:24.871894 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.suppliers"} */
+
+    create table prod.raw.suppliers (supplierID integer,companyName text,contactName text,contactTitle text,address text,city text,region text,postalCode text,country text,phone text,fax text,homePage text)
+  
+[0m22:15:24.872897 [debug] [Thread-1 (]: SQL status: OK in 0.010 seconds
+[0m22:15:24.876892 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m22:15:24.877892 [debug] [Thread-5 (]: SQL status: OK in 0.005 seconds
+[0m22:15:24.880893 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m22:15:24.880893 [debug] [Thread-4 (]: SQL status: OK in 0.008 seconds
+[0m22:15:24.884893 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.territories"
+[0m22:15:24.885897 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.886894 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: 
+          COPY prod.raw.raw_orders FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.887892 [debug] [Thread-8 (]: SQL status: OK in 0.004 seconds
+[0m22:15:24.890893 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.regions"
+[0m22:15:24.891892 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: 
+          COPY prod.raw.raw_order_items FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_order_items.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.894896 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m22:15:24.895894 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "workshop_duckdb", "target_name": "prod", "node_id": "seed.ci_cd_project.territories"} */
+
+    create table prod.raw.territories (territoryID integer,territoryDescription text,regionID integer)
+  
+[0m22:15:24.898891 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.shippers"
+[0m22:15:24.902894 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.suppliers"
+[0m22:15:24.903903 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: 
+          COPY prod.raw.regions FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\regions.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.905893 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: 
+          COPY prod.raw.raw_products FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.906893 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: 
+          COPY prod.raw.shippers FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\shippers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.907893 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: 
+          COPY prod.raw.suppliers FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\suppliers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.908913 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.914894 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.territories"
+[0m22:15:24.916898 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: 
+          COPY prod.raw.territories FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\territories.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:15:24.920894 [debug] [Thread-7 (]: SQL status: OK in 0.020 seconds
+[0m22:15:24.921894 [debug] [Thread-7 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_orders"
+[0m22:15:24.923892 [debug] [Thread-2 (]: SQL status: OK in 0.013 seconds
+[0m22:15:24.924892 [debug] [Thread-3 (]: SQL status: OK in 0.019 seconds
+[0m22:15:24.925892 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.ci_cd_project.shippers"
+[0m22:15:24.926892 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_order_items"
+[0m22:15:24.934893 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: COMMIT
+[0m22:15:24.937891 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: COMMIT
+[0m22:15:24.938892 [debug] [Thread-3 (]: Using duckdb connection "seed.ci_cd_project.raw_order_items"
+[0m22:15:24.939891 [debug] [Thread-7 (]: Using duckdb connection "seed.ci_cd_project.raw_orders"
+[0m22:15:24.940893 [debug] [Thread-1 (]: SQL status: OK in 0.023 seconds
+[0m22:15:24.941892 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: COMMIT
+[0m22:15:24.942891 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: COMMIT
+[0m22:15:24.946892 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: COMMIT
+[0m22:15:24.947891 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.ci_cd_project.territories"
+[0m22:15:24.948892 [debug] [Thread-5 (]: SQL status: OK in 0.039 seconds
+[0m22:15:24.950892 [debug] [Thread-4 (]: SQL status: OK in 0.040 seconds
+[0m22:15:24.951898 [debug] [Thread-2 (]: Using duckdb connection "seed.ci_cd_project.shippers"
+[0m22:15:24.952895 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m22:15:24.953894 [debug] [Thread-7 (]: SQL status: OK in 0.004 seconds
+[0m22:15:24.955892 [debug] [Thread-5 (]: Writing runtime SQL for node "seed.ci_cd_project.regions"
+[0m22:15:24.975894 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: COMMIT
+[0m22:15:24.957897 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.ci_cd_project.raw_products"
+[0m22:15:24.959893 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: COMMIT
+[0m22:15:24.961892 [debug] [Thread-3 (]: On seed.ci_cd_project.raw_order_items: Close
+[0m22:15:24.963894 [debug] [Thread-7 (]: On seed.ci_cd_project.raw_orders: Close
+[0m22:15:24.967893 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: COMMIT
+[0m22:15:24.976893 [debug] [Thread-5 (]: Using duckdb connection "seed.ci_cd_project.regions"
+[0m22:15:24.958894 [debug] [Thread-8 (]: SQL status: OK in 0.048 seconds
+[0m22:15:24.982893 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C4ADDF0>]}
+[0m22:15:24.984894 [debug] [Thread-7 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E506600>]}
+[0m22:15:24.985892 [debug] [Thread-6 (]: SQL status: OK in 0.496 seconds
+[0m22:15:24.986892 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:15:24.987891 [debug] [Thread-1 (]: Using duckdb connection "seed.ci_cd_project.territories"
+[0m22:15:24.988894 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: COMMIT
+[0m22:15:24.990891 [debug] [Thread-8 (]: Writing runtime SQL for node "seed.ci_cd_project.suppliers"
+[0m22:15:24.993892 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: COMMIT
+[0m22:15:24.997891 [debug] [Thread-6 (]: Writing runtime SQL for node "seed.ci_cd_project.orders"
+[0m22:15:24.999892 [debug] [Thread-2 (]: On seed.ci_cd_project.shippers: Close
+[0m22:15:25.000899 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: COMMIT
+[0m22:15:25.002893 [debug] [Thread-4 (]: Using duckdb connection "seed.ci_cd_project.raw_products"
+[0m22:15:25.003892 [debug] [Thread-5 (]: SQL status: OK in 0.002 seconds
+[0m22:15:25.004893 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9B75D280>]}
+[0m22:15:25.006892 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: COMMIT
+[0m22:15:25.008896 [debug] [Thread-5 (]: On seed.ci_cd_project.regions: Close
+[0m22:15:25.013893 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: COMMIT
+[0m22:15:25.016893 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: COMMIT
+[0m22:15:24.994892 [info ] [Thread-3 (]: 9 of 15 OK loaded seed file raw.raw_order_items ................................ [[32mINSERT 14[0m in 0.28s]
+[0m22:15:25.017893 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m22:15:25.019895 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E54C080>]}
+[0m22:15:25.020895 [debug] [Thread-6 (]: Using duckdb connection "seed.ci_cd_project.orders"
+[0m22:15:25.021893 [debug] [Thread-8 (]: Using duckdb connection "seed.ci_cd_project.suppliers"
+[0m22:15:25.022894 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m22:15:25.023892 [debug] [Thread-3 (]: Finished running node seed.ci_cd_project.raw_order_items
+[0m22:15:25.025894 [debug] [Thread-1 (]: On seed.ci_cd_project.territories: Close
+[0m22:15:24.996891 [info ] [Thread-7 (]: 10 of 15 OK loaded seed file raw.raw_orders .................................... [[32mINSERT 10[0m in 0.27s]
+[0m22:15:25.028894 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: COMMIT
+[0m22:15:25.029895 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: COMMIT
+[0m22:15:25.031893 [debug] [Thread-4 (]: On seed.ci_cd_project.raw_products: Close
+[0m22:15:25.009892 [info ] [Thread-2 (]: 13 of 15 OK loaded seed file raw.shippers ...................................... [[32mINSERT 3[0m in 0.28s]
+[0m22:15:25.033893 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E507DA0>]}
+[0m22:15:25.035893 [debug] [Thread-7 (]: Finished running node seed.ci_cd_project.raw_orders
+[0m22:15:25.036893 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E529280>]}
+[0m22:15:25.038893 [debug] [Thread-2 (]: Finished running node seed.ci_cd_project.shippers
+[0m22:15:25.039893 [debug] [Thread-6 (]: SQL status: OK in 0.003 seconds
+[0m22:15:25.041895 [debug] [Thread-8 (]: SQL status: OK in 0.005 seconds
+[0m22:15:25.046898 [debug] [Thread-6 (]: On seed.ci_cd_project.orders: Close
+[0m22:15:25.027894 [info ] [Thread-5 (]: 12 of 15 OK loaded seed file raw.regions ....................................... [[32mINSERT 4[0m in 0.30s]
+[0m22:15:25.048894 [debug] [Thread-8 (]: On seed.ci_cd_project.suppliers: Close
+[0m22:15:25.050893 [debug] [Thread-6 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9E351340>]}
+[0m22:15:25.051893 [debug] [Thread-5 (]: Finished running node seed.ci_cd_project.regions
+[0m22:15:25.040893 [info ] [Thread-1 (]: 15 of 15 OK loaded seed file raw.territories ................................... [[32mINSERT 53[0m in 0.29s]
+[0m22:15:25.055898 [debug] [Thread-1 (]: Finished running node seed.ci_cd_project.territories
+[0m22:15:25.043895 [info ] [Thread-4 (]: 11 of 15 OK loaded seed file raw.raw_products .................................. [[32mINSERT 10[0m in 0.32s]
+[0m22:15:25.058897 [debug] [Thread-4 (]: Finished running node seed.ci_cd_project.raw_products
+[0m22:15:25.053893 [info ] [Thread-6 (]: 6 of 15 OK loaded seed file raw.orders ......................................... [[32mINSERT 830[0m in 1.53s]
+[0m22:15:25.060894 [debug] [Thread-6 (]: Finished running node seed.ci_cd_project.orders
+[0m22:15:25.361894 [debug] [Thread-8 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cd0724f9-1e9c-4904-9af2-c61d3c1ffa2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C332FF0>]}
+[0m22:15:25.363895 [info ] [Thread-8 (]: 14 of 15 OK loaded seed file raw.suppliers ..................................... [[32mINSERT 29[0m in 0.64s]
+[0m22:15:25.365895 [debug] [Thread-8 (]: Finished running node seed.ci_cd_project.suppliers
+[0m22:15:25.369894 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:15:25.370896 [debug] [MainThread]: On master: BEGIN
+[0m22:15:25.371895 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:15:26.023894 [debug] [MainThread]: SQL status: OK in 0.652 seconds
+[0m22:15:26.024894 [debug] [MainThread]: On master: COMMIT
+[0m22:15:26.025894 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:15:26.026894 [debug] [MainThread]: On master: COMMIT
+[0m22:15:26.029894 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:15:26.030894 [debug] [MainThread]: On master: Close
+[0m22:15:26.039893 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:15:26.040896 [debug] [MainThread]: Connection 'create_prod_raw' was properly closed.
+[0m22:15:26.041894 [debug] [MainThread]: Connection 'list_prod_raw' was properly closed.
+[0m22:15:26.042894 [debug] [MainThread]: Connection 'list_prod_analytics' was properly closed.
+[0m22:15:26.043894 [debug] [MainThread]: Connection 'seed.ci_cd_project.territories' was properly closed.
+[0m22:15:26.043894 [debug] [MainThread]: Connection 'seed.ci_cd_project.shippers' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.raw_order_items' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.raw_products' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.regions' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.orders' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.raw_orders' was properly closed.
+[0m22:15:26.044957 [debug] [MainThread]: Connection 'seed.ci_cd_project.suppliers' was properly closed.
+[0m22:15:26.050109 [info ] [MainThread]: 
+[0m22:15:26.060212 [info ] [MainThread]: Finished running 15 seeds in 0 hours 0 minutes and 12.71 seconds (12.71s).
+[0m22:15:26.137308 [debug] [MainThread]: Command end result
+[0m22:15:26.459022 [info ] [MainThread]: 
+[0m22:15:26.472133 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:15:26.481644 [info ] [MainThread]: 
+[0m22:15:26.488643 [info ] [MainThread]: Done. PASS=15 WARN=0 ERROR=0 SKIP=0 TOTAL=15
+[0m22:15:26.493641 [debug] [MainThread]: Command `dbt seed` succeeded at 22:15:26.493641 after 27.63 seconds
+[0m22:15:26.494641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9C462A20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9B7A9C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CA9B7AE810>]}
+[0m22:15:26.495640 [debug] [MainThread]: Flushing usage events
+[0m22:15:26.533697 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m22:16:59.112918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC9298D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC92989B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC9298B30>]}
+
+
+============================== 22:16:59.123917 | 9754cb23-f930-4e2f-a77d-69dc8d859c1f ==============================
+[0m22:16:59.123917 [info ] [MainThread]: Running with dbt=1.8.9
+[0m22:16:59.125917 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run-operation drop_pr_dbs', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:16:59.841792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC59858E0>]}
+[0m22:17:00.002792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC785ED50>]}
+[0m22:17:00.009793 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m22:17:01.182634 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m22:17:01.488869 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m22:17:01.491869 [debug] [MainThread]: previous checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, current checksum: 615e2d2cb3f98118511aae44913b8ec8777c6094d89fb36e10217eda1f944ce4
+[0m22:17:01.492871 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m22:17:01.495871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC85BBF20>]}
+[0m22:17:09.482923 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m22:17:09.542714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022ECA73E360>]}
+[0m22:17:10.652609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_direct_join_to_source_.2ec67ec028' (models\marts\dag\dag.yml) depends on a node named 'fct_direct_join_to_source' which is disabled
+[0m22:17:10.654609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_duplicate_sources_.642214de31' (models\marts\dag\dag.yml) depends on a node named 'fct_duplicate_sources' which is disabled
+[0m22:17:10.654609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_marts_or_intermediate_dependent_on_source_.c0abd5f00f' (models\marts\dag\dag.yml) depends on a node named 'fct_marts_or_intermediate_dependent_on_source' which is disabled
+[0m22:17:10.655609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_fanout_.a3ef403a95' (models\marts\dag\dag.yml) depends on a node named 'fct_model_fanout' which is disabled
+[0m22:17:10.656608 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_multiple_sources_joined_.494f431817' (models\marts\dag\dag.yml) depends on a node named 'fct_multiple_sources_joined' which is disabled
+[0m22:17:10.656608 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_rejoining_of_upstream_concepts_.c6b3625c7d' (models\marts\dag\dag.yml) depends on a node named 'fct_rejoining_of_upstream_concepts' which is disabled
+[0m22:17:10.657608 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_root_models_.ccb5a490f1' (models\marts\dag\dag.yml) depends on a node named 'fct_root_models' which is disabled
+[0m22:17:10.658607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_fanout_.45762bb722' (models\marts\dag\dag.yml) depends on a node named 'fct_source_fanout' which is disabled
+[0m22:17:10.659607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_marts_or_intermediate_.3aa45af51f' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_marts_or_intermediate' which is disabled
+[0m22:17:10.660609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_staging_.bea47be3ca' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_staging' which is disabled
+[0m22:17:10.661611 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_unused_sources_.41456b9da8' (models\marts\dag\dag.yml) depends on a node named 'fct_unused_sources' which is disabled
+[0m22:17:10.662609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposure_parents_materializations_.5a21592422' (models\marts\dag\dag.yml) depends on a node named 'fct_exposure_parents_materializations' which is disabled
+[0m22:17:10.662609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_hard_coded_references_.9f62f70113' (models\marts\dag\dag.yml) depends on a node named 'fct_hard_coded_references' which is disabled
+[0m22:17:10.663609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_too_many_joins_.0cb37fa535' (models\marts\dag\dag.yml) depends on a node named 'fct_too_many_joins' which is disabled
+[0m22:17:10.664609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_documentation_coverage.67ef7314a7' (models\marts\documentation\documentation.yml) depends on a node named 'fct_documentation_coverage' which is disabled
+[0m22:17:10.664609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_models_.7c2f43109c' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_models' which is disabled
+[0m22:17:10.665609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_source_tables_.1c89ecc166' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_source_tables' which is disabled
+[0m22:17:10.666608 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_sources_.0409327235' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_sources' which is disabled
+[0m22:17:10.667609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_public_models_without_contract_.bcf47f1cb0' (models\marts\governance\governance.yml) depends on a node named 'fct_public_models_without_contract' which is disabled
+[0m22:17:10.667609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_public_models_.56938f1938' (models\marts\governance\governance.yml) depends on a node named 'fct_undocumented_public_models' which is disabled
+[0m22:17:10.668607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposures_dependent_on_private_models_.f12ef3521e' (models\marts\governance\governance.yml) depends on a node named 'fct_exposures_dependent_on_private_models' which is disabled
+[0m22:17:10.669607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_chained_views_dependencies_.d5cb95fb33' (models\marts\performance\performance.yml) depends on a node named 'fct_chained_views_dependencies' which is disabled
+[0m22:17:10.670607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_directories_.50098500db' (models\marts\structure\structure.yml) depends on a node named 'fct_model_directories' which is disabled
+[0m22:17:10.671609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_naming_conventions_.a79bc0fbe2' (models\marts\structure\structure.yml) depends on a node named 'fct_model_naming_conventions' which is disabled
+[0m22:17:10.671609 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_directories_.3ec42bc19c' (models\marts\structure\structure.yml) depends on a node named 'fct_source_directories' which is disabled
+[0m22:17:10.672607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_test_directories_.1c1db93433' (models\marts\structure\structure.yml) depends on a node named 'fct_test_directories' which is disabled
+[0m22:17:10.673607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_test_coverage.df03f31e09' (models\marts\tests\testing.yml) depends on a node named 'fct_test_coverage' which is disabled
+[0m22:17:10.673607 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_missing_primary_key_tests_.4d10d48da0' (models\marts\tests\testing.yml) depends on a node named 'fct_missing_primary_key_tests' which is disabled
+[0m22:17:10.922128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022ECA671CD0>]}
+[0m22:17:11.498128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022ECAEF33E0>]}
+[0m22:17:11.500128 [info ] [MainThread]: Found 8 models, 15 seeds, 41 data tests, 880 macros
+[0m22:17:11.502128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9754cb23-f930-4e2f-a77d-69dc8d859c1f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC5DF8DA0>]}
+[0m22:17:11.503129 [debug] [MainThread]: Acquiring new duckdb connection 'macro_drop_pr_dbs'
+[0m22:17:11.504129 [debug] [MainThread]: Using duckdb connection "macro_drop_pr_dbs"
+[0m22:17:11.505129 [debug] [MainThread]: On macro_drop_pr_dbs: BEGIN
+[0m22:17:11.506128 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:17:12.029601 [debug] [MainThread]: SQL status: OK in 0.524 seconds
+[0m22:17:12.030600 [debug] [MainThread]: On macro_drop_pr_dbs: COMMIT
+[0m22:17:12.031600 [debug] [MainThread]: Using duckdb connection "macro_drop_pr_dbs"
+[0m22:17:12.032598 [debug] [MainThread]: On macro_drop_pr_dbs: COMMIT
+[0m22:17:12.034600 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:17:12.034600 [debug] [MainThread]: On macro_drop_pr_dbs: Close
+[0m22:17:12.045600 [error] [MainThread]: Encountered an error while running operation: Runtime Error
+  dbt could not find a macro with the name "drop_pr_dbs" in any package
+[0m22:17:12.054600 [debug] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\preben.geier\Documents\dbt-workshop\.venv\Lib\site-packages\dbt\task\run_operation.py", line 62, in run
+    self._run_unsafe(package_name, macro_name)
+  File "C:\Users\preben.geier\Documents\dbt-workshop\.venv\Lib\site-packages\dbt\task\run_operation.py", line 47, in _run_unsafe
+    res = adapter.execute_macro(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\preben.geier\Documents\dbt-workshop\.venv\Lib\site-packages\dbt\adapters\base\impl.py", line 1271, in execute_macro
+    raise DbtRuntimeError(
+dbt_common.exceptions.base.DbtRuntimeError: Runtime Error
+  dbt could not find a macro with the name "drop_pr_dbs" in any package
+
+[0m22:17:12.055600 [error] [MainThread]: Encountered an error:
+Internal Error
+  dbt could not find a macro with the name 'drop_pr_dbs' in any package
+[0m22:17:12.062587 [debug] [MainThread]: Command `dbt run-operation` failed at 22:17:12.062045 after 13.31 seconds
+[0m22:17:12.063665 [debug] [MainThread]: Connection 'macro_drop_pr_dbs' was properly closed.
+[0m22:17:12.064748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022EC8FEA5A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022ECAEF3110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022ECAEF2690>]}
+[0m22:17:12.065819 [debug] [MainThread]: Flushing usage events
+[0m22:17:12.145041 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m22:17:22.815285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F56D4470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F56D5580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F56D5D90>]}
+
+
+============================== 22:17:22.826284 | 3b993470-0dea-4f8f-b762-7079cb663053 ==============================
+[0m22:17:22.826284 [info ] [MainThread]: Running with dbt=1.8.9
+[0m22:17:22.828285 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt build -s state:modified+ --defer --state ./', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:17:23.586723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3b993470-0dea-4f8f-b762-7079cb663053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F73ED820>]}
+[0m22:17:23.739724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3b993470-0dea-4f8f-b762-7079cb663053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F3985D00>]}
+[0m22:17:23.746724 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m22:17:24.839377 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m22:17:26.139198 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:17:26.140198 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:17:26.304199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3b993470-0dea-4f8f-b762-7079cb663053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F8228F80>]}
+[0m22:17:26.791000 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not read WritableManifest at "C:\Users\preben.geier\Documents\dbt-workshop\manifest.json" as JSON: Extra data: line 1 column 4 (char 3)
+[0m22:17:26.795000 [debug] [MainThread]: Command `dbt build` failed at 22:17:26.795000 after 4.31 seconds
+[0m22:17:26.796003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F710FE00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F86EF680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000193F71D9820>]}
+[0m22:17:26.799000 [debug] [MainThread]: Flushing usage events
+[0m22:17:26.836000 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.

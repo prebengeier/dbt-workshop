@@ -1,5 +1,6 @@
 dbt-core==1.8.*
 dbt-duckdb==1.8.*
+duckdb 
 sqlfluff==3.*
 sqlfluff-templater-dbt==3.*
 mcp-server-motherduck

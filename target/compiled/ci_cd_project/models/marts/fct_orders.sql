@@ -1,19 +1,19 @@
 
 
 with orders as (
-    select * from pr_999__local.analytics.stg_orders
+    select * from prod.analytics.stg_orders
 ),
 
 order_items as (
-    select * from pr_999__local.analytics.stg_order_items
+    select * from prod.analytics.stg_order_items
 ),
 
 products as (
-    select * from pr_999__local.analytics.stg_products
+    select * from prod.analytics.stg_products
 ),
 
 customers as (
-    select * from pr_999__local.analytics.stg_customers
+    select * from prod.analytics.stg_customers
 ),
 
 order_details as (
@@ -41,10 +41,10 @@ order_details as (
         c.state,
         c.country,
         oi.created_at
-    from order_items oi
-    inner join orders o on oi.order_id = o.order_id
-    inner join products p on oi.product_id = p.product_id
-    inner join customers c on o.customer_id = c.customer_id
+    from order_items as oi
+    inner join orders as o on oi.order_id = o.order_id
+    inner join products as p on oi.product_id = p.product_id
+    inner join customers as c on o.customer_id = c.customer_id
 )
 
 select * from order_details

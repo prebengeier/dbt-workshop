@@ -1,7 +1,7 @@
 
 
 with source as (
-    select * from pr_999__local.raw.raw_orders
+    select * from prod.raw.raw_orders
 ),
 
 staged as (

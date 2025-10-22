@@ -4,13 +4,13 @@
     
 
     create  table
-      pr_999__local.analytics.dim_customers__dbt_tmp
+      prod.analytics.dim_customers__dbt_tmp
   
     as (
       
 
 with customers as (
-    select * from pr_999__local.analytics.stg_customers
+    select * from prod.analytics.stg_customers
 ),
 
 customer_metrics as (
@@ -20,7 +20,7 @@ customer_metrics as (
         sum(total_amount) as total_spent,
         min(order_date) as first_order_date,
         max(order_date) as last_order_date
-    from pr_999__local.analytics.stg_orders
+    from prod.analytics.stg_orders
     group by customer_id
 )
 
@@ -47,8 +47,8 @@ select
         when cm.total_spent >= 100 then 'Regular'
         else 'New'
     end as customer_tier
-from customers c
-left join customer_metrics cm on c.customer_id = cm.customer_id
+from customers as c
+left join customer_metrics as cm on c.customer_id = cm.customer_id
     );
   
   

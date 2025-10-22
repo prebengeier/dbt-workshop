@@ -22,6 +22,8 @@ Installer følgende:
 - **DuckDB** (CLI valgfritt)
 - **git** og **GitHub**
 - **VS Code** (anbefalt)
+- **duckdb CLI (https://duckdb.org/install/?platform=windows&environment=cli)**
+
 
 Installer dbt med DuckDB-adapter:
 

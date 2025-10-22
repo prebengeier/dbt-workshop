@@ -16,7 +16,7 @@ with all_values as (
         customer_tier as value_field,
         count(*) as n_records
 
-    from pr_999__local.analytics.dim_customers
+    from prod.analytics.dim_customers
     group by customer_tier
 
 )

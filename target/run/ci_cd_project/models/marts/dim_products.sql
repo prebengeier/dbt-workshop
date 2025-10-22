@@ -4,13 +4,13 @@
     
 
     create  table
-      pr_999__local.analytics.dim_products__dbt_tmp
+      prod.analytics.dim_products__dbt_tmp
   
     as (
       
 
 with products as (
-    select * from pr_999__local.analytics.stg_products
+    select * from prod.analytics.stg_products
 ),
 
 product_metrics as (
@@ -20,7 +20,7 @@ product_metrics as (
         sum(quantity) as total_quantity_sold,
         sum(total_price) as total_revenue,
         avg(unit_price) as avg_selling_price
-    from pr_999__local.analytics.stg_order_items
+    from prod.analytics.stg_order_items
     group by product_id
 )
 
@@ -47,8 +47,8 @@ select
         when pm.total_revenue >= 1000 then 'Low Performance'
         else 'No Sales'
     end as performance_category
-from products p
-left join product_metrics pm on p.product_id = pm.product_id
+from products as p
+left join product_metrics as pm on p.product_id = pm.product_id
     );
   
   

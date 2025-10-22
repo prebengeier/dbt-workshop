@@ -1,9 +1,7 @@
 
     
     
-    
-    create table prod.raw.raw_products (product_id integer,product_name text,category text,subcategory text,brand text,price float8,cost integer,description text,is_active boolean,created_at date,updated_at date)
-  ;
+    truncate table "prod"."raw"."raw_products";
     -- dbt seed --
     
           COPY prod.raw.raw_products FROM 'C:\Users\preben.geier\Documents\dbt-workshop\seeds\raw_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')

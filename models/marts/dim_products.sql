@@ -31,16 +31,11 @@ select
     p.is_active,
     p.created_at,
     p.updated_at,
+
+    
     coalesce(pm.total_orders, 0) as total_orders,
     coalesce(pm.total_quantity_sold, 0) as total_quantity_sold,
     coalesce(pm.total_revenue, 0) as total_revenue,
-    coalesce(pm.avg_selling_price, 0) as avg_selling_price,
-    (p.price - p.cost) as profit_margin,
-    case
-        when pm.total_revenue >= 10000 then 'High Performance'
-        when pm.total_revenue >= 5000 then 'Medium Performance'
-        when pm.total_revenue >= 1000 then 'Low Performance'
-        else 'No Sales'
-    end as performance_category
+    coalesce(pm.avg_selling_price, 0) as avg_selling_price
 from products as p
 left join product_metrics as pm on p.product_id = pm.product_id

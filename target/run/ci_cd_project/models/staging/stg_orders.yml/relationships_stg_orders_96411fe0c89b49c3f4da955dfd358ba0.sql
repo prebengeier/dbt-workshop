@@ -12,13 +12,13 @@
 
 with child as (
     select customer_id as from_field
-    from pr_999__local.analytics.stg_orders
+    from prod.analytics.stg_orders
     where customer_id is not null
 ),
 
 parent as (
     select customer_id as to_field
-    from pr_999__local.analytics.stg_customers
+    from prod.analytics.stg_customers
 )
 
 select

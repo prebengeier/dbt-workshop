@@ -1,10 +1,10 @@
 
   
-  create view pr_999__local.analytics.stg_customers__dbt_tmp as (
+  create view prod.analytics.stg_customers__dbt_tmp as (
     
 
 with source as (
-    select * from pr_999__local.analytics_dev.raw_customers
+    select * from prod.raw.raw_customers
 ),
 
 staged as (

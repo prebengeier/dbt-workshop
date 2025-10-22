@@ -71,7 +71,6 @@ PY
       - name: Cleanup PR schemas in prod.duckdb
         shell: bash
         run: |
-          # Kjør makroen. Juster schema_prefix til ditt mønster.
           dbt run-operation drop_pr_schemas \
             --target prod \
             --args "{\"database\": \"warehouse/prod.duckdb\", \"schema_prefix\": \"analytics__pr\", \"pr_number\": \"${PR_NUM}\"}"

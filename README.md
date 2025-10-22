@@ -154,12 +154,16 @@ dbt build -s 'state:modified+' --defer --state ./
 
 Hvis ingen `manifest.json` finnes, kjøres full bygging.
 
+dbt build --target pr --vars "schema_id: 99"
+
+schema_id kan være navn på branchen  
+
 ---
 
 ## Lage en ny branch og deretter teste CI/CD 
 ```bash
-git checkout -b branch
-git push -u origin branch
-gh pr create --fill --base main --head branch
+git checkout -b test
+git push -u origin test
+gh pr create --fill --base main --head test
 ```
 

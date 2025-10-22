@@ -21,6 +21,7 @@ jobs:
 
       - name: Install dependencies (dbt + helpers)
         run: |
+          set -euo pipefail
           python -m pip install --upgrade pip
           pip install -r dbt-requirements.txt
           sudo apt-get update -y
@@ -59,21 +60,10 @@ jobs:
             fi
           fi
 
-          # If still missing, create an empty prod.duckdb
+          # If still missing, create an empty prod.duckdb without heredoc/Python
           if [[ ! -f warehouse/prod.duckdb ]]; then
             echo "No valid artifact found. Creating empty warehouse/prod.duckdb"
-            python - <<'PY'
-            import os
-            os.makedirs("warehouse", exist_ok=True)
-            try:
-                import duckdb
-                con = duckdb.connect("warehouse/prod.duckdb")
-                con.close()
-            except Exception:
-                # Fallback: create empty file if duckdb isn't installed
-                open("warehouse/prod.duckdb", "ab").close()
-            print("Empty prod.duckdb created")
-PY
+            : > warehouse/prod.duckdb
           fi
 
           ls -l warehouse || true

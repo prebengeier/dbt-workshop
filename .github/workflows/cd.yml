@@ -32,39 +32,30 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # Hent artifacts (100 siste)
           curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
             -o artifacts.json
 
-          # Finn nyeste IKKE-utløpte artifact med gitt navn
           prod_id=$(jq -r '.artifacts
             | map(select(.name=="duckdb-prod-db" and .expired==false))
             | sort_by(.updated_at) | last?.id // empty' artifacts.json)
 
           if [[ -n "${prod_id:-}" ]]; then
-            echo "✔ Fant artifact id=${prod_id} (duckdb-prod-db). Laster ned…"
+            echo "✔ Found duckdb-prod-db id=${prod_id}"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${prod_id}/zip" \
               -o prod.zip
             unzip -q prod.zip -d warehouse || true
-
-            # Flytt prod.duckdb til warehouse/ om den ligger dypt
             found=$(find warehouse -type f -name "prod.duckdb" | head -n1 || true)
             if [[ -n "${found:-}" && "${found}" != "warehouse/prod.duckdb" ]]; then
               mv "$found" warehouse/prod.duckdb
             fi
           fi
 
-          # Opprett tom DB hvis vi fortsatt ikke har filen
+          # Create empty DB if none
           if [[ ! -f warehouse/prod.duckdb ]]; then
-            echo "Ingen gyldig artifact funnet. Oppretter tom warehouse/prod.duckdb"
-            python - <<'PY'
-import os, duckdb
-os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
-print("Opprettet tom DuckDB: warehouse/prod.duckdb")
-PY
+            python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
+            echo "Created empty warehouse/prod.duckdb"
           fi
 
           ls -l warehouse
@@ -82,33 +73,28 @@ PY
             | sort_by(.updated_at) | last?.id // empty' artifacts.json)
 
           if [[ -n "${man_id:-}" ]]; then
-            echo "✔ Fant manifest artifact id=${man_id}. Laster ned…"
+            echo "✔ Found dbt-manifest id=${man_id}"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${man_id}/zip" \
               -o manifest.zip
             rm -rf state
             unzip -q manifest.zip -d state || true
-            if [[ -f state/manifest.json ]]; then
-              cp state/manifest.json ./manifest.json
-            fi
+            [[ -f state/manifest.json ]] && cp state/manifest.json ./manifest.json
           fi
 
-      - name: Deploy to production (Slim deploy if state present)
+      - name: Deploy to production (Slim if state present)
         shell: bash
         run: |
           set -euo pipefail
           if [[ -f "./manifest.json" ]]; then
-            echo "Slim deploy med state:modified+"
+            echo "Slim deploy with state:modified+"
             dbt build -s "state:modified+" --state ./ --target prod
           else
-            echo "Full deploy (ingen state funnet)"
+            echo "Full deploy (no state)"
             dbt build --target prod
           fi
-
-          # Oppdater manifest.json til neste runde
-          if [[ -f ./target/manifest.json ]]; then
-            cp ./target/manifest.json ./manifest.json
-          fi
+          # refresh state for next run
+          [[ -f ./target/manifest.json ]] && cp ./target/manifest.json ./manifest.json
 
       - name: Upload new manifest
         uses: actions/upload-artifact@v4

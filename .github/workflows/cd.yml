@@ -41,7 +41,7 @@ jobs:
             | sort_by(.updated_at) | last?.id // empty' artifacts.json)
 
           if [[ -n "${prod_id:-}" ]]; then
-            echo "✔ Found duckdb-prod-db id=${prod_id}"
+            echo "✔ Fant artifact id=${prod_id} (duckdb-prod-db). Laster ned…"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${prod_id}/zip" \
               -o prod.zip
@@ -52,10 +52,10 @@ jobs:
             fi
           fi
 
-          # Create empty DB if none
+          # Opprett tom DB hvis ingen artifact
           if [[ ! -f warehouse/prod.duckdb ]]; then
             python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
-            echo "Created empty warehouse/prod.duckdb"
+            echo "Opprettet tom warehouse/prod.duckdb"
           fi
 
           ls -l warehouse
@@ -73,7 +73,7 @@ jobs:
             | sort_by(.updated_at) | last?.id // empty' artifacts.json)
 
           if [[ -n "${man_id:-}" ]]; then
-            echo "✔ Found dbt-manifest id=${man_id}"
+            echo "✔ Fant manifest artifact id=${man_id}. Laster ned…"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${man_id}/zip" \
               -o manifest.zip
@@ -82,18 +82,17 @@ jobs:
             [[ -f state/manifest.json ]] && cp state/manifest.json ./manifest.json
           fi
 
-      - name: Deploy to production (Slim if state present)
+      - name: Deploy to production (Slim deploy if state present)
         shell: bash
         run: |
           set -euo pipefail
           if [[ -f "./manifest.json" ]]; then
-            echo "Slim deploy with state:modified+"
+            echo "Slim deploy med state:modified+"
             dbt build -s "state:modified+" --state ./ --target prod
           else
-            echo "Full deploy (no state)"
+            echo "Full deploy (ingen state funnet)"
             dbt build --target prod
           fi
-          # refresh state for next run
           [[ -f ./target/manifest.json ]] && cp ./target/manifest.json ./manifest.json
 
       - name: Upload new manifest

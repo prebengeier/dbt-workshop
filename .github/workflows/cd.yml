@@ -11,9 +11,9 @@ jobs:
       DBT_PROFILES_DIR: .
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          # Nødvendig hvis ci_cd_project er submodule/underkatalog
           submodules: recursive
 
       - name: Set up Python
@@ -21,13 +21,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dbt-duckdb
+      - name: Install dbt-duckdb + deps
         run: |
           python -m pip install --upgrade pip
           pip install -r dbt-requirements.txt
-
-      - name: Install dbt packages
-        run: |
           dbt --version
           dbt clean
           dbt deps
@@ -35,11 +32,7 @@ jobs:
       - name: Ensure warehouse + empty DB
         run: |
           mkdir -p warehouse external
-          python - <<'PY'
-import os, duckdb
-os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
-PY
+          python -c "import os, duckdb; os.makedirs('warehouse', exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
 
       - name: Build (full)
         run: dbt build --target prod
@@ -48,7 +41,7 @@ PY
         uses: actions/upload-artifact@v4
         with:
           name: dbt-manifest
-          path: ./target/manifest.json
+          path: target/manifest.json
           retention-days: 7
 
       - name: Upload prod.duckdb

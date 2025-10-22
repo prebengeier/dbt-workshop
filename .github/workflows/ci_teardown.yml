@@ -19,34 +19,62 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dbt-duckdb
-        run: pip install -r dbt-requirements.txt
+      - name: Install dependencies (dbt + helpers)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dbt-requirements.txt
+          sudo apt-get update -y
+          sudo apt-get install -y jq unzip
 
       - name: Ensure prod.duckdb available
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p warehouse
+
+          # Hent artifact-listen
           curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
-              -o artifacts.json
-          prod_id=$(jq -r '.artifacts[] | select(.name=="duckdb-prod-db") | .id' artifacts.json | head -n1)
-          if [ -n "$prod_id" ] && [ "$prod_id" != "null" ]; then
+            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
+            -o artifacts.json
+
+          # Finn nyeste artifact med navn "duckdb-prod-db"
+          prod_id=$(jq -r '.artifacts | map(select(.name=="duckdb-prod-db" and .expired==false)) | sort_by(.updated_at) | last?.id // empty' artifacts.json)
+
+          if [[ -n "${prod_id:-}" ]]; then
+            echo "✔ Fant artifact id=$prod_id. Laster ned…"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
-                -o prod.zip
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
+              -o prod.zip
             unzip -q prod.zip -d warehouse || true
-          else
+
+            # Flytt prod.duckdb til warehouse/ om den ligger dypt
+            found=$(find warehouse -type f -name "prod.duckdb" | head -n1 || true)
+            if [[ -n "${found:-}" && "${found}" != "warehouse/prod.duckdb" ]]; then
+              mv "$found" warehouse/prod.duckdb
+            fi
+          fi
+
+          # Hvis vi fortsatt ikke har filen, opprett en tom
+          if [[ ! -f warehouse/prod.duckdb ]]; then
+            echo "Ingen gyldig artifact funnet. Oppretter tom warehouse/prod.duckdb"
             python - << 'PY'
-import duckdb, os
+import os
+import duckdb
 os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
+con = duckdb.connect('warehouse/prod.duckdb')
+con.close()
 PY
+          fi
+
+          ls -l warehouse
 
       - name: Cleanup PR schemas in prod.duckdb
+        shell: bash
         run: |
+          # JSON-args må escapes riktig i bash
           dbt run-operation drop_pr_schemas \
             --target prod \
-            --args '{"database": "warehouse/prod.duckdb", "schema_prefix": "analytics__pr", "pr_number": "'"$PR_NUM"'"}'
+            --args "{\"database\": \"warehouse/prod.duckdb\", \"schema_prefix\": \"analytics__pr\", \"pr_number\": \"${PR_NUM}\"}"
 
       - name: Log cleanup results
-        run: echo "✅ Cleanup completed for PR #$PR_NUM"
+        run: echo "Cleanup completed for PR #$PR_NUM"

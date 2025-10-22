@@ -58,22 +58,3 @@ jobs:
           if [[ ! -f warehouse/prod.duckdb ]]; then
             echo "Ingen gyldig artifact funnet. Oppretter tom warehouse/prod.duckdb"
             python - <<'PY'
-import os, duckdb
-os.makedirs('warehouse', exist_ok=True)
-con = duckdb.connect('warehouse/prod.duckdb')
-con.close()
-print("Opprettet tom DuckDB: warehouse/prod.duckdb")
-PY
-          fi
-
-          ls -l warehouse
-
-      - name: Cleanup PR schemas in prod.duckdb
-        shell: bash
-        run: |
-          dbt run-operation drop_pr_schemas \
-            --target prod \
-            --args "{\"database\": \"warehouse/prod.duckdb\", \"schema_prefix\": \"analytics__pr\", \"pr_number\": \"${PR_NUM}\"}"
-
-      - name: Log cleanup results
-        run: echo "Cleanup completed for PR #$PR_NUM"

@@ -19,54 +19,19 @@ jobs:
           python-version: "3.11"
 
       - name: Install dbt-duckdb
-        run: pip install -r dbt-requirements.txt
-
-      - name: Ensure warehouse dirs
-        run: mkdir -p warehouse external
-
-      - name: Download latest prod.duckdb (if any)
-        shell: bash
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
-              -o artifacts.json
-          prod_id=$(jq -r '.artifacts[] | select(.name=="duckdb-prod-db") | .id' artifacts.json | head -n1)
-          if [ -n "$prod_id" ] && [ "$prod_id" != "null" ]; then
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
-                -o prod.zip
-            unzip -q prod.zip -d warehouse || true
-          fi
-          python - << 'PY'
-import duckdb, os
-os.makedirs('warehouse', exist_ok=True)
-duckdb.connect('warehouse/prod.duckdb').close()
-PY
+          python -m pip install --upgrade pip
+          pip install -r dbt-requirements.txt
 
-      - name: Download latest manifest (optional)
-        shell: bash
+      - name: Ensure warehouse + empty DB
         run: |
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" \
-              -o artifacts.json
-          man_id=$(jq -r '.artifacts[] | select(.name=="dbt-manifest") | .id' artifacts.json | head -n1)
-          if [ -n "$man_id" ] && [ "$man_id" != "null" ]; then
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$man_id/zip" \
-                -o manifest.zip
-            unzip -q manifest.zip -d state || true
-            cp state/manifest.json ./manifest.json || true
-          fi
+          mkdir -p warehouse external
+          python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
 
-      - name: Deploy to production (Slim deploy)
-        run: |
-          if [ -f "./manifest.json" ]; then
-            dbt build -s 'state:modified+' --state ./ --target prod
-          else
-            dbt build --target prod
-          fi
+      - name: Build (full)
+        run: dbt build --target prod
 
-      - name: Upload new manifest
+      - name: Upload manifest
         uses: actions/upload-artifact@v4
         with:
           name: dbt-manifest

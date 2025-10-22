@@ -158,6 +158,8 @@ dbt build --target pr --vars "schema_id: 99"
 
 schema_id kan være navn på branchen  
 
+Copy-Item .\state\manifest.json .\manifest.json -Force
+
 ---
 
 ## Lage en ny branch og deretter teste CI/CD 

@@ -19,7 +19,6 @@ customer_metrics as (
     group by customer_id
 )
 
---kommentar\
 select
     c.customer_id,
     c.first_name,

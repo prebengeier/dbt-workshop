@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Nødvendig hvis ci_cd_project er submodule/underkatalog
+          submodules: recursive
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,10 +26,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r dbt-requirements.txt
 
+      - name: Install dbt packages
+        run: |
+          dbt --version
+          dbt clean
+          dbt deps
+
       - name: Ensure warehouse + empty DB
         run: |
           mkdir -p warehouse external
-          python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
+          python - <<'PY'
+import os, duckdb
+os.makedirs('warehouse', exist_ok=True)
+duckdb.connect('warehouse/prod.duckdb').close()
+PY
 
       - name: Build (full)
         run: dbt build --target prod

@@ -2,7 +2,6 @@
 .venv/
 
 target/
-state/
 
 dbt_packages/*
 dbt_modules/*

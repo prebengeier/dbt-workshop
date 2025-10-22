@@ -14,8 +14,6 @@ staged as (
         companyname,
         contactname,
         contacttitle,
-        address,
-        city,
         region,
         postalcode,
         country,

@@ -38245,3 +38245,23 @@ information.
 [0m09:41:32.108848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248853B8620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024885362CF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248833682C0>]}
 [0m09:41:32.109815 [debug] [MainThread]: Flushing usage events
 [0m09:41:32.138820 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m10:20:05.985674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019495917230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019499DEFD40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019499D36480>]}
+
+
+============================== 10:20:05.999677 | 734167b2-b291-4ca1-b127-f6088e53e027 ==============================
+[0m10:20:05.999677 [info ] [MainThread]: Running with dbt=1.8.9
+[0m10:20:06.001675 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build -s state:modified+ --defer --state ./', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:20:06.589884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '734167b2-b291-4ca1-b127-f6088e53e027', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019496885FD0>]}
+[0m10:20:06.675124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '734167b2-b291-4ca1-b127-f6088e53e027', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019499E3ED80>]}
+[0m10:20:06.681123 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m10:20:07.560990 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m10:20:08.433684 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:20:08.434684 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:20:08.512664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '734167b2-b291-4ca1-b127-f6088e53e027', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001949B487410>]}
+[0m10:20:08.770215 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not read WritableManifest at "C:\Users\preben.geier\Documents\dbt-workshop\manifest.json" as JSON: Extra data: line 1 column 4 (char 3)
+[0m10:20:08.773220 [debug] [MainThread]: Command `dbt build` failed at 10:20:08.773220 after 3.08 seconds
+[0m10:20:08.773220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019495917230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001949B0321E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001949B032960>]}
+[0m10:20:08.774217 [debug] [MainThread]: Flushing usage events
+[0m10:20:08.840058 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.

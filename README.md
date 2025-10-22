@@ -110,11 +110,6 @@ dbt seed --target dev/test/prod
 dbt build --target dev/test/prod
 dbt snapshot --target dev/test/prod
 
-export DBT_DUCKDB_PATH=./warehouse/dev.duckdb
-dbt deps && dbt seed && dbt build --target dev
-
-export DBT_DUCKDB_PATH=./warehouse/pr_999__local.duckdb
-dbt build -s 'state:modified+' --state ./state --target pr --vars "schema_id: pr_999__local"
 ```
 
 ---

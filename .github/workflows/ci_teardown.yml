@@ -41,9 +41,9 @@ jobs:
           prod_id=$(jq -r '.artifacts | map(select(.name=="duckdb-prod-db" and .expired==false)) | sort_by(.updated_at) | last?.id // empty' artifacts.json)
 
           if [[ -n "${prod_id:-}" ]]; then
-            echo "✔ Fant artifact id=$prod_id. Laster ned…"
+            echo "✔ Fant artifact id=${prod_id}. Laster ned…"
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$prod_id/zip" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${prod_id}/zip" \
               -o prod.zip
             unzip -q prod.zip -d warehouse || true
 
@@ -57,12 +57,12 @@ jobs:
           # Hvis vi fortsatt ikke har filen, opprett en tom
           if [[ ! -f warehouse/prod.duckdb ]]; then
             echo "Ingen gyldig artifact funnet. Oppretter tom warehouse/prod.duckdb"
-            python - << 'PY'
-import os
-import duckdb
+            python - <<'PY'
+import os, duckdb
 os.makedirs('warehouse', exist_ok=True)
 con = duckdb.connect('warehouse/prod.duckdb')
 con.close()
+print("Opprettet tom DuckDB: warehouse/prod.duckdb")
 PY
           fi
 
@@ -71,7 +71,7 @@ PY
       - name: Cleanup PR schemas in prod.duckdb
         shell: bash
         run: |
-          # JSON-args må escapes riktig i bash
+          # Kjør makroen. Juster schema_prefix til ditt mønster.
           dbt run-operation drop_pr_schemas \
             --target prod \
             --args "{\"database\": \"warehouse/prod.duckdb\", \"schema_prefix\": \"analytics__pr\", \"pr_number\": \"${PR_NUM}\"}"

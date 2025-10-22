@@ -16,8 +16,6 @@ staged as (
         contacttitle,
         region,
         postalcode,
-        country,
-        phone,
         fax
     from source
 )

@@ -18,84 +18,20 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dbt-duckdb + tools
+      - name: Install dbt-duckdb
         run: |
           python -m pip install --upgrade pip
           pip install -r dbt-requirements.txt
-          sudo apt-get update -y
-          sudo apt-get install -y jq unzip
 
-      - name: Ensure warehouse dirs
-        run: mkdir -p warehouse external
-
-      - name: Download latest prod.duckdb (if any)
-        shell: bash
+      - name: Ensure warehouse + empty DB
         run: |
-          set -euo pipefail
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
-            -o artifacts.json
+          mkdir -p warehouse external
+          python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
 
-          prod_id=$(jq -r '.artifacts
-            | map(select(.name=="duckdb-prod-db" and .expired==false))
-            | sort_by(.updated_at) | last?.id // empty' artifacts.json)
+      - name: Build (full)
+        run: dbt build --target prod
 
-          if [[ -n "${prod_id:-}" ]]; then
-            echo "✔ Fant artifact id=${prod_id} (duckdb-prod-db). Laster ned…"
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${prod_id}/zip" \
-              -o prod.zip
-            unzip -q prod.zip -d warehouse || true
-            found=$(find warehouse -type f -name "prod.duckdb" | head -n1 || true)
-            if [[ -n "${found:-}" && "${found}" != "warehouse/prod.duckdb" ]]; then
-              mv "$found" warehouse/prod.duckdb
-            fi
-          fi
-
-          # Opprett tom DB hvis ingen artifact
-          if [[ ! -f warehouse/prod.duckdb ]]; then
-            python -c "import os,duckdb; os.makedirs('warehouse',exist_ok=True); duckdb.connect('warehouse/prod.duckdb').close()"
-            echo "Opprettet tom warehouse/prod.duckdb"
-          fi
-
-          ls -l warehouse
-
-      - name: Download latest manifest (optional Slim state)
-        shell: bash
-        run: |
-          set -euo pipefail
-          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
-            -o artifacts.json
-
-          man_id=$(jq -r '.artifacts
-            | map(select(.name=="dbt-manifest" and .expired==false))
-            | sort_by(.updated_at) | last?.id // empty' artifacts.json)
-
-          if [[ -n "${man_id:-}" ]]; then
-            echo "✔ Fant manifest artifact id=${man_id}. Laster ned…"
-            curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${man_id}/zip" \
-              -o manifest.zip
-            rm -rf state
-            unzip -q manifest.zip -d state || true
-            [[ -f state/manifest.json ]] && cp state/manifest.json ./manifest.json
-          fi
-
-      - name: Deploy to production (Slim deploy if state present)
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [[ -f "./manifest.json" ]]; then
-            echo "Slim deploy med state:modified+"
-            dbt build -s "state:modified+" --state ./ --target prod
-          else
-            echo "Full deploy (ingen state funnet)"
-            dbt build --target prod
-          fi
-          [[ -f ./target/manifest.json ]] && cp ./target/manifest.json ./manifest.json
-
-      - name: Upload new manifest
+      - name: Upload manifest
         uses: actions/upload-artifact@v4
         with:
           name: dbt-manifest

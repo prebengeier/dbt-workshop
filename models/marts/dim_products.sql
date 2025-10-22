@@ -31,6 +31,7 @@ select
     p.is_active,
     p.created_at,
     p.updated_at,
+    --Komentarer
 
     
     coalesce(pm.total_orders, 0) as total_orders,

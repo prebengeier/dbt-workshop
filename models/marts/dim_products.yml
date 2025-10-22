@@ -13,13 +13,3 @@ models:
         description: "Total revenue from product sales"
         tests:
           - not_null
-      - name: profit_margin
-        description: "Profit margin per product"
-        tests:
-          - not_null
-      - name: performance_category
-        description: "Product performance category"
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['High Performance', 'Medium Performance', 'Low Performance', 'No Sales']

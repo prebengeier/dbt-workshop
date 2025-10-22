@@ -10,18 +10,16 @@ workshop_duckdb:
       extensions: [httpfs]
       external_root: ./external
 
-
     pr:
       type: duckdb
-      path: "{{ env_var('DBT_DUCKDB_PATH', './warehouse/test.duckdb') }}"
-      schema: "{{ var('schema_id', 'analytics_pr') }}"
+      path: "./warehouse/pr_{{ var('schema_id','local') }}.duckdb"
+      schema: "analytics_pr"
       threads: 4
       extensions: [httpfs]
       external_root: ./external
       attach:
         - path: ./warehouse/prod.duckdb
           alias: prod
-
 
     prod:
       type: duckdb

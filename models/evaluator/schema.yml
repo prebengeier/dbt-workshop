@@ -1,9 +1,0 @@
-version: 2
-
-models:
-  - name: generate_project_metadata
-    description: "Wrapper som genererer metadata for dbt_project_evaluator"
-  - name: evaluate_project
-    description: "Wrapper som kjører selve evalueringen"
-  - name: test_project_evaluation
-    description: "Wrapper for å eksponere evaluatortesten (valgfritt)"

@@ -16,6 +16,7 @@ staged as (
         subcategory,
         brand,
         price,
+        {{ usd_to_nok('price', 10.87) }} as price_nok, 
         cost,
         description,
         is_active,

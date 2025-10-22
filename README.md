@@ -156,35 +156,10 @@ Hvis ingen `manifest.json` finnes, kjøres full bygging.
 
 ---
 
-
-## Workshop-oppgaver
-
-1️⃣ **Kjør lokalt (30 min)** – bygg, seed, snapshot
-
-2️⃣ **Legg til feiltest (20 min)** – endre CSV slik at test feiler
-
-3️⃣ **Lag ny modell (30 min)** – bygg en aggregert `int_daily_revenue.sql`
-
-4️⃣ **Snapshot (20 min)** – endre e-post og se historikk
-
-5️⃣ **PR CI (40 min)** – åpne PR, CI kjører isolert DuckDB-fil
-
-6️⃣ **CD (30 min)** – merge til main, bygg prod og last opp manifest
-
-7️⃣ **Teardown (10 min)** – lukk PR, slett midlertidige filer
-
----
-
-
-
+## Lage en ny branch og deretter teste CI/CD 
 ```bash
-# Lokal utvikling
-export DBT_DUCKDB_PATH=local.duckdb
-dbt deps && dbt seed && dbt build && dbt snapshot
-
-# Slim CI lokalt
-dbt build -s 'state:modified+' --defer --state ./
-
-# Rydd opp PR-db-filer
-dbt run-operation drop_pr_dbs --args '{"glob_pattern": "ci/pr_123__*.duckdb"}'
+git checkout -b branch
+git push -u origin branch
+gh pr create --fill --base main --head branch
 ```
+

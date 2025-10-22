@@ -2,10 +2,13 @@ version: 2
 
 seeds:
   - name: test_fct_missing_primary_key_tests
-    tests:
+    data_tests:
       - dbt_utils.equality:
           name: equality_fct_missing_primary_key_tests
           compare_model: ref('fct_missing_primary_key_tests')
+          exclude_columns:
+            - resource_type
+            - model_type
 
   - name: test_fct_test_coverage
     config:
@@ -15,7 +18,7 @@ seeds:
         intermediate_test_coverage_pct: *float
         marts_test_coverage_pct: *float
         other_test_coverage_pct: *float
-    tests:
+    data_tests:
       - dbt_utils.equality:
           name: equality_fct_test_coverage
           compare_model: ref('fct_test_coverage')
@@ -29,3 +32,9 @@ seeds:
             - intermediate_test_coverage_pct
             - marts_test_coverage_pct
             - other_test_coverage_pct
+
+  - name: test_fct_sources_without_freshness
+    data_tests:
+      - dbt_utils.equality:
+          name: equality_fct_sources_without_freshness
+          compare_model: ref('fct_sources_without_freshness')

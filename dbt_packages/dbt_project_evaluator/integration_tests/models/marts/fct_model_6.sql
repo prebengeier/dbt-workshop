@@ -65,7 +65,11 @@ select 1 as id
   union all
   select 
       4 as id
-  from 'raw_relation_4'    
+  from 'raw_relation_4'
+  union all
+  select
+      4 as id
+  from `project-name.dataset_name.table_name`
   union all
   select
       4 as id
@@ -88,6 +92,13 @@ select 1 as id
   select
       5 as id
   from {{ var('my_table_reference', 'table_d') }}
-
+  union all
+  select 
+      5 as id
+  from a.b.c
+  union all
+  select 
+      5 as id
+  from a.b
 
 #}

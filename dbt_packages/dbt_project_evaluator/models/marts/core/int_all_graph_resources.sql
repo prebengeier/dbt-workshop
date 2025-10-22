@@ -2,11 +2,19 @@
 
 {# flatten the sets of permissable primary key test sets to one level for later iteration #}
 {%- set test_macro_list = [] %}
+{%- set test_macro_names_list = [] %}
 {%- for test_set in var('primary_key_test_macros') -%}
       {%- for test in test_set %}
-        {%- do test_macro_list.append(test) -%}
+            {%- do test_macro_list.append(test) -%}
       {%- endfor %}
 {%- endfor -%}
+{% for test in test_macro_list %}
+        {%- do test_macro_names_list.append(test.split('.')[1]) -%}
+{%- endfor -%}
+{%- if "test_unique" not in test_macro_names_list -%}
+    {%- do test_macro_list.append("dbt.test_unique") -%}
+{%- endif -%}
+{%- set test_macro_set = set_strict(test_macro_list) -%}
 
 {%- set quoted_directory_pattern = wrap_string_with_quotes(get_directory_pattern()) %}
 
@@ -60,7 +68,7 @@ joined as (
         unioned_with_calc.file_name,
         case 
             when unioned_with_calc.resource_type in ('test', 'source', 'metric', 'exposure', 'seed') then null
-            else naming_convention_prefixes.model_type 
+            else nullif(naming_convention_prefixes.model_type, '')
         end as model_type_prefix,
         case 
             when unioned_with_calc.resource_type in ('test', 'source', 'metric', 'exposure', 'seed') then null
@@ -69,7 +77,7 @@ joined as (
         end as model_type_folder,
         {{ dbt.position(dbt.concat([quoted_directory_pattern, 'naming_convention_folders.folder_name_value', quoted_directory_pattern]),'unioned_with_calc.directory_path') }} as position_folder,  
         nullif(unioned_with_calc.column_name, '') as column_name,
-        {% for test in test_macro_list %}
+        {% for test in test_macro_set %}
         unioned_with_calc.macro_dependencies like '%macro.{{ test }}%' and unioned_with_calc.resource_type = 'test' as is_{{ test.split('.')[1] }},  
         {% endfor %}
         unioned_with_calc.is_enabled, 
@@ -109,6 +117,7 @@ joined as (
         unioned_with_calc.source_name, -- NULL for non-source resources
         unioned_with_calc.is_source_described, 
         unioned_with_calc.loaded_at_field, 
+        unioned_with_calc.is_freshness_enabled, 
         unioned_with_calc.loader, 
         unioned_with_calc.identifier,
         unioned_with_calc.hard_coded_references, -- NULL for non-model resources

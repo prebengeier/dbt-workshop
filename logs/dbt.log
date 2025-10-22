@@ -38040,3 +38040,208 @@ where unit_price is null
 [0m16:41:12.212635 [debug] [MainThread]: Command `dbt build` succeeded at 16:41:12.212635 after 12.54 seconds
 [0m16:41:12.213613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA79A37440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA77D680B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA7CA7D1F0>]}
 [0m16:41:13.762974 [debug] [MainThread]: Flushing usage events
+[0m09:36:06.804792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F1090470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F10BB890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F10BA780>]}
+
+
+============================== 09:36:06.813676 | 7d823066-968c-4013-bad7-6f27cd1c45e8 ==============================
+[0m09:36:06.813676 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:36:06.815675 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build -s state:modified+ --state ./state --target pr --vars schema_id: pr_99', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:36:07.316898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F20516A0>]}
+[0m09:36:07.396388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F21118E0>]}
+[0m09:36:07.400385 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m09:36:08.075264 [debug] [MainThread]: checksum: cd9b35727ad82087b7cf24daaccec6f1e0f7f1b6ba394ce7eaf46ff9c359f6f8, vars: {'schema_id': 'pr_99'}, profile: , target: pr, version: 1.8.9
+[0m09:36:08.234700 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m09:36:08.235704 [debug] [MainThread]: previous checksum: cd9b35727ad82087b7cf24daaccec6f1e0f7f1b6ba394ce7eaf46ff9c359f6f8, current checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1
+[0m09:36:08.236631 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m09:36:08.237616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F10E8110>]}
+[0m09:36:12.905300 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m09:36:12.906304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F2FDBB90>]}
+[0m09:36:13.475836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_direct_join_to_source_.2ec67ec028' (models\marts\dag\dag.yml) depends on a node named 'fct_direct_join_to_source' which is disabled
+[0m09:36:13.476833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_duplicate_sources_.642214de31' (models\marts\dag\dag.yml) depends on a node named 'fct_duplicate_sources' which is disabled
+[0m09:36:13.476833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_marts_or_intermediate_dependent_on_source_.c0abd5f00f' (models\marts\dag\dag.yml) depends on a node named 'fct_marts_or_intermediate_dependent_on_source' which is disabled
+[0m09:36:13.476833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_fanout_.a3ef403a95' (models\marts\dag\dag.yml) depends on a node named 'fct_model_fanout' which is disabled
+[0m09:36:13.477833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_multiple_sources_joined_.494f431817' (models\marts\dag\dag.yml) depends on a node named 'fct_multiple_sources_joined' which is disabled
+[0m09:36:13.477833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_rejoining_of_upstream_concepts_.c6b3625c7d' (models\marts\dag\dag.yml) depends on a node named 'fct_rejoining_of_upstream_concepts' which is disabled
+[0m09:36:13.478833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_root_models_.ccb5a490f1' (models\marts\dag\dag.yml) depends on a node named 'fct_root_models' which is disabled
+[0m09:36:13.478833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_fanout_.45762bb722' (models\marts\dag\dag.yml) depends on a node named 'fct_source_fanout' which is disabled
+[0m09:36:13.478833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_marts_or_intermediate_.3aa45af51f' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_marts_or_intermediate' which is disabled
+[0m09:36:13.479833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_staging_.bea47be3ca' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_staging' which is disabled
+[0m09:36:13.479833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_unused_sources_.41456b9da8' (models\marts\dag\dag.yml) depends on a node named 'fct_unused_sources' which is disabled
+[0m09:36:13.479833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposure_parents_materializations_.5a21592422' (models\marts\dag\dag.yml) depends on a node named 'fct_exposure_parents_materializations' which is disabled
+[0m09:36:13.480833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_hard_coded_references_.9f62f70113' (models\marts\dag\dag.yml) depends on a node named 'fct_hard_coded_references' which is disabled
+[0m09:36:13.480833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_too_many_joins_.0cb37fa535' (models\marts\dag\dag.yml) depends on a node named 'fct_too_many_joins' which is disabled
+[0m09:36:13.481833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_documentation_coverage.67ef7314a7' (models\marts\documentation\documentation.yml) depends on a node named 'fct_documentation_coverage' which is disabled
+[0m09:36:13.481833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_models_.7c2f43109c' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_models' which is disabled
+[0m09:36:13.481833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_source_tables_.1c89ecc166' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_source_tables' which is disabled
+[0m09:36:13.482833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_sources_.0409327235' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_sources' which is disabled
+[0m09:36:13.482833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_public_models_without_contract_.bcf47f1cb0' (models\marts\governance\governance.yml) depends on a node named 'fct_public_models_without_contract' which is disabled
+[0m09:36:13.482833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_public_models_.56938f1938' (models\marts\governance\governance.yml) depends on a node named 'fct_undocumented_public_models' which is disabled
+[0m09:36:13.483833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposures_dependent_on_private_models_.f12ef3521e' (models\marts\governance\governance.yml) depends on a node named 'fct_exposures_dependent_on_private_models' which is disabled
+[0m09:36:13.483833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_chained_views_dependencies_.d5cb95fb33' (models\marts\performance\performance.yml) depends on a node named 'fct_chained_views_dependencies' which is disabled
+[0m09:36:13.483833 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_directories_.50098500db' (models\marts\structure\structure.yml) depends on a node named 'fct_model_directories' which is disabled
+[0m09:36:13.484836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_naming_conventions_.a79bc0fbe2' (models\marts\structure\structure.yml) depends on a node named 'fct_model_naming_conventions' which is disabled
+[0m09:36:13.484836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_directories_.3ec42bc19c' (models\marts\structure\structure.yml) depends on a node named 'fct_source_directories' which is disabled
+[0m09:36:13.484836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_test_directories_.1c1db93433' (models\marts\structure\structure.yml) depends on a node named 'fct_test_directories' which is disabled
+[0m09:36:13.485836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_test_coverage.df03f31e09' (models\marts\tests\testing.yml) depends on a node named 'fct_test_coverage' which is disabled
+[0m09:36:13.485836 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_missing_primary_key_tests_.4d10d48da0' (models\marts\tests\testing.yml) depends on a node named 'fct_missing_primary_key_tests' which is disabled
+[0m09:36:13.621285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F373E000>]}
+[0m09:36:13.864588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7d823066-968c-4013-bad7-6f27cd1c45e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F2F2FEC0>]}
+[0m09:36:13.865591 [info ] [MainThread]: Found 8 models, 15 seeds, 41 data tests, 858 macros
+[0m09:36:13.866587 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Got a state selector method, but no comparison manifest
+[0m09:36:13.869597 [debug] [MainThread]: Command `dbt build` failed at 09:36:13.868611 after 7.38 seconds
+[0m09:36:13.870588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F10E9AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F366A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000130F2FBF6B0>]}
+[0m09:36:13.870588 [debug] [MainThread]: Flushing usage events
+[0m09:36:13.937177 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m09:37:36.710736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191242D97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019124038F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191229DF8F0>]}
+
+
+============================== 09:37:36.716250 | fb51abfd-42fa-46c8-be37-1095306dc253 ==============================
+[0m09:37:36.716250 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:37:36.717250 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt clean', 'send_anonymous_usage_stats': 'True'}
+[0m09:37:36.980548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb51abfd-42fa-46c8-be37-1095306dc253', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191243FCFB0>]}
+[0m09:37:38.233948 [debug] [MainThread]: Command `dbt clean` succeeded at 09:37:38.233948 after 1.68 seconds
+[0m09:37:38.233948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191240BA930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191243ECF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191229DF8F0>]}
+[0m09:37:38.234948 [debug] [MainThread]: Flushing usage events
+[0m09:37:38.304254 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m09:37:43.518436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025693C28F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694D96A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694D94260>]}
+
+
+============================== 09:37:43.527055 | 75fded30-3758-4fb2-8bfe-b02577c9fcc9 ==============================
+[0m09:37:43.527055 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:37:43.528211 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'debug': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt deps', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:37:43.801132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694C716A0>]}
+[0m09:37:43.868667 [debug] [MainThread]: Set downloads directory='C:\Users\PREBEN~1.GEI\AppData\Local\Temp\dbt-downloads-f1dxujcr'
+[0m09:37:43.869669 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m09:37:44.627917 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m09:37:44.629917 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m09:37:45.410716 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m09:37:45.421729 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_project_evaluator.json
+[0m09:37:46.347469 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_project_evaluator.json 200
+[0m09:37:46.353466 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json
+[0m09:37:47.071252 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json 200
+[0m09:37:47.073248 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `calogica/dbt_expectations` package is deprecated in favor of
+`metaplane/dbt_expectations`. Please update your `packages.yml` configuration to
+use `metaplane/dbt_expectations` instead.
+[0m09:37:47.074248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000256934DFB30>]}
+[0m09:37:47.078249 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json
+[0m09:37:47.787458 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json 200
+[0m09:37:47.792463 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m09:37:49.894273 [info ] [MainThread]: Installed from version 1.1.1
+[0m09:37:49.895279 [info ] [MainThread]: Updated version available: 1.3.1
+[0m09:37:49.896270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000256956B1370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000256956B1280>]}
+[0m09:37:49.897269 [info ] [MainThread]: Installing dbt-labs/dbt_project_evaluator
+[0m09:37:53.549465 [info ] [MainThread]: Installed from version 0.11.0
+[0m09:37:53.550462 [info ] [MainThread]: Updated version available: 1.0.2
+[0m09:37:53.550462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694F89730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694F8AA80>]}
+[0m09:37:53.551462 [info ] [MainThread]: Installing calogica/dbt_expectations
+[0m09:37:56.687584 [info ] [MainThread]: Installed from version 0.10.3
+[0m09:37:56.688594 [info ] [MainThread]: Updated version available: 0.10.4
+[0m09:37:56.690212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002569412D070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694F63200>]}
+[0m09:37:56.690212 [info ] [MainThread]: Installing calogica/dbt_date
+[0m09:37:57.903151 [info ] [MainThread]: Installed from version 0.10.1
+[0m09:37:57.904154 [info ] [MainThread]: Up to date!
+[0m09:37:57.904154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '75fded30-3758-4fb2-8bfe-b02577c9fcc9', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025695698710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000256956986E0>]}
+[0m09:37:57.905152 [info ] [MainThread]: 
+[0m09:37:57.905152 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils', 'dbt-labs/dbt_project_evaluator', 'calogica/dbt_expectations']                 
+Update your versions in packages.yml, then run dbt deps
+[0m09:37:57.914155 [debug] [MainThread]: Command `dbt deps` succeeded at 09:37:57.914155 after 14.61 seconds
+[0m09:37:57.915163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002569394EDE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694190B60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025694192E10>]}
+[0m09:37:57.916152 [debug] [MainThread]: Flushing usage events
+[0m09:37:57.925170 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m09:38:02.815287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107A163AA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021079F37D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107A161070>]}
+
+
+============================== 09:38:02.824289 | b08a13fd-c678-435b-a318-181712ba659f ==============================
+[0m09:38:02.824289 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:38:02.825288 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt parse --target pr --vars schema_id: pr_99', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:38:03.249731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b08a13fd-c678-435b-a318-181712ba659f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107AE0DEB0>]}
+[0m09:38:03.331959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b08a13fd-c678-435b-a318-181712ba659f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107A194E00>]}
+[0m09:38:03.337956 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m09:38:04.098776 [debug] [MainThread]: checksum: cd9b35727ad82087b7cf24daaccec6f1e0f7f1b6ba394ce7eaf46ff9c359f6f8, vars: {'schema_id': 'pr_99'}, profile: , target: pr, version: 1.8.9
+[0m09:38:04.103775 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:38:04.104774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b08a13fd-c678-435b-a318-181712ba659f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107A354C20>]}
+[0m09:38:08.743710 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m09:38:08.744710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'b08a13fd-c678-435b-a318-181712ba659f', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107BD7D970>]}
+[0m09:38:09.353504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_direct_join_to_source_.2ec67ec028' (models\marts\dag\dag.yml) depends on a node named 'fct_direct_join_to_source' which is disabled
+[0m09:38:09.354504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_duplicate_sources_.642214de31' (models\marts\dag\dag.yml) depends on a node named 'fct_duplicate_sources' which is disabled
+[0m09:38:09.355504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_marts_or_intermediate_dependent_on_source_.c0abd5f00f' (models\marts\dag\dag.yml) depends on a node named 'fct_marts_or_intermediate_dependent_on_source' which is disabled
+[0m09:38:09.356509 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_fanout_.a3ef403a95' (models\marts\dag\dag.yml) depends on a node named 'fct_model_fanout' which is disabled
+[0m09:38:09.356509 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_multiple_sources_joined_.494f431817' (models\marts\dag\dag.yml) depends on a node named 'fct_multiple_sources_joined' which is disabled
+[0m09:38:09.357505 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_rejoining_of_upstream_concepts_.c6b3625c7d' (models\marts\dag\dag.yml) depends on a node named 'fct_rejoining_of_upstream_concepts' which is disabled
+[0m09:38:09.357505 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_root_models_.ccb5a490f1' (models\marts\dag\dag.yml) depends on a node named 'fct_root_models' which is disabled
+[0m09:38:09.358502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_fanout_.45762bb722' (models\marts\dag\dag.yml) depends on a node named 'fct_source_fanout' which is disabled
+[0m09:38:09.359502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_marts_or_intermediate_.3aa45af51f' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_marts_or_intermediate' which is disabled
+[0m09:38:09.359502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_staging_dependent_on_staging_.bea47be3ca' (models\marts\dag\dag.yml) depends on a node named 'fct_staging_dependent_on_staging' which is disabled
+[0m09:38:09.359502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_unused_sources_.41456b9da8' (models\marts\dag\dag.yml) depends on a node named 'fct_unused_sources' which is disabled
+[0m09:38:09.360502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposure_parents_materializations_.5a21592422' (models\marts\dag\dag.yml) depends on a node named 'fct_exposure_parents_materializations' which is disabled
+[0m09:38:09.360502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_hard_coded_references_.9f62f70113' (models\marts\dag\dag.yml) depends on a node named 'fct_hard_coded_references' which is disabled
+[0m09:38:09.361502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_too_many_joins_.0cb37fa535' (models\marts\dag\dag.yml) depends on a node named 'fct_too_many_joins' which is disabled
+[0m09:38:09.361502 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_documentation_coverage.67ef7314a7' (models\marts\documentation\documentation.yml) depends on a node named 'fct_documentation_coverage' which is disabled
+[0m09:38:09.362505 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_models_.7c2f43109c' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_models' which is disabled
+[0m09:38:09.362505 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_source_tables_.1c89ecc166' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_source_tables' which is disabled
+[0m09:38:09.363501 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_sources_.0409327235' (models\marts\documentation\documentation.yml) depends on a node named 'fct_undocumented_sources' which is disabled
+[0m09:38:09.364504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_public_models_without_contract_.bcf47f1cb0' (models\marts\governance\governance.yml) depends on a node named 'fct_public_models_without_contract' which is disabled
+[0m09:38:09.364504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_undocumented_public_models_.56938f1938' (models\marts\governance\governance.yml) depends on a node named 'fct_undocumented_public_models' which is disabled
+[0m09:38:09.365503 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_exposures_dependent_on_private_models_.f12ef3521e' (models\marts\governance\governance.yml) depends on a node named 'fct_exposures_dependent_on_private_models' which is disabled
+[0m09:38:09.365503 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_chained_views_dependencies_.d5cb95fb33' (models\marts\performance\performance.yml) depends on a node named 'fct_chained_views_dependencies' which is disabled
+[0m09:38:09.366510 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_directories_.50098500db' (models\marts\structure\structure.yml) depends on a node named 'fct_model_directories' which is disabled
+[0m09:38:09.366510 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_model_naming_conventions_.a79bc0fbe2' (models\marts\structure\structure.yml) depends on a node named 'fct_model_naming_conventions' which is disabled
+[0m09:38:09.366510 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_source_directories_.3ec42bc19c' (models\marts\structure\structure.yml) depends on a node named 'fct_source_directories' which is disabled
+[0m09:38:09.367504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_test_directories_.1c1db93433' (models\marts\structure\structure.yml) depends on a node named 'fct_test_directories' which is disabled
+[0m09:38:09.367504 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.valid_test_coverage.df03f31e09' (models\marts\tests\testing.yml) depends on a node named 'fct_test_coverage' which is disabled
+[0m09:38:09.368505 [debug] [MainThread]: [[33mWARNING[0m]: Test 'test.dbt_project_evaluator.is_empty_fct_missing_primary_key_tests_.4d10d48da0' (models\marts\tests\testing.yml) depends on a node named 'fct_missing_primary_key_tests' which is disabled
+[0m09:38:09.569632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b08a13fd-c678-435b-a318-181712ba659f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107BCE4C50>]}
+[0m09:38:09.579599 [info ] [MainThread]: Performance info: C:\Users\preben.geier\Documents\dbt-workshop\target\perf_info.json
+[0m09:38:09.928345 [debug] [MainThread]: Command `dbt parse` succeeded at 09:38:09.928345 after 7.30 seconds
+[0m09:38:09.931903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021079F37D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107BE4FFE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002107BE4FE30>]}
+[0m09:38:09.932955 [debug] [MainThread]: Flushing usage events
+[0m09:38:09.994050 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m09:39:28.470178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278DC6E57F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E0B95160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E0B61130>]}
+
+
+============================== 09:39:28.480180 | a89dd3e7-0318-4f93-8030-13c87df02047 ==============================
+[0m09:39:28.480180 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:39:28.481179 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ls -s state:modified+ --state .\\state --target pr --vars schema_id: pr_99', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:39:29.000538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a89dd3e7-0318-4f93-8030-13c87df02047', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278DF4042C0>]}
+[0m09:39:29.118225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a89dd3e7-0318-4f93-8030-13c87df02047', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E0B95520>]}
+[0m09:39:29.124245 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m09:39:29.975231 [debug] [MainThread]: checksum: cd9b35727ad82087b7cf24daaccec6f1e0f7f1b6ba394ce7eaf46ff9c359f6f8, vars: {'schema_id': 'pr_99'}, profile: , target: pr, version: 1.8.9
+[0m09:39:30.698216 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:39:30.699216 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:39:30.757741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a89dd3e7-0318-4f93-8030-13c87df02047', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E18CE510>]}
+[0m09:39:31.231146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a89dd3e7-0318-4f93-8030-13c87df02047', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E2625C10>]}
+[0m09:39:31.232146 [info ] [MainThread]: Found 8 models, 15 seeds, 41 data tests, 858 macros
+[0m09:39:31.233145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a89dd3e7-0318-4f93-8030-13c87df02047', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278E20D5D90>]}
+[0m09:39:31.237143 [warn ] [MainThread]: The selection criterion 'state:modified+' does not match any enabled nodes
+[0m09:39:31.238142 [warn ] [MainThread]: No nodes selected!
+[0m09:39:31.243183 [debug] [MainThread]: Command `dbt ls` succeeded at 09:39:31.243183 after 3.01 seconds
+[0m09:39:31.244148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278DF190E60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278DF190CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278DDAF5670>]}
+[0m09:39:31.244148 [debug] [MainThread]: Flushing usage events
+[0m09:39:31.280226 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m09:41:29.216083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024881A3F3B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024881724560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248853B8620>]}
+
+
+============================== 09:41:29.227088 | 3780bbfd-c44c-41f0-b76a-6b4148d703c1 ==============================
+[0m09:41:29.227088 [info ] [MainThread]: Running with dbt=1.8.9
+[0m09:41:29.229087 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\preben.geier\\Documents\\dbt-workshop', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt parse --target pr --vars schema_id: pr_99', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:41:29.861493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3780bbfd-c44c-41f0-b76a-6b4148d703c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024881D85E50>]}
+[0m09:41:29.995103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3780bbfd-c44c-41f0-b76a-6b4148d703c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248859C9640>]}
+[0m09:41:30.002621 [info ] [MainThread]: Registered adapter: duckdb=1.8.4
+[0m09:41:30.956122 [debug] [MainThread]: checksum: cd9b35727ad82087b7cf24daaccec6f1e0f7f1b6ba394ce7eaf46ff9c359f6f8, vars: {'schema_id': 'pr_99'}, profile: , target: pr, version: 1.8.9
+[0m09:41:31.779477 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:41:31.779477 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:41:31.849087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3780bbfd-c44c-41f0-b76a-6b4148d703c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248858FF4D0>]}
+[0m09:41:31.857086 [info ] [MainThread]: Performance info: C:\Users\preben.geier\Documents\dbt-workshop\target\perf_info.json
+[0m09:41:32.108848 [debug] [MainThread]: Command `dbt parse` succeeded at 09:41:32.108848 after 3.13 seconds
+[0m09:41:32.108848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248853B8620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024885362CF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248833682C0>]}
+[0m09:41:32.109815 [debug] [MainThread]: Flushing usage events
+[0m09:41:32.138820 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.

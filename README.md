@@ -23,6 +23,7 @@ Installer følgende:
 - **git** og **GitHub**
 - **VS Code** (anbefalt)
 - **duckdb CLI (https://duckdb.org/install/?platform=windows&environment=cli)**
+- **Github CLI**
 
 
 Installer dbt med DuckDB-adapter:
@@ -32,6 +33,7 @@ python -m venv .venv
 source .venv/bin/activate           # Windows: .venv\Scripts\activate
 pip install --upgrade pip
 pip install -r dbt-requirements.txt
+winget install --id GitHub.cli -e
 ```
 
 ---

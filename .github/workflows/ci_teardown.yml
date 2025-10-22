@@ -1,15 +1,43 @@
+name: dbt CI Teardown (DuckDB)
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  teardown:
+    runs-on: ubuntu-latest
+    env:
+      DBT_PROFILES_DIR: .
+      PR_NUM: ${{ github.event.number }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies (dbt + helpers)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dbt-requirements.txt
+          sudo apt-get update -y
+          sudo apt-get install -y jq unzip
+
       - name: Ensure prod.duckdb available
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p warehouse
 
-          # Hent artifact-listen
+          # Fetch artifact list
           curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=100" \
             -o artifacts.json
 
-          # Finn nyeste artifact med navn "duckdb-prod-db" (robust jq uten last?)
+          # Pick newest artifact named duckdb-prod-db (robust jq)
           prod_id=$(jq -r '
             (.artifacts // [])
             | map(select(.name=="duckdb-prod-db" and (.expired|not)))
@@ -18,33 +46,33 @@
           ' artifacts.json)
 
           if [[ -n "${prod_id:-}" ]]; then
-            echo "✔ Fant artifact id=${prod_id}. Laster ned…"
+            echo "Found artifact id=${prod_id}. Downloading..."
             curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
               "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${prod_id}/zip" \
               -o prod.zip
             unzip -q prod.zip -d warehouse || true
 
-            # Flytt prod.duckdb til warehouse/ om den ligger dypt
+            # Move prod.duckdb to warehouse/ if nested
             found=$(find warehouse -type f -name "prod.duckdb" | head -n1 || true)
             if [[ -n "${found:-}" && "${found}" != "warehouse/prod.duckdb" ]]; then
               mv "$found" warehouse/prod.duckdb
             fi
           fi
 
-          # Hvis vi fortsatt ikke har filen, opprett en tom
+          # If still missing, create an empty prod.duckdb
           if [[ ! -f warehouse/prod.duckdb ]]; then
-            echo "Ingen gyldig artifact funnet. Oppretter tom warehouse/prod.duckdb"
+            echo "No valid artifact found. Creating empty warehouse/prod.duckdb"
             python - <<'PY'
-import os
-os.makedirs("warehouse", exist_ok=True)
-try:
-    import duckdb
-    con = duckdb.connect("warehouse/prod.duckdb")
-    con.close()
-except Exception:
-    # Fallback: lag tom fil hvis duckdb ikke er installert i dette miljøet
-    open("warehouse/prod.duckdb", "ab").close()
-print("Tom prod.duckdb opprettet")
+            import os
+            os.makedirs("warehouse", exist_ok=True)
+            try:
+                import duckdb
+                con = duckdb.connect("warehouse/prod.duckdb")
+                con.close()
+            except Exception:
+                # Fallback: create empty file if duckdb isn't installed
+                open("warehouse/prod.duckdb", "ab").close()
+            print("Empty prod.duckdb created")
 PY
           fi
 
